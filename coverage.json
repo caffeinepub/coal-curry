@@ -1,138 +1,91 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-24T16:20:20.508Z",
+  "generatedAt": "2026-02-25T01:10:27.410Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 5,
-    "implemented": 5,
+    "total": 3,
+    "implemented": 3,
     "items": [
       {
-        "id": "REQ-20",
-        "summary": "Add per-page SEO meta tags to every route in the React SPA. Each page must have a unique <title> tag and <meta name='description'> tag. Use a React-based head management approach (e.g., a reusable SEOHead component using document.title + meta tag injection or react-helmet-async). Pages and their suggested titles/descriptions: Home — 'Coal & Curry | Authentic South Indian Charcoal Restaurant in Neyveli'; About — 'About Us | Coal & Curry – Chettinad Charcoal Cooking, Neyveli'; Menu — 'Menu | Coal & Curry – South Indian Charcoal Grilled Dishes, Biryani & More'; Offers — 'Special Offers | Coal & Curry Restaurant Neyveli'; Gallery — 'Gallery | Coal & Curry – Charcoal Grill & Restaurant Ambience'; Contact — 'Contact Us | Coal & Curry, Neyveli Tamil Nadu'; Reservation — 'Reserve a Table | Coal & Curry Restaurant Neyveli'; Blog — 'Blog | Coal & Curry – Food Stories & Recipes'; Loyalty — 'Loyalty Program | Coal & Curry Neyveli'; Cart — 'Your Cart | Coal & Curry'; Checkout — 'Checkout | Coal & Curry'.",
+        "id": "REQ-1",
+        "summary": "Generate AI images for each dish listed in frontend/src/data/menuData.ts (e.g., Jigarthanda, Ice Cream, and all other menu items) and save them as static assets under frontend/public/assets/generated/ with filenames matching the dish references used in menuData.ts.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/seo/SEOHead.tsx",
-          "frontend/src/pages/Home.tsx",
-          "frontend/src/pages/About.tsx",
-          "frontend/src/pages/Menu.tsx",
-          "frontend/src/pages/Offers.tsx",
-          "frontend/src/pages/Gallery.tsx",
-          "frontend/src/pages/Contact.tsx",
-          "frontend/src/pages/Reservation.tsx",
-          "frontend/src/pages/Blog.tsx",
-          "frontend/src/pages/Loyalty.tsx",
-          "frontend/src/pages/Cart.tsx",
-          "frontend/src/pages/Checkout.tsx"
+          "frontend/public/assets/generated/jigarthanda.dim_400x400.png",
+          "frontend/public/assets/generated/ice-cream.dim_400x400.png",
+          "frontend/public/assets/generated/chettinad-chicken-curry.dim_400x400.png",
+          "frontend/public/assets/generated/mutton-kola-urundai.dim_400x400.png",
+          "frontend/public/assets/generated/prawn-masala.dim_400x400.png",
+          "frontend/public/assets/generated/paneer-tikka.dim_400x400.png",
+          "frontend/public/assets/generated/chettinad-fish-curry.dim_400x400.png",
+          "frontend/public/assets/generated/biryani.dim_400x400.png",
+          "frontend/public/assets/generated/parotta.dim_400x400.png",
+          "frontend/public/assets/generated/rasam.dim_400x400.png",
+          "frontend/public/assets/generated/sambar.dim_400x400.png",
+          "frontend/public/assets/generated/curd-rice.dim_400x400.png"
         ],
         "matchedFiles": [
-          "frontend/src/components/seo/SEOHead.tsx",
-          "frontend/src/pages/Home.tsx",
-          "frontend/src/pages/About.tsx",
-          "frontend/src/pages/Menu.tsx",
-          "frontend/src/pages/Offers.tsx",
-          "frontend/src/pages/Gallery.tsx",
-          "frontend/src/pages/Contact.tsx",
-          "frontend/src/pages/Reservation.tsx",
-          "frontend/src/pages/Blog.tsx",
-          "frontend/src/pages/Loyalty.tsx",
-          "frontend/src/pages/Cart.tsx",
-          "frontend/src/pages/Checkout.tsx"
+          "frontend/public/assets/generated/jigarthanda.dim_400x400.png",
+          "frontend/public/assets/generated/ice-cream.dim_400x400.png",
+          "frontend/public/assets/generated/chettinad-chicken-curry.dim_400x400.png",
+          "frontend/public/assets/generated/mutton-kola-urundai.dim_400x400.png",
+          "frontend/public/assets/generated/prawn-masala.dim_400x400.png",
+          "frontend/public/assets/generated/paneer-tikka.dim_400x400.png",
+          "frontend/public/assets/generated/chettinad-fish-curry.dim_400x400.png",
+          "frontend/public/assets/generated/biryani.dim_400x400.png",
+          "frontend/public/assets/generated/parotta.dim_400x400.png",
+          "frontend/public/assets/generated/rasam.dim_400x400.png",
+          "frontend/public/assets/generated/sambar.dim_400x400.png",
+          "frontend/public/assets/generated/curd-rice.dim_400x400.png"
         ]
       },
       {
-        "id": "REQ-21",
-        "summary": "Add Open Graph (OG) and Twitter Card meta tags to all pages so shared links on social media render rich previews. Each page should include: og:title, og:description, og:type ('website' for most, 'restaurant' for Home), og:url (relative canonical path), og:image (pointing to the restaurant logo or a hero food image from /assets/generated), og:site_name ('Coal & Curry'), og:locale ('en_IN'), twitter:card ('summary_large_image'), twitter:title, twitter:description, and twitter:image.",
+        "id": "REQ-2",
+        "summary": "Update frontend/src/data/menuData.ts to replace all existing placeholder or missing image references with the paths to the newly generated dish images stored in frontend/public/assets/generated/.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/seo/SEOHead.tsx",
-          "frontend/src/pages/Home.tsx",
-          "frontend/src/pages/About.tsx",
-          "frontend/src/pages/Menu.tsx",
-          "frontend/src/pages/Offers.tsx",
-          "frontend/src/pages/Gallery.tsx",
-          "frontend/src/pages/Contact.tsx",
-          "frontend/src/pages/Reservation.tsx",
-          "frontend/src/pages/Blog.tsx",
-          "frontend/src/pages/Loyalty.tsx",
-          "frontend/src/pages/Cart.tsx",
-          "frontend/src/pages/Checkout.tsx"
+          "frontend/src/data/menuData.ts"
         ],
         "matchedFiles": [
-          "frontend/src/components/seo/SEOHead.tsx",
-          "frontend/src/pages/Home.tsx",
-          "frontend/src/pages/About.tsx",
-          "frontend/src/pages/Menu.tsx",
-          "frontend/src/pages/Offers.tsx",
-          "frontend/src/pages/Gallery.tsx",
-          "frontend/src/pages/Contact.tsx",
-          "frontend/src/pages/Reservation.tsx",
-          "frontend/src/pages/Blog.tsx",
-          "frontend/src/pages/Loyalty.tsx",
-          "frontend/src/pages/Cart.tsx",
-          "frontend/src/pages/Checkout.tsx"
+          "frontend/src/data/menuData.ts"
         ]
       },
       {
-        "id": "REQ-22",
-        "summary": "Create a static sitemap.xml file at frontend/public/sitemap.xml listing all public routes of the application: /, /menu, /about, /offers, /gallery, /contact, /reservation, /blog, /loyalty. Each URL entry should include a <loc> with the canonical base URL placeholder (e.g., https://coalandcurry.com) appended with the path, a <lastmod> set to today's date, and a <changefreq> appropriate per page (home: 'weekly', menu/offers: 'weekly', about/contact/loyalty: 'monthly', gallery/blog: 'weekly').",
+        "id": "REQ-3",
+        "summary": "Update the four hardcoded signature dishes in frontend/src/components/home/SignatureDishes.tsx to use the newly generated dish images instead of any placeholder or old image references.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/sitemap.xml"
+          "frontend/src/components/home/SignatureDishes.tsx"
         ],
         "matchedFiles": [
-          "frontend/public/sitemap.xml"
-        ]
-      },
-      {
-        "id": "REQ-23",
-        "summary": "Create a robots.txt file at frontend/public/robots.txt that allows all crawlers (User-agent: *) to index the site, disallows /cart and /checkout paths (since they should not be indexed), and includes a Sitemap reference pointing to /sitemap.xml.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/robots.txt"
-        ],
-        "matchedFiles": [
-          "frontend/public/robots.txt"
-        ]
-      },
-      {
-        "id": "REQ-24",
-        "summary": "Add Schema.org JSON-LD structured data of type 'Restaurant' to the Home page (and optionally embedded in the index.html head for global coverage). The structured data must include: @type: 'Restaurant', name: 'Coal & Curry', description: 'Authentic South Indian charcoal-grilled cuisine in Neyveli, Tamil Nadu', url: 'https://coalandcurry.com', address (@type: PostalAddress) with streetAddress, addressLocality: 'Neyveli', addressRegion: 'Tamil Nadu', addressCountry: 'IN', telephone: restaurant phone number placeholder, servesCuisine: ['South Indian', 'Chettinad', 'Tamil'], priceRange: '₹₹', openingHours: appropriate hours string (e.g., 'Mo-Su 11:00-23:00'), hasMenu: '/menu', and image pointing to the restaurant logo asset. Inject this as a <script type='application/ld+json'> tag in the document head on the Home page.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/seo/SEOHead.tsx",
-          "frontend/src/pages/Home.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/seo/SEOHead.tsx",
-          "frontend/src/pages/Home.tsx"
+          "frontend/src/components/home/SignatureDishes.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
-    "build-template/README.md",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/robots.txt",
-    "frontend/public/sitemap.xml",
-    "frontend/src/components/seo/SEOHead.tsx",
-    "frontend/src/pages/About.tsx",
-    "frontend/src/pages/Blog.tsx",
-    "frontend/src/pages/Cart.tsx",
-    "frontend/src/pages/Checkout.tsx",
-    "frontend/src/pages/Contact.tsx",
-    "frontend/src/pages/Gallery.tsx",
-    "frontend/src/pages/Home.tsx",
-    "frontend/src/pages/Loyalty.tsx",
-    "frontend/src/pages/Menu.tsx",
-    "frontend/src/pages/Offers.tsx",
-    "frontend/src/pages/Reservation.tsx",
+    "frontend/public/assets/generated/biryani.dim_400x400.png",
+    "frontend/public/assets/generated/chettinad-chicken-curry.dim_400x400.png",
+    "frontend/public/assets/generated/chettinad-fish-curry.dim_400x400.png",
+    "frontend/public/assets/generated/curd-rice.dim_400x400.png",
+    "frontend/public/assets/generated/ice-cream.dim_400x400.png",
+    "frontend/public/assets/generated/jigarthanda.dim_400x400.png",
+    "frontend/public/assets/generated/mutton-kola-urundai.dim_400x400.png",
+    "frontend/public/assets/generated/paneer-tikka.dim_400x400.png",
+    "frontend/public/assets/generated/parotta.dim_400x400.png",
+    "frontend/public/assets/generated/prawn-masala.dim_400x400.png",
+    "frontend/public/assets/generated/rasam.dim_400x400.png",
+    "frontend/public/assets/generated/sambar.dim_400x400.png",
+    "frontend/src/components/home/SignatureDishes.tsx",
+    "frontend/src/data/menuData.ts",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

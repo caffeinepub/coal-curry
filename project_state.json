@@ -1,181 +1,33 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
-  "summary": "Premium dark-luxury South Indian restaurant website for Coal & Curry (Neyveli, Tamil Nadu). Theme: charcoal fire cooking with Coal Black, Deep Maroon, Gold, Smoky Brown palette. Cinematic, elegant design with Tamil cultural elements.",
-  "architectural_notes": [
-    "Dark luxury color palette: Coal Black (#1C1C1C), Deep Maroon (#6E1414), Gold (#C8A951), Smoky Brown (#3B2F2F)",
-    "Style: cinematic, elegant, modern with traditional Tamil cultural touch",
-    "Multi-language support: English + Tamil",
-    "SEO: Schema.org Restaurant structured data, sitemap.xml, robots.txt, and per-page meta tags targeting 'Coal & Curry Neyveli' search terms"
-  ],
+  "projectStateVersion": 3,
+  "summary": "Food/restaurant app with a menu or food ordering section. User wants AI-generated images for each dish (e.g., Jigarthanda, Ice Cream) to replace existing placeholder images.",
+  "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Jigarthanda — a chilled South Indian drink with sarsaparilla syrup, almond gum, reduced milk, and ice cream in a tall glass, top-down shot on dark stone surface (jigarthanda.dim_400x400.png)\n- Vanilla Ice Cream — two scoops of creamy vanilla ice cream in a ceramic bowl with wafer, warm moody lighting on dark background (ice-cream.dim_400x400.png)\n- Chettinad Chicken Curry — rich dark brown spiced chicken curry in a clay pot with curry leaves and red chilies, rustic wooden surface (chettinad-chicken-curry.dim_400x400.png)\n- Mutton Kola Urundai — golden fried minced mutton balls on a banana leaf with mint chutney, close-up shot (mutton-kola-urundai.dim_400x400.png)\n- Prawn Masala — vibrant orange-red spiced prawns in a cast iron skillet with coriander garnish, dark moody lighting (prawn-masala.dim_400x400.png)\n- Paneer Tikka — charcoal-grilled paneer cubes with bell peppers on skewers, light smoke wisps, dark background (paneer-tikka.dim_400x400.png)\n- Chettinad Fish Curry — deep red fish curry with whole spices in a terracotta bowl, banana leaf underneath (chettinad-fish-curry.dim_400x400.png)\n- Biryani — aromatic saffron-layered Chettinad biryani in a copper handi with fried onions and boiled egg (biryani.dim_400x400.png)\n- Parotta — flaky layered South Indian parotta stacked on a banana leaf, golden brown, dark atmospheric background (parotta.dim_400x400.png)\n- Rasam — thin golden-red tomato rasam in a small brass tumbler with curry leaves, steam rising (rasam.dim_400x400.png)\n- Sambar — thick lentil and vegetable sambar in a clay bowl with drumstick pieces visible (sambar.dim_400x400.png)\n- Curd Rice — creamy curd rice topped with pomegranate seeds and curry leaf tempering in a white ceramic bowl (curd-rice.dim_400x400.png)",
   "existing_features": [
     {
-      "id": "feature-implement-a-global-dark-luxury-visual-theme-using-coal-black-1c1c1c-deep-maroon-6e1414-gold-c8a951-and-smoky-brown-3b2f2f-as-the-primary-palette-typography-should-use-a-modern-serif-font-for-headings-e-g-playfair-display-and-a-clean-sans-serif-for-body-text-all-pages-must-feel-cinematic-and-premium-with-subtle-fire-smoke-inspired-textures-gold-dividers-and-traditional-tamil-motif-accents-e-g-kolam-inspired-borders-apply-this-consistently-across-every-page-and-component",
-      "title": "Implement a global dark-luxury visual theme using Coal Black (#1C1C1C), Deep Maroon (#6E1414), Gold (#C8A951), and Smoky Brown (#3B2F2F) as the primary palette. Typography should use a modern serif font for headings (e.g., 'Playfair Display') and a clean sans-serif for body text. All pages must feel cinematic and premium with subtle fire/smoke-inspired textures, gold dividers, and traditional Tamil motif accents (e.g., kolam-inspired borders). Apply this consistently across every page and component.",
+      "id": "feature-generate-ai-images-for-each-dish-listed-in-frontend-src-data-menudata-ts-e-g-jigarthanda-ice-cream-and-all-other-menu-items-and-save-them-as-static-assets-under-frontend-public-assets-generated-with-filenames-matching-the-dish-references-used-in-menudata-ts",
+      "title": "Generate AI images for each dish listed in frontend/src/data/menuData.ts (e.g., Jigarthanda, Ice Cream, and all other menu items) and save them as static assets under frontend/public/assets/generated/ with filenames matching the dish references used in menuData.ts.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-build-a-full-screen-hero-section-on-the-home-page-with-a-looping-autoplay-muted-video-background-depicting-live-charcoal-grilling-overlay-the-headline-authentic-south-indian-cuisine-crafted-over-coal-fire-and-the-tagline-where-fire-meets-flavor-in-gold-serif-typography-include-three-cta-buttons-view-menu-reserve-table-and-order-online-add-a-floating-reserve-now-button-gold-fixed-position-visible-on-all-pages",
-      "title": "Build a full-screen hero section on the Home page with a looping autoplay muted video background depicting live charcoal grilling. Overlay the headline 'Authentic South Indian Cuisine Crafted Over Coal Fire' and the tagline 'Where Fire Meets Flavor' in gold serif typography. Include three CTA buttons: 'View Menu', 'Reserve Table', and 'Order Online'. Add a floating 'Reserve Now' button (gold, fixed position) visible on all pages.",
+      "id": "feature-update-frontend-src-data-menudata-ts-to-replace-all-existing-placeholder-or-missing-image-references-with-the-paths-to-the-newly-generated-dish-images-stored-in-frontend-public-assets-generated",
+      "title": "Update frontend/src/data/menuData.ts to replace all existing placeholder or missing image references with the paths to the newly generated dish images stored in frontend/public/assets/generated/.",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
     },
     {
-      "id": "feature-below-the-hero-section-on-the-home-page-add-the-following-sections-in-order-1-signature-dishes-a-horizontal-scroll-or-grid-showcase-of-4-6-featured-dishes-with-image-name-and-short-description-2-customer-reviews-a-carousel-of-4-6-testimonial-cards-with-star-ratings-reviewer-name-and-quote-3-offers-banner-a-full-width-promotional-banner-highlighting-current-offers-with-a-view-all-offers-link-4-instagram-feed-a-static-grid-of-6-placeholder-instagram-style-food-photos-with-the-coalandcurry-handle",
-      "title": "Below the hero section on the Home page, add the following sections in order: (1) Signature Dishes — a horizontal scroll or grid showcase of 4–6 featured dishes with image, name, and short description; (2) Customer Reviews — a carousel of 4–6 testimonial cards with star ratings, reviewer name, and quote; (3) Offers Banner — a full-width promotional banner highlighting current offers with a 'View All Offers' link; (4) Instagram Feed — a static grid of 6 placeholder Instagram-style food photos with the @coalandcurry handle.",
+      "id": "feature-update-the-four-hardcoded-signature-dishes-in-frontend-src-components-home-signaturedishes-tsx-to-use-the-newly-generated-dish-images-instead-of-any-placeholder-or-old-image-references",
+      "title": "Update the four hardcoded signature dishes in frontend/src/components/home/SignatureDishes.tsx to use the newly generated dish images instead of any placeholder or old image references.",
       "reqIds": [
         "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-an-about-us-page-with-four-sections-1-our-story-narrative-about-coal-curry-bringing-back-traditional-tamil-charcoal-cooking-blended-with-modern-fine-dining-locally-sourced-spices-authentic-chettinad-flavors-2-founder-story-a-biographical-card-with-photo-placeholder-name-and-story-3-our-chefs-2-3-chef-profile-cards-with-photo-placeholder-name-specialty-4-mission-vision-two-elegant-side-by-side-cards-5-hygienic-kitchen-highlight-a-section-with-icons-badges-emphasizing-cleanliness-and-food-safety-standards",
-      "title": "Create an About Us page with four sections: (1) Our Story — narrative about Coal & Curry bringing back traditional Tamil charcoal cooking blended with modern fine dining, locally sourced spices, authentic Chettinad flavors; (2) Founder Story — a biographical card with photo placeholder, name, and story; (3) Our Chefs — 2–3 chef profile cards with photo placeholder, name, specialty; (4) Mission & Vision — two elegant side-by-side cards; (5) Hygienic Kitchen Highlight — a section with icons/badges emphasizing cleanliness and food safety standards.",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-a-menu-page-with-50-dishes-organized-into-8-tabbed-or-filter-selectable-categories-veg-starters-non-veg-starters-coal-specials-biryani-rice-dosa-tiffin-seafood-specials-beverages-and-desserts-each-dish-card-must-include-a-food-image-placeholder-dish-name-short-description-1-2-sentences-spice-level-indicator-1-5-chilli-icons-price-placeholder-e-g-and-an-add-to-cart-button-the-full-dish-list-to-implement-veg-starters-gobi-65-paneer-tikka-coal-grilled-baby-corn-pepper-fry-mushroom-sukka-chilli-paneer-veg-cutlet-onion-pakoda-vazhaipoo-vadai-veg-spring-rolls-mini-idli-sambar-non-veg-starters-chicken-65-chettinad-chicken-fry-mutton-sukka-pepper-chicken-tandoori-chicken-coal-chicken-lollipop-fish-fry-vanjaram-prawn-pepper-fry-nethili-fry-egg-podimas-coal-specials-coal-grilled-paneer-steak-coal-smoked-chicken-roast-coal-grilled-fish-smoky-mutton-chops-charcoal-bbq-wings-coal-dum-biryani-coal-smoked-veg-platter-firewood-dosa-special-smoked-crab-masala-charcoal-grill-platter-combo-biryani-rice-chicken-biryani-mutton-biryani-prawn-biryani-veg-biryani-egg-biryani-seeraga-samba-biryani-tomato-rice-lemon-rice-curd-rice-ghee-rice-dosa-tiffin-ghee-roast-dosa-kari-dosa-kal-dosa-masala-dosa-onion-uttapam-idiyappam-with-coconut-milk-pongal-poori-masala-rava-dosa-kothu-parotta-seafood-specials-meen-kuzhambu-prawn-masala-crab-curry-fish-65-squid-fry-beverages-jigarthanda-filter-coffee-rose-milk-fresh-lime-soda-tender-coconut-desserts-elaneer-payasam-gulab-jamun-brownie-with-ice-cream-kesari-falooda",
-      "title": "Create a Menu page with 50+ dishes organized into 8 tabbed or filter-selectable categories: Veg Starters, Non-Veg Starters, Coal Specials, Biryani & Rice, Dosa & Tiffin, Seafood Specials, Beverages, and Desserts. Each dish card must include: a food image placeholder, dish name, short description (1–2 sentences), spice level indicator (1–5 chilli icons), price placeholder (e.g., '₹ ---'), and an 'Add to Cart' button. The full dish list to implement: Veg Starters — Gobi 65, Paneer Tikka (Coal Grilled), Baby Corn Pepper Fry, Mushroom Sukka, Chilli Paneer, Veg Cutlet, Onion Pakoda, Vazhaipoo Vadai, Veg Spring Rolls, Mini Idli Sambar. Non-Veg Starters — Chicken 65, Chettinad Chicken Fry, Mutton Sukka, Pepper Chicken, Tandoori Chicken (Coal), Chicken Lollipop, Fish Fry (Vanjaram), Prawn Pepper Fry, Nethili Fry, Egg Podimas. Coal Specials — Coal Grilled Paneer Steak, Coal Smoked Chicken Roast, Coal Grilled Fish, Smoky Mutton Chops, Charcoal BBQ Wings, Coal Dum Biryani, Coal Smoked Veg Platter, Firewood Dosa Special, Smoked Crab Masala, Charcoal Grill Platter Combo. Biryani & Rice — Chicken Biryani, Mutton Biryani, Prawn Biryani, Veg Biryani, Egg Biryani, Seeraga Samba Biryani, Tomato Rice, Lemon Rice, Curd Rice, Ghee Rice. Dosa & Tiffin — Ghee Roast Dosa, Kari Dosa, Kal Dosa, Masala Dosa, Onion Uttapam, Idiyappam with Coconut Milk, Pongal, Poori Masala, Rava Dosa, Kothu Parotta. Seafood Specials — Meen Kuzhambu, Prawn Masala, Crab Curry, Fish 65, Squid Fry. Beverages — Jigarthanda, Filter Coffee, Rose Milk, Fresh Lime Soda, Tender Coconut. Desserts — Elaneer Payasam, Gulab Jamun, Brownie with Ice Cream, Kesari, Falooda.",
-      "reqIds": [
-        "REQ-5"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-implement-a-cart-and-checkout-flow-clicking-add-to-cart-on-any-dish-card-adds-it-to-a-persistent-cart-a-cart-icon-in-the-navigation-shows-item-count-the-cart-panel-page-shows-item-list-quantities-subtotal-and-a-proceed-to-checkout-button-the-checkout-page-includes-delivery-address-field-order-type-selection-delivery-takeaway-estimated-delivery-time-display-e-g-30-45-mins-and-a-payment-methods-section-offering-upi-debit-credit-card-net-banking-and-cash-on-delivery-show-a-secure-checkout-badge-include-a-whatsapp-order-button-that-opens-a-pre-filled-whatsapp-message-display-placeholder-links-badges-for-swiggy-and-zomato-integrations",
-      "title": "Implement a cart and checkout flow. Clicking 'Add to Cart' on any dish card adds it to a persistent cart. A cart icon in the navigation shows item count. The cart panel/page shows item list, quantities, subtotal, and a 'Proceed to Checkout' button. The checkout page includes: delivery address field, order type selection (Delivery / Takeaway), estimated delivery time display (e.g., '30–45 mins'), and a Payment Methods section offering UPI, Debit/Credit Card, Net Banking, and Cash on Delivery. Show a secure checkout badge. Include a WhatsApp Order button that opens a pre-filled WhatsApp message. Display placeholder links/badges for Swiggy and Zomato integrations.",
-      "reqIds": [
-        "REQ-6"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-build-a-table-reservation-page-with-a-multi-step-or-single-form-booking-interface-containing-date-picker-time-picker-guest-count-selector-1-20-occasion-selection-dropdown-birthday-anniversary-business-dinner-family-gathering-other-seating-preference-indoor-outdoor-toggle-special-requests-textarea-customer-name-and-phone-number-fields-and-a-confirm-reservation-button-on-submission-display-a-confirmation-message-with-booking-summary-add-a-note-indicating-sms-confirmation-will-be-sent",
-      "title": "Build a Table Reservation page with a multi-step or single-form booking interface containing: date picker, time picker, guest count selector (1–20+), occasion selection dropdown (Birthday, Anniversary, Business Dinner, Family Gathering, Other), seating preference (Indoor / Outdoor toggle), special requests textarea, customer name and phone number fields, and a 'Confirm Reservation' button. On submission, display a confirmation message with booking summary. Add a note indicating SMS confirmation will be sent.",
-      "reqIds": [
-        "REQ-7"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-an-offers-page-with-6-premium-offer-cards-in-a-grid-layout-lunch-combo-family-feast-weekend-grill-fest-student-discount-festival-special-and-birthday-package-each-card-must-include-an-offer-title-short-description-discount-badge-and-a-countdown-timer-showing-time-remaining-until-offer-expiry-set-expiry-dates-a-few-days-weeks-in-the-future-from-current-date-cards-should-use-gold-and-maroon-accents-on-dark-backgrounds-with-an-elegant-design",
-      "title": "Create an Offers page with 6 premium offer cards in a grid layout: Lunch Combo, Family Feast, Weekend Grill Fest, Student Discount, Festival Special, and Birthday Package. Each card must include an offer title, short description, discount badge, and a countdown timer showing time remaining until offer expiry (set expiry dates a few days/weeks in the future from current date). Cards should use gold and maroon accents on dark backgrounds with an elegant design.",
-      "reqIds": [
-        "REQ-8"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-build-a-gallery-page-with-4-sections-live-charcoal-cooking-restaurant-interiors-food-photography-and-customer-celebration-moments-each-section-shows-a-masonry-or-grid-layout-of-image-placeholder-cards-at-least-4-per-section-clicking-an-image-opens-a-lightbox-modal-viewer-use-generated-food-and-ambience-images-as-the-visual-content",
-      "title": "Build a Gallery page with 4 sections: Live Charcoal Cooking, Restaurant Interiors, Food Photography, and Customer Celebration Moments. Each section shows a masonry or grid layout of image placeholder cards (at least 4 per section). Clicking an image opens a lightbox/modal viewer. Use generated food and ambience images as the visual content.",
-      "reqIds": [
-        "REQ-9"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-a-contact-page-with-an-embedded-google-maps-iframe-centered-on-neyveli-tamil-nadu-restaurant-phone-number-and-whatsapp-button-email-address-business-hours-table-mon-sun-with-open-closed-times-and-social-media-icon-links-instagram-facebook-youtube-include-a-simple-contact-enquiry-form-with-name-email-message-fields-and-a-send-button",
-      "title": "Create a Contact page with: an embedded Google Maps iframe centered on Neyveli, Tamil Nadu; restaurant phone number and WhatsApp button; email address; business hours table (Mon–Sun with open/closed times); and social media icon links (Instagram, Facebook, YouTube). Include a simple contact enquiry form with Name, Email, Message fields and a Send button.",
-      "reqIds": [
-        "REQ-10"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-implement-a-loyalty-program-section-accessible-from-the-footer-or-a-dedicated-page-where-users-can-enter-their-phone-number-to-enroll-and-view-a-placeholder-points-balance-card-include-a-newsletter-signup-bar-visible-on-the-home-page-footer-area-with-an-email-input-and-subscribe-button-add-a-blog-section-with-at-least-3-placeholder-blog-post-cards-title-excerpt-date-read-more-link-under-a-blog-route",
-      "title": "Implement a Loyalty Program section (accessible from the footer or a dedicated page) where users can enter their phone number to enroll and view a placeholder points balance card. Include a Newsletter signup bar (visible on the Home page footer area) with an email input and 'Subscribe' button. Add a Blog section with at least 3 placeholder blog post cards (title, excerpt, date, 'Read More' link) under a /blog route.",
-      "reqIds": [
-        "REQ-11"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-language-toggle-button-en-in-the-navigation-bar-when-tamil-is-selected-key-ui-labels-such-as-navigation-items-section-headings-cta-button-text-and-the-restaurant-tagline-switch-to-tamil-equivalents-when-english-is-selected-they-revert-to-english-implement-this-using-a-react-context-based-i18n-approach-with-a-static-translation-map-for-both-languages",
-      "title": "Add a language toggle button (EN / தமிழ்) in the navigation bar. When Tamil is selected, key UI labels such as navigation items, section headings, CTA button text, and the restaurant tagline switch to Tamil equivalents. When English is selected, they revert to English. Implement this using a React context-based i18n approach with a static translation map for both languages.",
-      "reqIds": [
-        "REQ-12"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-implement-a-floating-ai-chatbot-widget-bottom-right-corner-with-a-fire-spark-icon-button-clicking-it-opens-a-chat-panel-the-chatbot-responds-to-common-queries-using-a-static-rule-based-response-map-covering-menu-questions-opening-hours-table-reservation-help-delivery-information-location-and-offers-it-should-feel-conversational-and-branded-responding-as-agni-your-coal-curry-assistant",
-      "title": "Implement a floating AI Chatbot widget (bottom-right corner) with a fire/spark icon button. Clicking it opens a chat panel. The chatbot responds to common queries using a static rule-based response map covering: menu questions, opening hours, table reservation help, delivery information, location, and offers. It should feel conversational and branded (responding as 'Agni, your Coal & Curry assistant').",
-      "reqIds": [
-        "REQ-13"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-implement-a-persistent-navigation-bar-with-the-coal-curry-logo-generated-image-navigation-links-home-menu-about-offers-gallery-blog-contact-cart-icon-with-badge-and-language-toggle-on-mobile-collapse-to-a-hamburger-menu-drawer-the-navbar-should-have-a-dark-semi-transparent-background-with-a-gold-bottom-border-and-scroll-to-become-fully-opaque-on-scroll",
-      "title": "Implement a persistent navigation bar with the Coal & Curry logo (generated image), navigation links (Home, Menu, About, Offers, Gallery, Blog, Contact), cart icon with badge, and language toggle. On mobile, collapse to a hamburger menu drawer. The navbar should have a dark semi-transparent background with a gold bottom border, and scroll to become fully opaque on scroll.",
-      "reqIds": [
-        "REQ-14"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-build-a-rich-footer-with-the-coal-curry-logo-and-tagline-three-link-columns-quick-links-menu-categories-connect-newsletter-signup-form-social-media-icons-business-address-in-neyveli-tamil-nadu-and-a-copyright-line-style-using-smoky-brown-3b2f2f-background-with-gold-text-accents",
-      "title": "Build a rich footer with: the Coal & Curry logo and tagline, three link columns (Quick Links, Menu Categories, Connect), newsletter signup form, social media icons, business address in Neyveli Tamil Nadu, and a copyright line. Style using Smoky Brown (#3B2F2F) background with gold text accents.",
-      "reqIds": [
-        "REQ-15"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-render-all-generated-logo-and-food-imagery-from-frontend-public-assets-generated-as-static-assets-use-the-logo-images-in-the-navbar-and-footer-and-food-ambience-images-in-the-gallery-menu-hero-and-home-sections",
-      "title": "Render all generated logo and food imagery from frontend/public/assets/generated as static assets. Use the logo images in the navbar and footer, and food/ambience images in the Gallery, Menu, Hero, and Home sections.",
-      "reqIds": [
-        "REQ-19"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-per-page-seo-meta-tags-to-every-route-in-the-react-spa-each-page-must-have-a-unique-title-tag-and-meta-name-description-tag-use-a-react-based-head-management-approach-e-g-a-reusable-seohead-component-using-document-title-meta-tag-injection-or-react-helmet-async-pages-and-their-suggested-titles-descriptions-home-coal-curry-authentic-south-indian-charcoal-restaurant-in-neyveli-about-about-us-coal-curry-chettinad-charcoal-cooking-neyveli-menu-menu-coal-curry-south-indian-charcoal-grilled-dishes-biryani-more-offers-special-offers-coal-curry-restaurant-neyveli-gallery-gallery-coal-curry-charcoal-grill-restaurant-ambience-contact-contact-us-coal-curry-neyveli-tamil-nadu-reservation-reserve-a-table-coal-curry-restaurant-neyveli-blog-blog-coal-curry-food-stories-recipes-loyalty-loyalty-program-coal-curry-neyveli-cart-your-cart-coal-curry-checkout-checkout-coal-curry",
-      "title": "Add per-page SEO meta tags to every route in the React SPA. Each page must have a unique <title> tag and <meta name='description'> tag. Use a React-based head management approach (e.g., a reusable SEOHead component using document.title + meta tag injection or react-helmet-async). Pages and their suggested titles/descriptions: Home — 'Coal & Curry | Authentic South Indian Charcoal Restaurant in Neyveli'; About — 'About Us | Coal & Curry – Chettinad Charcoal Cooking, Neyveli'; Menu — 'Menu | Coal & Curry – South Indian Charcoal Grilled Dishes, Biryani & More'; Offers — 'Special Offers | Coal & Curry Restaurant Neyveli'; Gallery — 'Gallery | Coal & Curry – Charcoal Grill & Restaurant Ambience'; Contact — 'Contact Us | Coal & Curry, Neyveli Tamil Nadu'; Reservation — 'Reserve a Table | Coal & Curry Restaurant Neyveli'; Blog — 'Blog | Coal & Curry – Food Stories & Recipes'; Loyalty — 'Loyalty Program | Coal & Curry Neyveli'; Cart — 'Your Cart | Coal & Curry'; Checkout — 'Checkout | Coal & Curry'.",
-      "reqIds": [
-        "REQ-20"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-open-graph-og-and-twitter-card-meta-tags-to-all-pages-so-shared-links-on-social-media-render-rich-previews-each-page-should-include-og-title-og-description-og-type-website-for-most-restaurant-for-home-og-url-relative-canonical-path-og-image-pointing-to-the-restaurant-logo-or-a-hero-food-image-from-assets-generated-og-site-name-coal-curry-og-locale-en-in-twitter-card-summary-large-image-twitter-title-twitter-description-and-twitter-image",
-      "title": "Add Open Graph (OG) and Twitter Card meta tags to all pages so shared links on social media render rich previews. Each page should include: og:title, og:description, og:type ('website' for most, 'restaurant' for Home), og:url (relative canonical path), og:image (pointing to the restaurant logo or a hero food image from /assets/generated), og:site_name ('Coal & Curry'), og:locale ('en_IN'), twitter:card ('summary_large_image'), twitter:title, twitter:description, and twitter:image.",
-      "reqIds": [
-        "REQ-21"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-a-static-sitemap-xml-file-at-frontend-public-sitemap-xml-listing-all-public-routes-of-the-application-menu-about-offers-gallery-contact-reservation-blog-loyalty-each-url-entry-should-include-a-loc-with-the-canonical-base-url-placeholder-e-g-https-coalandcurry-com-appended-with-the-path-a-lastmod-set-to-today-s-date-and-a-changefreq-appropriate-per-page-home-weekly-menu-offers-weekly-about-contact-loyalty-monthly-gallery-blog-weekly",
-      "title": "Create a static sitemap.xml file at frontend/public/sitemap.xml listing all public routes of the application: /, /menu, /about, /offers, /gallery, /contact, /reservation, /blog, /loyalty. Each URL entry should include a <loc> with the canonical base URL placeholder (e.g., https://coalandcurry.com) appended with the path, a <lastmod> set to today's date, and a <changefreq> appropriate per page (home: 'weekly', menu/offers: 'weekly', about/contact/loyalty: 'monthly', gallery/blog: 'weekly').",
-      "reqIds": [
-        "REQ-22"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-create-a-robots-txt-file-at-frontend-public-robots-txt-that-allows-all-crawlers-user-agent-to-index-the-site-disallows-cart-and-checkout-paths-since-they-should-not-be-indexed-and-includes-a-sitemap-reference-pointing-to-sitemap-xml",
-      "title": "Create a robots.txt file at frontend/public/robots.txt that allows all crawlers (User-agent: *) to index the site, disallows /cart and /checkout paths (since they should not be indexed), and includes a Sitemap reference pointing to /sitemap.xml.",
-      "reqIds": [
-        "REQ-23"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-schema-org-json-ld-structured-data-of-type-restaurant-to-the-home-page-and-optionally-embedded-in-the-index-html-head-for-global-coverage-the-structured-data-must-include-type-restaurant-name-coal-curry-description-authentic-south-indian-charcoal-grilled-cuisine-in-neyveli-tamil-nadu-url-https-coalandcurry-com-address-type-postaladdress-with-streetaddress-addresslocality-neyveli-addressregion-tamil-nadu-addresscountry-in-telephone-restaurant-phone-number-placeholder-servescuisine-south-indian-chettinad-tamil-pricerange-openinghours-appropriate-hours-string-e-g-mo-su-11-00-23-00-hasmenu-menu-and-image-pointing-to-the-restaurant-logo-asset-inject-this-as-a-script-type-application-ld-json-tag-in-the-document-head-on-the-home-page",
-      "title": "Add Schema.org JSON-LD structured data of type 'Restaurant' to the Home page (and optionally embedded in the index.html head for global coverage). The structured data must include: @type: 'Restaurant', name: 'Coal & Curry', description: 'Authentic South Indian charcoal-grilled cuisine in Neyveli, Tamil Nadu', url: 'https://coalandcurry.com', address (@type: PostalAddress) with streetAddress, addressLocality: 'Neyveli', addressRegion: 'Tamil Nadu', addressCountry: 'IN', telephone: restaurant phone number placeholder, servesCuisine: ['South Indian', 'Chettinad', 'Tamil'], priceRange: '₹₹', openingHours: appropriate hours string (e.g., 'Mo-Su 11:00-23:00'), hasMenu: '/menu', and image pointing to the restaurant logo asset. Inject this as a <script type='application/ld+json'> tag in the document head on the Home page.",
-      "reqIds": [
-        "REQ-24"
       ],
       "version": 1
     }
@@ -183,97 +35,7 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Logo design: charcoal flame 'C', clay pot silhouette, smoke curry swirl, gold accents, circular + horizontal + icon versions",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "Home page: hero section with charcoal grilling video background, headline, CTA buttons, signature dishes, reviews, offers banner, Instagram feed, floating Reserve Now button",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "About Us page: founder story, chef section, mission & vision, hygienic kitchen highlight, Tamil charcoal cooking heritage",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-4",
-      "summary": "Menu page with 50+ dishes across 8 categories (Veg Starters, Non-Veg Starters, Coal Specials, Biryani & Rice, Dosa & Tiffin, Seafood, Beverages, Desserts) with images, descriptions, spice indicators, price placeholders, add-to-cart",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-5",
-      "summary": "Online order & delivery: delivery radius, live order tracking, takeaway, WhatsApp order, Swiggy/Zomato integration, estimated delivery time",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-6",
-      "summary": "Table reservation system: date/time picker, guest count, occasion selection, indoor/outdoor seating, SMS confirmation, special request notes",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-7",
-      "summary": "Payment methods: UPI, Debit/Credit Card, Net Banking, Cash on Delivery, secure checkout page",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-8",
-      "summary": "Offers page: premium card designs for Lunch Combo, Family Feast, Weekend Grill Fest, Student Discount, Festival Special, Birthday Package — with countdown timers",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-9",
-      "summary": "Gallery page: live charcoal cooking, restaurant interiors, food photography, customer celebration moments",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-10",
-      "summary": "Contact page: Google Map (Neyveli), phone, WhatsApp, email, business hours, social media icons",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-11",
-      "summary": "Extra features: loyalty program, newsletter, blog (food stories & recipes), customer reviews, multi-language (English + Tamil), AI chatbot",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-27",
-      "summary": "Store table reservations submitted via the Reservation page in the Motoko backend. The backend actor should expose: a function to submit a reservation (name, phone, date, time, guests, occasion, seating, notes), a function to retrieve all reservations (for admin review), and a function to get reservations by phone number. Use a stable array or HashMap for persistence.",
-      "reqIds": [
-        "REQ-16"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-28",
-      "summary": "Store newsletter subscribers in the Motoko backend. Expose: a subscribeNewsletter function (accepts email, returns success/duplicate status), and a getSubscribers function. Store emails in a stable data structure with deduplication.",
-      "reqIds": [
-        "REQ-17"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-29",
-      "summary": "Store customer reviews/testimonials in the Motoko backend. Expose: submitReview (name, rating 1–5, comment, dish name optional), getReviews (returns all), and getTopReviews (returns reviews with rating >= 4). Reviews should be stored stably and displayed on the Home page reviews carousel.",
-      "reqIds": [
-        "REQ-18"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-30",
-      "summary": "Full SEO optimization: meta title/description tags on all pages, Open Graph tags, sitemap.xml, robots.txt, Schema.org structured data (Restaurant type) with name, location (Neyveli), cuisine type for Google rich results",
+      "summary": "Generate and add AI images for each dish (e.g., Jigarthanda, Ice Cream) to replace existing placeholder images on the menu/food page",
       "reqIds": [],
       "status": "pending"
     }

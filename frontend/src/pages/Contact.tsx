@@ -23,13 +23,13 @@ export default function Contact() {
     setSubmitted(true);
   };
 
-  const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent('Hello! I would like to enquire about Coal & Curry, Neyveli.')}`;
+  const whatsappUrl = `https://wa.me/917845582661?text=${encodeURIComponent('Hello! I would like to enquire about Coal & Curry, Neyveli.')}`;
 
   return (
     <main className="min-h-screen bg-coal pt-20">
       <SEOHead
         title="Contact Us | Coal & Curry, Neyveli Tamil Nadu"
-        description="Get in touch with Coal & Curry restaurant in Neyveli, Tamil Nadu. Visit us at our address, call +91 98765 43210, email hello@coalandcurry.in, or chat on WhatsApp. Open 7 days a week, 11 AM – 11 PM."
+        description="Get in touch with Coal & Curry restaurant in Neyveli, Tamil Nadu. Visit us at our address, call +91 7845582661, email isacksanthosh@gmail.com, or chat on WhatsApp. Open 7 days a week, 11 AM – 11 PM."
         canonical="https://coalandcurry.com/contact"
         ogType="website"
         ogUrl="https://coalandcurry.com/contact"
@@ -67,8 +67,8 @@ export default function Contact() {
                   <Phone size={20} className="text-gold flex-shrink-0" />
                   <div>
                     <p className="text-cream font-sans text-sm font-medium">Phone</p>
-                    <a href="tel:+919876543210" className="text-cream/60 font-sans text-sm hover:text-gold transition-colors">
-                      +91 98765 43210
+                    <a href="tel:+917845582661" className="text-cream/60 font-sans text-sm hover:text-gold transition-colors">
+                      +91 7845582661
                     </a>
                   </div>
                 </div>
@@ -76,8 +76,8 @@ export default function Contact() {
                   <Mail size={20} className="text-gold flex-shrink-0" />
                   <div>
                     <p className="text-cream font-sans text-sm font-medium">Email</p>
-                    <a href="mailto:hello@coalandcurry.in" className="text-cream/60 font-sans text-sm hover:text-gold transition-colors">
-                      hello@coalandcurry.in
+                    <a href="mailto:isacksanthosh@gmail.com" className="text-cream/60 font-sans text-sm hover:text-gold transition-colors">
+                      isacksanthosh@gmail.com
                     </a>
                   </div>
                 </div>

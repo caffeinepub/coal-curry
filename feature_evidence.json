@@ -2,22 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-per-page-seo-meta-tags-to-every-route-in-the-react-spa-each-page-must-have-a-unique-title-tag-and-meta-name-description-tag-use-a-react-based-head-management-approach-e-g-a-reusable-seohead-component-using-document-title-meta-tag-injection-or-react-helmet-async-pages-and-their-suggested-titles-descriptions-home-coal-curry-authentic-south-indian-charcoal-restaurant-in-neyveli-about-about-us-coal-curry-chettinad-charcoal-cooking-neyveli-menu-menu-coal-curry-south-indian-charcoal-grilled-dishes-biryani-more-offers-special-offers-coal-curry-restaurant-neyveli-gallery-gallery-coal-curry-charcoal-grill-restaurant-ambience-contact-contact-us-coal-curry-neyveli-tamil-nadu-reservation-reserve-a-table-coal-curry-restaurant-neyveli-blog-blog-coal-curry-food-stories-recipes-loyalty-loyalty-program-coal-curry-neyveli-cart-your-cart-coal-curry-checkout-checkout-coal-curry",
-      "featureTitle": "Add per-page SEO meta tags to every route in the React SPA. Each page must have a unique <title> tag and <meta name='description'> tag. Use a React-based head management approach (e.g., a reusable SEOHead component using document.title + meta tag injection or react-helmet-async). Pages and their suggested titles/descriptions: Home — 'Coal & Curry | Authentic South Indian Charcoal Restaurant in Neyveli'; About — 'About Us | Coal & Curry – Chettinad Charcoal Cooking, Neyveli'; Menu — 'Menu | Coal & Curry – South Indian Charcoal Grilled Dishes, Biryani & More'; Offers — 'Special Offers | Coal & Curry Restaurant Neyveli'; Gallery — 'Gallery | Coal & Curry – Charcoal Grill & Restaurant Ambience'; Contact — 'Contact Us | Coal & Curry, Neyveli Tamil Nadu'; Reservation — 'Reserve a Table | Coal & Curry Restaurant Neyveli'; Blog — 'Blog | Coal & Curry – Food Stories & Recipes'; Loyalty — 'Loyalty Program | Coal & Curry Neyveli'; Cart — 'Your Cart | Coal & Curry'; Checkout — 'Checkout | Coal & Curry'.",
-      "files": [
-        "frontend/src/components/seo/SEOHead.tsx",
-        "frontend/src/pages/About.tsx",
-        "frontend/src/pages/Blog.tsx",
-        "frontend/src/pages/Cart.tsx",
-        "frontend/src/pages/Checkout.tsx",
-        "frontend/src/pages/Contact.tsx",
-        "frontend/src/pages/Gallery.tsx",
-        "frontend/src/pages/Home.tsx",
-        "frontend/src/pages/Loyalty.tsx",
-        "frontend/src/pages/Menu.tsx",
-        "frontend/src/pages/Offers.tsx",
-        "frontend/src/pages/Reservation.tsx"
-      ],
+      "featureId": "feature-generate-ai-images-for-each-dish-listed-in-frontend-src-data-menudata-ts-e-g-jigarthanda-ice-cream-and-all-other-menu-items-and-save-them-as-static-assets-under-frontend-public-assets-generated-with-filenames-matching-the-dish-references-used-in-menudata-ts",
+      "featureTitle": "Generate AI images for each dish listed in frontend/src/data/menuData.ts (e.g., Jigarthanda, Ice Cream, and all other menu items) and save them as static assets under frontend/public/assets/generated/ with filenames matching the dish references used in menuData.ts.",
+      "files": [],
       "components": [
         "blob-storage@4.0.0",
         "core-infrastructure@1.0.2",
@@ -27,26 +14,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-20"
+        "REQ-1"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-open-graph-og-and-twitter-card-meta-tags-to-all-pages-so-shared-links-on-social-media-render-rich-previews-each-page-should-include-og-title-og-description-og-type-website-for-most-restaurant-for-home-og-url-relative-canonical-path-og-image-pointing-to-the-restaurant-logo-or-a-hero-food-image-from-assets-generated-og-site-name-coal-curry-og-locale-en-in-twitter-card-summary-large-image-twitter-title-twitter-description-and-twitter-image",
-      "featureTitle": "Add Open Graph (OG) and Twitter Card meta tags to all pages so shared links on social media render rich previews. Each page should include: og:title, og:description, og:type ('website' for most, 'restaurant' for Home), og:url (relative canonical path), og:image (pointing to the restaurant logo or a hero food image from /assets/generated), og:site_name ('Coal & Curry'), og:locale ('en_IN'), twitter:card ('summary_large_image'), twitter:title, twitter:description, and twitter:image.",
+      "featureId": "feature-update-frontend-src-data-menudata-ts-to-replace-all-existing-placeholder-or-missing-image-references-with-the-paths-to-the-newly-generated-dish-images-stored-in-frontend-public-assets-generated",
+      "featureTitle": "Update frontend/src/data/menuData.ts to replace all existing placeholder or missing image references with the paths to the newly generated dish images stored in frontend/public/assets/generated/.",
       "files": [
-        "frontend/src/components/seo/SEOHead.tsx",
-        "frontend/src/pages/About.tsx",
-        "frontend/src/pages/Blog.tsx",
-        "frontend/src/pages/Cart.tsx",
-        "frontend/src/pages/Checkout.tsx",
-        "frontend/src/pages/Contact.tsx",
-        "frontend/src/pages/Gallery.tsx",
-        "frontend/src/pages/Home.tsx",
-        "frontend/src/pages/Loyalty.tsx",
-        "frontend/src/pages/Menu.tsx",
-        "frontend/src/pages/Offers.tsx",
-        "frontend/src/pages/Reservation.tsx"
+        "frontend/src/data/menuData.ts"
       ],
       "components": [
         "blob-storage@4.0.0",
@@ -57,15 +33,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-21"
+        "REQ-2"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-a-static-sitemap-xml-file-at-frontend-public-sitemap-xml-listing-all-public-routes-of-the-application-menu-about-offers-gallery-contact-reservation-blog-loyalty-each-url-entry-should-include-a-loc-with-the-canonical-base-url-placeholder-e-g-https-coalandcurry-com-appended-with-the-path-a-lastmod-set-to-today-s-date-and-a-changefreq-appropriate-per-page-home-weekly-menu-offers-weekly-about-contact-loyalty-monthly-gallery-blog-weekly",
-      "featureTitle": "Create a static sitemap.xml file at frontend/public/sitemap.xml listing all public routes of the application: /, /menu, /about, /offers, /gallery, /contact, /reservation, /blog, /loyalty. Each URL entry should include a <loc> with the canonical base URL placeholder (e.g., https://coalandcurry.com) appended with the path, a <lastmod> set to today's date, and a <changefreq> appropriate per page (home: 'weekly', menu/offers: 'weekly', about/contact/loyalty: 'monthly', gallery/blog: 'weekly').",
+      "featureId": "feature-update-the-four-hardcoded-signature-dishes-in-frontend-src-components-home-signaturedishes-tsx-to-use-the-newly-generated-dish-images-instead-of-any-placeholder-or-old-image-references",
+      "featureTitle": "Update the four hardcoded signature dishes in frontend/src/components/home/SignatureDishes.tsx to use the newly generated dish images instead of any placeholder or old image references.",
       "files": [
-        "frontend/public/sitemap.xml"
+        "frontend/src/components/home/SignatureDishes.tsx"
       ],
       "components": [
         "blob-storage@4.0.0",
@@ -76,46 +52,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-22"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-robots-txt-file-at-frontend-public-robots-txt-that-allows-all-crawlers-user-agent-to-index-the-site-disallows-cart-and-checkout-paths-since-they-should-not-be-indexed-and-includes-a-sitemap-reference-pointing-to-sitemap-xml",
-      "featureTitle": "Create a robots.txt file at frontend/public/robots.txt that allows all crawlers (User-agent: *) to index the site, disallows /cart and /checkout paths (since they should not be indexed), and includes a Sitemap reference pointing to /sitemap.xml.",
-      "files": [
-        "frontend/public/robots.txt"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-23"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-schema-org-json-ld-structured-data-of-type-restaurant-to-the-home-page-and-optionally-embedded-in-the-index-html-head-for-global-coverage-the-structured-data-must-include-type-restaurant-name-coal-curry-description-authentic-south-indian-charcoal-grilled-cuisine-in-neyveli-tamil-nadu-url-https-coalandcurry-com-address-type-postaladdress-with-streetaddress-addresslocality-neyveli-addressregion-tamil-nadu-addresscountry-in-telephone-restaurant-phone-number-placeholder-servescuisine-south-indian-chettinad-tamil-pricerange-openinghours-appropriate-hours-string-e-g-mo-su-11-00-23-00-hasmenu-menu-and-image-pointing-to-the-restaurant-logo-asset-inject-this-as-a-script-type-application-ld-json-tag-in-the-document-head-on-the-home-page",
-      "featureTitle": "Add Schema.org JSON-LD structured data of type 'Restaurant' to the Home page (and optionally embedded in the index.html head for global coverage). The structured data must include: @type: 'Restaurant', name: 'Coal & Curry', description: 'Authentic South Indian charcoal-grilled cuisine in Neyveli, Tamil Nadu', url: 'https://coalandcurry.com', address (@type: PostalAddress) with streetAddress, addressLocality: 'Neyveli', addressRegion: 'Tamil Nadu', addressCountry: 'IN', telephone: restaurant phone number placeholder, servesCuisine: ['South Indian', 'Chettinad', 'Tamil'], priceRange: '₹₹', openingHours: appropriate hours string (e.g., 'Mo-Su 11:00-23:00'), hasMenu: '/menu', and image pointing to the restaurant logo asset. Inject this as a <script type='application/ld+json'> tag in the document head on the Home page.",
-      "files": [
-        "frontend/src/components/seo/SEOHead.tsx",
-        "frontend/src/pages/Home.tsx"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-24"
+        "REQ-3"
       ],
       "confidence": "high"
     }

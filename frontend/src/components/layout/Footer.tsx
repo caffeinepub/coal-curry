@@ -88,11 +88,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-cream/60 text-sm font-sans">
                 <Phone size={16} className="text-gold flex-shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-gold transition-colors">+91 98765 43210</a>
+                <a href="tel:+917845582661" className="hover:text-gold transition-colors">+91 7845582661</a>
               </li>
               <li className="flex items-center gap-2 text-cream/60 text-sm font-sans">
                 <Mail size={16} className="text-gold flex-shrink-0" />
-                <a href="mailto:hello@coalandcurry.in" className="hover:text-gold transition-colors">hello@coalandcurry.in</a>
+                <a href="mailto:isacksanthosh@gmail.com" className="hover:text-gold transition-colors">isacksanthosh@gmail.com</a>
               </li>
             </ul>
             <div className="mt-4 space-y-1">

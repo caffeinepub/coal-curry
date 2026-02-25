@@ -1,13 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Add full SEO optimization to the Coal & Curry React SPA, including per-page meta tags, Open Graph/Twitter Card tags, sitemap.xml, robots.txt, and Schema.org structured data.
+**Goal:** Generate AI dish images for every menu item and wire them into the menu data and home page signature dishes.
 
 **Planned changes:**
-- Create a reusable `SEOHead` component that injects unique `<title>`, `<meta name="description">`, Open Graph, and Twitter Card tags for all 11 page routes (Home, About, Menu, Offers, Gallery, Contact, Reservation, Blog, Loyalty, Cart, Checkout)
-- Add Open Graph tags (`og:title`, `og:description`, `og:type`, `og:url`, `og:image`, `og:site_name`, `og:locale`) and Twitter Card tags (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`) to every page, referencing existing assets from `/assets/generated`
-- Create `frontend/public/sitemap.xml` listing all 9 public routes (`/`, `/menu`, `/about`, `/offers`, `/gallery`, `/contact`, `/reservation`, `/blog`, `/loyalty`) with `<loc>`, `<lastmod>`, and `<changefreq>` entries
-- Create `frontend/public/robots.txt` allowing all crawlers, disallowing `/cart` and `/checkout`, and referencing `/sitemap.xml`
-- Inject a `<script type="application/ld+json">` Restaurant Schema.org structured data block on the Home page with name, address (Neyveli, Tamil Nadu), cuisine, price range, opening hours, and image
+- Generate AI images for all dishes in `menuData.ts` (including Jigarthanda, Ice Cream, and all other items) and save them under `frontend/public/assets/generated/`
+- Update all dish entries in `menuData.ts` to reference the newly generated image paths
+- Update the four hardcoded signature dishes in `SignatureDishes.tsx` to use the new dish images
 
-**User-visible outcome:** The site will have proper SEO metadata on every page, social media link previews will render rich cards when shared, search engines can crawl and index all public pages, and Google can display rich results (address, hours, cuisine) for the restaurant.
+**User-visible outcome:** Every dish card on the Menu page and every signature dish on the Home page displays a visually appropriate, AI-generated food image with no broken image links.
