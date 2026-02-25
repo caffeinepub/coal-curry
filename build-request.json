@@ -1,0 +1,123 @@
+{
+  "kind": "build_request",
+  "title": "Full SEO Optimization: Meta Tags, Open Graph, Sitemap, Robots.txt, Schema.org Structured Data",
+  "projectName": "Coal & Curry",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-20",
+      "text": "Add per-page SEO meta tags to every route in the React SPA. Each page must have a unique <title> tag and <meta name='description'> tag. Use a React-based head management approach (e.g., a reusable SEOHead component using document.title + meta tag injection or react-helmet-async). Pages and their suggested titles/descriptions: Home — 'Coal & Curry | Authentic South Indian Charcoal Restaurant in Neyveli'; About — 'About Us | Coal & Curry – Chettinad Charcoal Cooking, Neyveli'; Menu — 'Menu | Coal & Curry – South Indian Charcoal Grilled Dishes, Biryani & More'; Offers — 'Special Offers | Coal & Curry Restaurant Neyveli'; Gallery — 'Gallery | Coal & Curry – Charcoal Grill & Restaurant Ambience'; Contact — 'Contact Us | Coal & Curry, Neyveli Tamil Nadu'; Reservation — 'Reserve a Table | Coal & Curry Restaurant Neyveli'; Blog — 'Blog | Coal & Curry – Food Stories & Recipes'; Loyalty — 'Loyalty Program | Coal & Curry Neyveli'; Cart — 'Your Cart | Coal & Curry'; Checkout — 'Checkout | Coal & Curry'.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Add full SEO optimization to the site so it has the best chance of appearing in Google searches for terms like 'Coal & Curry Neyveli' or 'best restaurant in Neyveli'",
+          "proper meta title and description tags on every page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Every page route renders a unique <title> in the document head",
+        "Every page route renders a <meta name='description'> with a relevant description",
+        "Titles include the restaurant name and location keywords (Coal & Curry, Neyveli)",
+        "A reusable SEOHead component or equivalent is used consistently across all page components"
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "Add Open Graph (OG) and Twitter Card meta tags to all pages so shared links on social media render rich previews. Each page should include: og:title, og:description, og:type ('website' for most, 'restaurant' for Home), og:url (relative canonical path), og:image (pointing to the restaurant logo or a hero food image from /assets/generated), og:site_name ('Coal & Curry'), og:locale ('en_IN'), twitter:card ('summary_large_image'), twitter:title, twitter:description, and twitter:image.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Open Graph tags for social sharing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 11 page routes include og:title, og:description, og:image, og:type, og:site_name, og:locale meta tags",
+        "All 11 page routes include twitter:card, twitter:title, twitter:description, twitter:image meta tags",
+        "og:image references a valid static asset path from /assets/generated",
+        "og:site_name is set to 'Coal & Curry' on all pages"
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "text": "Create a static sitemap.xml file at frontend/public/sitemap.xml listing all public routes of the application: /, /menu, /about, /offers, /gallery, /contact, /reservation, /blog, /loyalty. Each URL entry should include a <loc> with the canonical base URL placeholder (e.g., https://coalandcurry.com) appended with the path, a <lastmod> set to today's date, and a <changefreq> appropriate per page (home: 'weekly', menu/offers: 'weekly', about/contact/loyalty: 'monthly', gallery/blog: 'weekly').",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "a sitemap.xml helps Google understand your site structure",
+          "Add a sitemap"
+        ]
+      },
+      "acceptanceCriteria": [
+        "frontend/public/sitemap.xml exists and is valid XML",
+        "All 9 main routes are listed as <url> entries",
+        "Each entry has <loc>, <lastmod>, and <changefreq> child elements",
+        "The file is accessible at /sitemap.xml when the app is served"
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "text": "Create a robots.txt file at frontend/public/robots.txt that allows all crawlers (User-agent: *) to index the site, disallows /cart and /checkout paths (since they should not be indexed), and includes a Sitemap reference pointing to /sitemap.xml.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "robots.txt"
+        ]
+      },
+      "acceptanceCriteria": [
+        "frontend/public/robots.txt exists",
+        "Contains 'User-agent: *' with 'Allow: /'",
+        "Disallows /cart and /checkout",
+        "Includes 'Sitemap: /sitemap.xml' directive",
+        "File is accessible at /robots.txt when the app is served"
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "text": "Add Schema.org JSON-LD structured data of type 'Restaurant' to the Home page (and optionally embedded in the index.html head for global coverage). The structured data must include: @type: 'Restaurant', name: 'Coal & Curry', description: 'Authentic South Indian charcoal-grilled cuisine in Neyveli, Tamil Nadu', url: 'https://coalandcurry.com', address (@type: PostalAddress) with streetAddress, addressLocality: 'Neyveli', addressRegion: 'Tamil Nadu', addressCountry: 'IN', telephone: restaurant phone number placeholder, servesCuisine: ['South Indian', 'Chettinad', 'Tamil'], priceRange: '₹₹', openingHours: appropriate hours string (e.g., 'Mo-Su 11:00-23:00'), hasMenu: '/menu', and image pointing to the restaurant logo asset. Inject this as a <script type='application/ld+json'> tag in the document head on the Home page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "Schema.org structured data (Restaurant type) with your restaurant name, location in Neyveli, cuisine type, and other rich result details",
+          "helps Google show rich results like address, hours, and star ratings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home page renders a <script type='application/ld+json'> tag with valid Restaurant Schema.org JSON-LD",
+        "Structured data includes name, description, address (Neyveli, Tamil Nadu), servesCuisine, priceRange, openingHours, and image fields",
+        "JSON-LD is valid and parseable",
+        "Google Rich Results Test would recognize the Restaurant entity from this markup"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files listed under frontend.immutablePaths",
+    "All SEO tags must be injected client-side using a safe React-compatible approach; do not alter index.html structure beyond adding static meta defaults",
+    "sitemap.xml and robots.txt must be placed in frontend/public so they are served at the root path"
+  ],
+  "nonGoals": [
+    "Google Search Console integration or submission (requires manual user action)",
+    "Dynamic server-side rendering or SSR for SEO",
+    "Paid SEO tools or third-party analytics integration",
+    "Changing any existing page layouts or visual design",
+    "Backend changes for SEO purposes"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

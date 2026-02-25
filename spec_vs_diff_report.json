@@ -1,0 +1,74 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T16:20:20.503Z",
+  "summary": "The diff implements all four requirements (REQ-20 through REQ-24) comprehensively. A reusable SEOHead component is created and applied to all 11 page routes with unique titles and descriptions. Open Graph and Twitter Card tags are injected via SEOHead. sitemap.xml and robots.txt are placed in frontend/public. The Home page includes Restaurant Schema.org JSON-LD structured data. A few minor gaps exist: the Blog title in the implementation differs slightly from the spec, and the Loyalty title is expanded beyond the spec. Overall implementation is very thorough.",
+  "missing_requirements": [
+    {
+      "id": "REQ-20",
+      "requirement": "Blog page title should be exactly 'Blog | Coal & Curry – Food Stories & Recipes'",
+      "reason": "The Blog page uses 'Blog | Coal & Curry – Food Stories, Recipes & Tamil Culinary Culture' instead of the specified title 'Blog | Coal & Curry – Food Stories & Recipes'",
+      "evidence": [
+        "frontend/src/pages/Blog.tsx"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "requirement": "Loyalty page title should be exactly 'Loyalty Program | Coal & Curry Neyveli'",
+      "reason": "The Loyalty page uses 'Loyalty Program | Coal & Curry Neyveli – Earn Points & Rewards' instead of the specified title 'Loyalty Program | Coal & Curry Neyveli'",
+      "evidence": [
+        "frontend/src/pages/Loyalty.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "noindex meta tag applied to Cart and Checkout pages",
+      "reason": "REQ-23 only disallows /cart and /checkout in robots.txt; no requirement specifies adding noindex meta tags to these pages. The SEOHead component is called with noindex=true on Cart and Checkout pages, which was not requested.",
+      "evidence": [
+        "frontend/src/pages/Cart.tsx",
+        "frontend/src/pages/Checkout.tsx"
+      ]
+    },
+    {
+      "description": "Additional Restaurant structured data fields beyond spec: geo coordinates, email, acceptsReservations, currenciesAccepted, paymentAccepted, sameAs",
+      "reason": "REQ-24 specifies a defined set of required fields. The implementation adds geo, email, acceptsReservations, currenciesAccepted, paymentAccepted, and sameAs which were not requested.",
+      "evidence": [
+        "frontend/src/pages/Home.tsx"
+      ]
+    },
+    {
+      "description": "priority elements added to sitemap.xml URL entries",
+      "reason": "REQ-22 only specifies loc, lastmod, and changefreq as required child elements. The sitemap includes an additional priority element not requested in the spec.",
+      "evidence": [
+        "frontend/public/sitemap.xml"
+      ]
+    },
+    {
+      "description": "Sitemap directive in robots.txt uses full absolute URL instead of relative path",
+      "reason": "REQ-23 specifies 'Sitemap: /sitemap.xml' but the implementation uses 'Sitemap: https://coalandcurry.com/sitemap.xml', which deviates from the stated requirement.",
+      "evidence": [
+        "frontend/public/robots.txt"
+      ]
+    }
+  ],
+  "confidence": 0.85,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/public/robots.txt",
+    "frontend/public/sitemap.xml",
+    "frontend/src/components/seo/SEOHead.tsx",
+    "frontend/src/pages/About.tsx",
+    "frontend/src/pages/Blog.tsx",
+    "frontend/src/pages/Cart.tsx",
+    "frontend/src/pages/Checkout.tsx",
+    "frontend/src/pages/Contact.tsx",
+    "frontend/src/pages/Gallery.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/Loyalty.tsx",
+    "frontend/src/pages/Menu.tsx",
+    "frontend/src/pages/Offers.tsx",
+    "frontend/src/pages/Reservation.tsx",
+    "project_state.json"
+  ]
+}

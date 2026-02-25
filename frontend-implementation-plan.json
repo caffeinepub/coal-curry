@@ -1,0 +1,208 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Full SEO Optimization: Meta Tags, Open Graph, Sitemap, Robots.txt, Schema.org Structured Data",
+  "requirements": [
+    {
+      "id": "REQ-20",
+      "summary": "Add per-page SEO meta tags to every route in the React SPA with unique title and description tags using a reusable SEOHead component",
+      "acceptanceCriteria": [
+        "Every page route renders a unique <title> in the document head",
+        "Every page route renders a <meta name='description'> with a relevant description",
+        "Titles include the restaurant name and location keywords (Coal & Curry, Neyveli)",
+        "A reusable SEOHead component or equivalent is used consistently across all page components"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/seo/SEOHead.tsx",
+          "operation": "create",
+          "description": "Create a reusable SEOHead component that accepts title, description, and other meta tag props. The component uses useEffect to dynamically set document.title and inject/update meta tags in the document head. Support props for title, description, og:* tags, twitter:* tags, and canonical URLs. Implement logic to clean up meta tags on unmount to prevent duplicates."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Coal & Curry | Authentic South Indian Charcoal Restaurant in Neyveli' and description highlighting the restaurant's charcoal-grilled South Indian cuisine in Neyveli, Tamil Nadu."
+        },
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='About Us | Coal & Curry – Chettinad Charcoal Cooking, Neyveli' and description covering the restaurant's story, Chettinad cooking tradition, and founder background."
+        },
+        {
+          "path": "frontend/src/pages/Menu.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Menu | Coal & Curry – South Indian Charcoal Grilled Dishes, Biryani & More' and description listing signature dishes and menu categories."
+        },
+        {
+          "path": "frontend/src/pages/Offers.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Special Offers | Coal & Curry Restaurant Neyveli' and description highlighting current promotions and deals."
+        },
+        {
+          "path": "frontend/src/pages/Gallery.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Gallery | Coal & Curry – Charcoal Grill & Restaurant Ambience' and description showcasing charcoal cooking, interiors, food photography, and celebrations."
+        },
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Contact Us | Coal & Curry, Neyveli Tamil Nadu' and description including address, phone, hours, and contact form information."
+        },
+        {
+          "path": "frontend/src/pages/Reservation.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Reserve a Table | Coal & Curry Restaurant Neyveli' and description covering table booking, seating options, and occasion celebrations."
+        },
+        {
+          "path": "frontend/src/pages/Blog.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Blog | Coal & Curry – Food Stories & Recipes' and description highlighting food culture articles, recipes, and restaurant stories."
+        },
+        {
+          "path": "frontend/src/pages/Loyalty.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Loyalty Program | Coal & Curry Neyveli' and description covering rewards tiers, benefits, and enrollment details."
+        },
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Your Cart | Coal & Curry' and description for the shopping cart page. Add noindex meta tag to prevent search engine indexing of cart pages."
+        },
+        {
+          "path": "frontend/src/pages/Checkout.tsx",
+          "operation": "modify",
+          "description": "Import and render SEOHead component with title='Checkout | Coal & Curry' and description for the checkout page. Add noindex meta tag to prevent search engine indexing of checkout pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "summary": "Add Open Graph and Twitter Card meta tags to all pages for rich social media previews with restaurant branding and imagery",
+      "acceptanceCriteria": [
+        "All 11 page routes include og:title, og:description, og:image, og:type, og:site_name, og:locale meta tags",
+        "All 11 page routes include twitter:card, twitter:title, twitter:description, twitter:image meta tags",
+        "og:image references a valid static asset path from /assets/generated",
+        "og:site_name is set to 'Coal & Curry' on all pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/seo/SEOHead.tsx",
+          "operation": "modify",
+          "description": "Extend the SEOHead component to accept and render Open Graph props (ogTitle, ogDescription, ogType, ogUrl, ogImage, ogSiteName, ogLocale) and Twitter Card props (twitterCard, twitterTitle, twitterDescription, twitterImage). Generate appropriate <meta property='og:*'> and <meta name='twitter:*'> tags. Set default values: ogSiteName='Coal & Curry', ogLocale='en_IN', twitterCard='summary_large_image'. For ogImage and twitterImage, support passing asset paths from frontend/public/assets/generated and convert them to absolute URLs."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='restaurant', ogImage pointing to frontend/public/assets/generated/hero-charcoal-grill.dim_1920x1080.png, and ogUrl='/'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/founder-portrait.dim_600x600.png, and ogUrl='/about'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/Menu.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/gallery-food-spread.dim_1200x800.png, and ogUrl='/menu'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/Offers.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/offers-banner-bg.dim_1920x600.png, and ogUrl='/offers'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/Gallery.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/gallery-charcoal-cooking.dim_1200x800.png, and ogUrl='/gallery'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/restaurant-interior.dim_1200x800.png, and ogUrl='/contact'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/Reservation.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/restaurant-interior.dim_1200x800.png, and ogUrl='/reservation'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/Blog.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/gallery-food-spread.dim_1200x800.png, and ogUrl='/blog'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/Loyalty.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/coal-curry-logo-circular.dim_512x512.png, and ogUrl='/loyalty'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/coal-curry-logo-circular.dim_512x512.png, and ogUrl='/cart'. Include matching Twitter Card props."
+        },
+        {
+          "path": "frontend/src/pages/Checkout.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include Open Graph props with ogType='website', ogImage pointing to frontend/public/assets/generated/coal-curry-logo-circular.dim_512x512.png, and ogUrl='/checkout'. Include matching Twitter Card props."
+        }
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "summary": "Create a static sitemap.xml file listing all public routes with canonical URLs, last modified dates, and change frequencies",
+      "acceptanceCriteria": [
+        "frontend/public/sitemap.xml exists and is valid XML",
+        "All 9 main routes are listed as <url> entries",
+        "Each entry has <loc>, <lastmod>, and <changefreq> child elements",
+        "The file is accessible at /sitemap.xml when the app is served"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/sitemap.xml",
+          "operation": "create",
+          "description": "Create a valid XML sitemap with <?xml version='1.0' encoding='UTF-8'?> declaration and <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'> root element. Include <url> entries for the following routes: / (changefreq='weekly'), /menu (changefreq='weekly'), /about (changefreq='monthly'), /offers (changefreq='weekly'), /gallery (changefreq='weekly'), /contact (changefreq='monthly'), /reservation (changefreq='monthly'), /blog (changefreq='weekly'), /loyalty (changefreq='monthly'). Each <url> must contain <loc> with https://coalandcurry.com prefix, <lastmod> with today's date in YYYY-MM-DD format, and <changefreq> as specified. Do not include /cart or /checkout in the sitemap."
+        }
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "summary": "Create a robots.txt file allowing all crawlers, disallowing cart/checkout paths, and referencing the sitemap",
+      "acceptanceCriteria": [
+        "frontend/public/robots.txt exists",
+        "Contains 'User-agent: *' with 'Allow: /'",
+        "Disallows /cart and /checkout",
+        "Includes 'Sitemap: /sitemap.xml' directive",
+        "File is accessible at /robots.txt when the app is served"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/robots.txt",
+          "operation": "create",
+          "description": "Create a robots.txt file with the following directives: 'User-agent: *' followed by 'Allow: /' to permit all crawlers, 'Disallow: /cart' and 'Disallow: /checkout' to exclude private shopping pages from indexing, and 'Sitemap: https://coalandcurry.com/sitemap.xml' to reference the sitemap location."
+        }
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "summary": "Add Schema.org JSON-LD structured data of type Restaurant to the Home page with business details, location, cuisine, and hours",
+      "acceptanceCriteria": [
+        "Home page renders a <script type='application/ld+json'> tag with valid Restaurant Schema.org JSON-LD",
+        "Structured data includes name, description, address (Neyveli, Tamil Nadu), servesCuisine, priceRange, openingHours, and image fields",
+        "JSON-LD is valid and parseable",
+        "Google Rich Results Test would recognize the Restaurant entity from this markup"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/seo/SEOHead.tsx",
+          "operation": "modify",
+          "description": "Add support for an optional structuredData prop that accepts a JavaScript object. When provided, render a <script type='application/ld+json'> tag in the document head containing the stringified JSON. Ensure proper JSON escaping and validation."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead usage to include structuredData prop with a Restaurant Schema.org JSON-LD object containing: @context='https://schema.org', @type='Restaurant', name='Coal & Curry', description='Authentic South Indian charcoal-grilled cuisine in Neyveli, Tamil Nadu', url='https://coalandcurry.com', address with @type='PostalAddress' including streetAddress (placeholder), addressLocality='Neyveli', addressRegion='Tamil Nadu', postalCode (placeholder), addressCountry='IN', telephone (placeholder phone number), servesCuisine=['South Indian', 'Chettinad', 'Tamil'], priceRange='₹₹', openingHours='Mo-Su 11:00-23:00', hasMenu='https://coalandcurry.com/menu', and image pointing to the restaurant logo asset at frontend/public/assets/generated/coal-curry-logo-circular.dim_512x512.png."
+        }
+      ]
+    }
+  ]
+}

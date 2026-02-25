@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application entry point that sets up TanStack Router with all 11 routes, wraps the app with LanguageProvider and CartProvider, and renders the Layout component (Navbar, Footer, FloatingReserveButton, ChatbotWidget) via a root route with Outlet.",
+  "frontend/src/pages/About.tsx": "About Us page with five sections (Our Story, Founder's Story, Our Chefs, Mission & Vision, Hygienic Kitchen) plus SEOHead with Chettinad/Neyveli-focused title, description, and Open Graph tags.",
+  "frontend/src/pages/Offers.tsx": "Offers page with hero banner and 6 offer cards with countdown timers, now includes SEOHead with promotional keywords and Open Graph tags using the offers banner image.",
+  "frontend/src/pages/Gallery.tsx": "Gallery page with 4 labeled sections and a full-screen Lightbox modal, now includes SEOHead with visual/photography keywords and Open Graph tags using the charcoal cooking image.",
+  "frontend/src/pages/Blog.tsx": "Blog page with featured post and 5 article cards, now includes SEOHead with food stories/recipes/Tamil culture keywords and Open Graph tags using the food spread image.",
+  "frontend/src/pages/Contact.tsx": "Contact page with Google Maps, contact info card, business hours, and enquiry form, now includes SEOHead with address/phone/hours keywords and Open Graph tags using the restaurant interior image.",
+  "frontend/src/pages/Cart.tsx": "Cart page showing items with quantity controls and checkout button, now includes SEOHead with noindex to prevent search engine indexing of the cart page.",
+  "frontend/src/pages/Checkout.tsx": "Checkout page with order type, delivery address, payment method, order summary, and external order platform links, now includes SEOHead with noindex on all checkout states.",
+  "frontend/src/pages/Reservation.tsx": "Table reservation page with validated booking form and backend integration, now includes SEOHead with booking/occasion keywords and Open Graph tags; confirmation state also has a noindex SEOHead.",
+  "frontend/src/pages/Loyalty.tsx": "Loyalty program page with benefit cards, tier levels, and phone enrollment form, now includes SEOHead with rewards/points keywords and Open Graph tags using the restaurant logo.",
+  "frontend/src/components/seo/SEOHead.tsx": "Reusable React component that imperatively injects and manages SEO meta tags (title, description, robots, canonical, Open Graph, Twitter Card) and JSON-LD structured data into the document head using useEffect, with full cleanup on unmount.",
+  "frontend/src/pages/Home.tsx": "Home page that renders all homepage sections (Hero, SignatureDishes, CustomerReviews, OffersGallery, InstagramFeed) and includes SEOHead with full Restaurant Schema.org JSON-LD structured data for Google rich results.",
+  "frontend/src/pages/Menu.tsx": "Menu page with category tabs and dish grid, now includes SEOHead with South Indian charcoal cuisine keywords and Open Graph tags pointing to the food spread image.",
+  "frontend/public/sitemap.xml": "Valid XML sitemap listing all 9 public routes (home, menu, offers, gallery, blog, about, contact, reservation, loyalty) with canonical coalandcurry.com URLs, lastmod dates, change frequencies, and priority values.",
+  "frontend/public/robots.txt": "Robots.txt file allowing all crawlers with Allow: /, disallowing /cart and /checkout, and referencing the sitemap at https://coalandcurry.com/sitemap.xml."
+}
