@@ -1,71 +1,78 @@
-import { Link } from '@tanstack/react-router';
-import { useLanguage } from '@/context/LanguageContext';
+import { Link } from "@tanstack/react-router";
+import { ChevronDown, UtensilsCrossed, CalendarCheck } from "lucide-react";
 
 export default function HeroSection() {
-  const { t } = useLanguage();
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/assets/generated/hero-charcoal-grill.dim_1920x1080.png')` }}
-      />
-      {/* Overlays */}
-      <div className="absolute inset-0 bg-coal/70" />
-      <div className="absolute inset-0 smoke-overlay" />
-      {/* Decorative fire glow */}
-      <div className="absolute inset-0 bg-gradient-to-t from-maroon/20 via-transparent to-transparent" />
+      <div className="absolute inset-0">
+        <img
+          src="/assets/generated/hero-bg.dim_1920x1080.png"
+          alt="South Indian cuisine spread"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/50 to-charcoal/80" />
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-        {/* Tagline */}
-        <p className="font-serif-alt text-gold text-lg sm:text-xl italic mb-4 tracking-widest tamil-motif">
-          {t('tagline')}
-        </p>
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-saffron/20 border border-saffron/40 rounded-full text-saffron text-sm font-medium mb-6 backdrop-blur-sm">
+          <span>🌶️</span>
+          <span>Authentic South Indian Multi-Cuisine</span>
+        </div>
 
-        {/* Main Headline */}
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-cream leading-tight mb-6">
-          {t('heroHeadline')}
+        {/* Title */}
+        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-cream mb-4 leading-tight">
+          Coal &{" "}
+          <span className="text-saffron">Curry</span>
         </h1>
 
-        {/* Divider */}
-        <div className="gold-divider w-48 mx-auto mb-8" />
-
-        {/* Subtitle */}
-        <p className="font-sans text-cream/70 text-base sm:text-lg max-w-2xl mx-auto mb-10">
-          Authentic Chettinad flavors. Locally sourced spices. Premium coal-fire cooking.
-          Experience the taste of Tamil Nadu like never before.
+        {/* Tagline */}
+        <p className="text-xl sm:text-2xl text-cream/80 font-body mb-4 leading-relaxed">
+          Authentic South Indian Multi-Cuisine Experience
+        </p>
+        <p className="text-base text-cream/60 font-body mb-10 max-w-2xl mx-auto">
+          From crispy Ghee Roast Dosas to fiery Chettinad Curries, Filter Coffee to Payasam — 
+          every dish tells a story of tradition, spice, and love.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/menu"
-            className="btn-gold px-8 py-3.5 rounded font-display font-semibold text-base shadow-fire hover:scale-105 transition-transform"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-saffron text-charcoal font-bold text-lg rounded-md hover:bg-turmeric transition-all hover:scale-105 shadow-warm"
           >
-            {t('viewMenu')}
+            <UtensilsCrossed className="w-5 h-5" />
+            Explore Menu
           </Link>
           <Link
-            to="/reserve"
-            className="btn-maroon px-8 py-3.5 rounded font-display font-semibold text-base hover:scale-105 transition-transform"
+            to="/reservation"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-cream text-cream font-bold text-lg rounded-md hover:bg-cream hover:text-charcoal transition-all hover:scale-105"
           >
-            {t('reserveTable')}
-          </Link>
-          <Link
-            to="/checkout"
-            className="border border-gold/60 text-gold px-8 py-3.5 rounded font-display font-semibold text-base hover:bg-gold/10 transition-colors"
-          >
-            {t('orderOnline')}
+            <CalendarCheck className="w-5 h-5" />
+            Book a Table
           </Link>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 float-anim">
-          <div className="w-6 h-10 border-2 border-gold/40 rounded-full flex items-start justify-center pt-2">
-            <div className="w-1 h-3 bg-gold/60 rounded-full" />
-          </div>
+        {/* Stats */}
+        <div className="mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto">
+          {[
+            { value: "50+", label: "Dishes" },
+            { value: "9", label: "Categories" },
+            { value: "100%", label: "Authentic" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <p className="font-display text-3xl font-bold text-saffron">{stat.value}</p>
+              <p className="text-sm text-cream/60">{stat.label}</p>
+            </div>
+          ))}
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <ChevronDown className="w-8 h-8 text-cream/50" />
       </div>
     </section>
   );

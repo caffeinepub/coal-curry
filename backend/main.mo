@@ -2,8 +2,8 @@ import Set "mo:core/Set";
 import Map "mo:core/Map";
 import Array "mo:core/Array";
 import Text "mo:core/Text";
-import Iter "mo:core/Iter";
 import Order "mo:core/Order";
+import Iter "mo:core/Iter";
 import Runtime "mo:core/Runtime";
 import MixinStorage "blob-storage/Mixin";
 

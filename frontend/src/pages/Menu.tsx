@@ -1,59 +1,77 @@
-import { useState } from 'react';
-import { menuData, menuCategories } from '@/data/menuData';
-import MenuTabs from '@/components/menu/MenuTabs';
-import DishCard from '@/components/menu/DishCard';
-import { useLanguage } from '@/context/LanguageContext';
-import SEOHead from '@/components/seo/SEOHead';
+import { useState } from "react";
+import MenuTabs from "../components/menu/MenuTabs";
+import DishCard from "../components/menu/DishCard";
+import SEOHead from "../components/seo/SEOHead";
+import { menuItems, getItemsByCategory } from "../data/menuData";
+import { Search } from "lucide-react";
 
 export default function Menu() {
-  const [activeCategory, setActiveCategory] = useState(menuCategories[0]);
-  const { t } = useLanguage();
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filtered = menuData.filter(d => d.category === activeCategory);
+  const filtered = getItemsByCategory(activeCategory).filter((item) => {
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      item.name.toLowerCase().includes(q) ||
+      item.description.toLowerCase().includes(q)
+    );
+  });
 
   return (
-    <main className="min-h-screen bg-coal pt-20">
+    <>
       <SEOHead
-        title="Menu | Coal & Curry – South Indian Charcoal Grilled Dishes, Biryani & More"
-        description="Explore 50+ authentic South Indian dishes at Coal & Curry, Neyveli. From Chettinad biryani and coal-smoked chicken to ghee roast dosa and BBQ wings — all cooked over live coal fire."
-        canonical="https://coalandcurry.com/menu"
-        ogType="website"
-        ogUrl="https://coalandcurry.com/menu"
+        title="South Indian Multi-Cuisine Menu | Coal & Curry"
+        description="Explore our extensive South Indian menu with 9 categories: Starters, Dosas, Idly & Vada, Rice & Biryani, Curries, Breads, Seafood Specials, Desserts, and Drinks."
         ogImage="/assets/generated/gallery-food-spread.dim_1200x800.png"
       />
 
-      {/* Hero */}
-      <div className="relative py-16 bg-smoky/30 border-b border-gold/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="font-serif-alt text-gold/70 text-sm uppercase tracking-[0.3em] mb-2">Explore</p>
-          <h1 className="section-heading text-5xl sm:text-6xl mb-4">{t('menu')}</h1>
-          <div className="gold-divider w-32 mx-auto mb-4" />
-          <p className="text-cream/60 font-sans max-w-xl mx-auto">
-            50+ authentic South Indian dishes crafted with locally sourced spices and traditional coal-fire cooking methods.
+      {/* Page Header */}
+      <div className="pt-20 lg:pt-24 bg-charcoal">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+          <span className="text-saffron font-medium text-sm uppercase tracking-widest">Explore</span>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold text-cream mt-2 mb-4">
+            Our Menu
+          </h1>
+          <p className="text-cream/60 max-w-xl mx-auto mb-8">
+            50+ authentic South Indian dishes across 9 categories — from crispy Dosas to fiery Chettinad Curries.
           </p>
+          {/* Search */}
+          <div className="relative max-w-md mx-auto">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-cream/40" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search dishes..."
+              className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-cream placeholder-cream/40 focus:outline-none focus:border-saffron"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Content */}
+      <MenuTabs activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
+
+      {/* Dish Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        {/* Tabs */}
-        <div className="mb-8">
-          <MenuTabs activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
-        </div>
-
-        {/* Category Info */}
-        <div className="mb-6 flex items-center justify-between">
-          <h2 className="font-display text-gold text-2xl font-semibold">{activeCategory}</h2>
-          <span className="text-cream/40 text-sm font-sans">{filtered.length} dishes</span>
-        </div>
-
-        {/* Dishes Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {filtered.map(dish => (
-            <DishCard key={dish.id} dish={dish} />
-          ))}
-        </div>
+        {filtered.length === 0 ? (
+          <div className="text-center py-20">
+            <p className="text-4xl mb-4">🍽️</p>
+            <p className="text-muted-foreground text-lg">No dishes found. Try a different search.</p>
+          </div>
+        ) : (
+          <>
+            <p className="text-sm text-muted-foreground mb-6">
+              Showing {filtered.length} dish{filtered.length !== 1 ? "es" : ""}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filtered.map((dish) => (
+                <DishCard key={dish.id} dish={dish} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
-    </main>
+    </>
   );
 }

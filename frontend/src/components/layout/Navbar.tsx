@@ -1,150 +1,142 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from '@tanstack/react-router';
-import { ShoppingCart, Menu, X, Globe } from 'lucide-react';
-import { useCart } from '@/context/CartContext';
-import { useLanguage } from '@/context/LanguageContext';
+import { useState, useEffect } from "react";
+import { Link, useRouter } from "@tanstack/react-router";
+import { ShoppingCart, Menu, X, UtensilsCrossed } from "lucide-react";
+import { useCart } from "../../contexts/CartContext";
 
 const navLinks = [
-  { key: 'home' as const, path: '/' },
-  { key: 'menu' as const, path: '/menu' },
-  { key: 'about' as const, path: '/about' },
-  { key: 'offers' as const, path: '/offers' },
-  { key: 'gallery' as const, path: '/gallery' },
-  { key: 'blog' as const, path: '/blog' },
-  { key: 'contact' as const, path: '/contact' },
+  { label: "Home", path: "/" },
+  { label: "Menu", path: "/menu" },
+  { label: "About", path: "/about" },
+  { label: "Gallery", path: "/gallery" },
+  { label: "Offers", path: "/offers" },
+  { label: "Reservations", path: "/reservation" },
+  { label: "Blog", path: "/blog" },
+  { label: "Contact", path: "/contact" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { totalItems } = useCart();
-  const { t, language, toggleLanguage } = useLanguage();
-  const location = useLocation();
+  const { cartCount } = useCart();
+  const router = useRouter();
+  const currentPath = router.state.location.pathname;
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [location.pathname]);
+  const isActive = (path: string) =>
+    path === "/" ? currentPath === "/" : currentPath.startsWith(path);
 
   return (
-    <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-coal shadow-lg' : 'bg-coal/80 backdrop-blur-md'
-        } border-b border-gold/30`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 flex-shrink-0">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled || mobileOpen
+          ? "bg-charcoal shadow-warm-lg"
+          : "bg-gradient-to-b from-charcoal/80 to-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-saffron">
               <img
-                src="/assets/generated/coal-curry-logo-horizontal.dim_800x300.png"
+                src="/assets/generated/coal-curry-logo-circular.dim_512x512.png"
                 alt="Coal & Curry"
-                className="h-10 lg:h-12 w-auto object-contain"
+                className="w-full h-full object-cover"
               />
-            </Link>
-
-            {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-6">
-              {navLinks.map(link => (
-                <Link
-                  key={link.key}
-                  to={link.path}
-                  className={`font-sans text-sm font-medium transition-colors duration-200 hover:text-gold ${
-                    location.pathname === link.path ? 'text-gold' : 'text-cream/80'
-                  }`}
-                >
-                  {t(link.key)}
-                </Link>
-              ))}
             </div>
-
-            {/* Right Actions */}
-            <div className="flex items-center gap-3">
-              {/* Language Toggle */}
-              <button
-                onClick={toggleLanguage}
-                className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold/40 text-gold text-xs font-medium hover:bg-gold/10 transition-colors"
-              >
-                <Globe size={14} />
-                {language === 'en' ? 'தமிழ்' : 'EN'}
-              </button>
-
-              {/* Cart */}
-              <Link to="/cart" className="relative p-2 text-cream hover:text-gold transition-colors">
-                <ShoppingCart size={22} />
-                {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-maroon text-gold text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center border border-gold/50">
-                    {totalItems > 9 ? '9+' : totalItems}
-                  </span>
-                )}
-              </Link>
-
-              {/* Reserve Button (desktop) */}
-              <Link
-                to="/reserve"
-                className="hidden md:block btn-maroon px-4 py-2 rounded text-sm font-medium font-sans"
-              >
-                {t('reserveTable')}
-              </Link>
-
-              {/* Hamburger */}
-              <button
-                onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden p-2 text-cream hover:text-gold transition-colors"
-              >
-                {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+            <div className="hidden sm:block">
+              <span className="font-display text-xl font-bold text-cream group-hover:text-saffron transition-colors">
+                Coal & Curry
+              </span>
+              <p className="text-xs text-cream/60 leading-none">South Indian Multi-Cuisine</p>
             </div>
-          </div>
-        </div>
-      </nav>
+          </Link>
 
-      {/* Mobile Menu */}
-      <div
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
-          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        <div className="absolute inset-0 bg-coal/95 backdrop-blur-md" onClick={() => setMobileOpen(false)} />
-        <div
-          className={`absolute top-16 right-0 bottom-0 w-72 bg-coal border-l border-gold/20 transition-transform duration-300 ${
-            mobileOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
-          <div className="p-6 flex flex-col gap-4">
-            {navLinks.map(link => (
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => (
               <Link
-                key={link.key}
+                key={link.path}
                 to={link.path}
-                className={`font-display text-lg font-medium transition-colors py-2 border-b border-gold/10 ${
-                  location.pathname === link.path ? 'text-gold' : 'text-cream/80 hover:text-gold'
+                className={`px-3 py-2 text-sm font-body font-medium rounded-md transition-colors ${
+                  isActive(link.path)
+                    ? "text-saffron bg-saffron/10"
+                    : "text-cream/80 hover:text-saffron hover:bg-saffron/10"
                 }`}
               >
-                {t(link.key)}
+                {link.label}
               </Link>
             ))}
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 text-gold text-sm font-medium mt-2"
-            >
-              <Globe size={16} />
-              {language === 'en' ? 'Switch to தமிழ்' : 'Switch to English'}
-            </button>
+          </nav>
+
+          {/* Right Actions */}
+          <div className="flex items-center gap-3">
             <Link
-              to="/reserve"
-              className="btn-maroon text-center px-4 py-3 rounded font-medium mt-4"
+              to="/cart"
+              className="relative p-2 text-cream hover:text-saffron transition-colors"
+              aria-label="Cart"
             >
-              {t('reserveTable')}
+              <ShoppingCart className="w-6 h-6" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-deep-red text-cream text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                  {cartCount > 99 ? "99+" : cartCount}
+                </span>
+              )}
             </Link>
+
+            <Link
+              to="/reservation"
+              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 bg-saffron text-charcoal text-sm font-bold rounded-md hover:bg-turmeric transition-colors"
+            >
+              <UtensilsCrossed className="w-4 h-4" />
+              Book Table
+            </Link>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              className="lg:hidden p-2 text-cream hover:text-saffron transition-colors"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </div>
-    </>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="lg:hidden bg-charcoal border-t border-saffron/20">
+          <nav className="px-4 py-4 flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setMobileOpen(false)}
+                className={`px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                  isActive(link.path)
+                    ? "text-saffron bg-saffron/10"
+                    : "text-cream/80 hover:text-saffron hover:bg-saffron/10"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              to="/reservation"
+              onClick={() => setMobileOpen(false)}
+              className="mt-2 px-4 py-3 bg-saffron text-charcoal text-sm font-bold rounded-md text-center hover:bg-turmeric transition-colors"
+            >
+              Book a Table
+            </Link>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 }

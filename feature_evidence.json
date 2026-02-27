@@ -2,9 +2,15 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-generate-ai-images-for-each-dish-listed-in-frontend-src-data-menudata-ts-e-g-jigarthanda-ice-cream-and-all-other-menu-items-and-save-them-as-static-assets-under-frontend-public-assets-generated-with-filenames-matching-the-dish-references-used-in-menudata-ts",
-      "featureTitle": "Generate AI images for each dish listed in frontend/src/data/menuData.ts (e.g., Jigarthanda, Ice Cream, and all other menu items) and save them as static assets under frontend/public/assets/generated/ with filenames matching the dish references used in menuData.ts.",
-      "files": [],
+      "featureId": "feature-apply-a-warm-vibrant-south-indian-inspired-visual-theme-throughout-the-entire-app-using-a-rich-spice-palette-saffron-turmeric-deep-red-cream-dark-charcoal-use-bold-display-typography-layered-texture-backgrounds-and-consistent-component-styling-that-evokes-authentic-south-indian-dining-culture",
+      "featureTitle": "Apply a warm, vibrant South Indian-inspired visual theme throughout the entire app using a rich spice palette (saffron, turmeric, deep red, cream, dark charcoal). Use bold display typography, layered texture backgrounds, and consistent component styling that evokes authentic South Indian dining culture.",
+      "files": [
+        "frontend/src/components/home/HeroSection.tsx",
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/Navbar.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
       "components": [
         "blob-storage@4.0.0",
         "core-infrastructure@1.0.2",
@@ -19,8 +25,8 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-update-frontend-src-data-menudata-ts-to-replace-all-existing-placeholder-or-missing-image-references-with-the-paths-to-the-newly-generated-dish-images-stored-in-frontend-public-assets-generated",
-      "featureTitle": "Update frontend/src/data/menuData.ts to replace all existing placeholder or missing image references with the paths to the newly generated dish images stored in frontend/public/assets/generated/.",
+      "featureId": "feature-build-a-complete-south-indian-multi-cuisine-menu-with-the-following-categories-starters-dosas-uttapam-idly-vada-rice-biryani-curries-gravies-breads-seafood-specials-desserts-and-drinks-each-category-must-contain-at-least-4-6-realistic-south-indian-dishes-with-name-description-price-in-inr-spice-level-and-veg-non-veg-badge",
+      "featureTitle": "Build a complete South Indian multi-cuisine menu with the following categories: Starters, Dosas & Uttapam, Idly & Vada, Rice & Biryani, Curries & Gravies, Breads, Seafood Specials, Desserts, and Drinks. Each category must contain at least 4–6 realistic South Indian dishes with name, description, price (in INR), spice level, and veg/non-veg badge.",
       "files": [
         "frontend/src/data/menuData.ts"
       ],
@@ -38,10 +44,11 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-update-the-four-hardcoded-signature-dishes-in-frontend-src-components-home-signaturedishes-tsx-to-use-the-newly-generated-dish-images-instead-of-any-placeholder-or-old-image-references",
-      "featureTitle": "Update the four hardcoded signature dishes in frontend/src/components/home/SignatureDishes.tsx to use the newly generated dish images instead of any placeholder or old image references.",
+      "featureId": "feature-implement-horizontally-scrollable-category-tabs-on-the-menu-page-so-users-can-filter-dishes-by-category-each-tab-should-show-a-relevant-emoji-and-the-category-name-the-active-tab-should-be-visually-distinct",
+      "featureTitle": "Implement horizontally scrollable category tabs on the Menu page so users can filter dishes by category. Each tab should show a relevant emoji and the category name. The active tab should be visually distinct.",
       "files": [
-        "frontend/src/components/home/SignatureDishes.tsx"
+        "frontend/src/components/menu/MenuTabs.tsx",
+        "frontend/src/pages/Menu.tsx"
       ],
       "components": [
         "blob-storage@4.0.0",
@@ -53,6 +60,207 @@
       ],
       "testIds": [
         "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-dish-cards-on-the-menu-page-with-dish-image-name-short-description-spice-level-indicator-price-veg-non-veg-badge-and-an-add-to-cart-button-images-should-use-generated-dish-images-stored-in-frontend-public-assets-generated",
+      "featureTitle": "Render dish cards on the Menu page with dish image, name, short description, spice level indicator, price, veg/non-veg badge, and an 'Add to Cart' button. Images should use generated dish images stored in frontend/public/assets/generated.",
+      "files": [
+        "frontend/src/components/menu/DishCard.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-shopping-cart-with-the-ability-to-add-remove-dishes-adjust-quantities-and-view-a-subtotal-the-cart-should-persist-via-localstorage-and-display-item-count-in-the-navbar-include-a-checkout-flow-with-delivery-takeaway-selection-address-entry-payment-method-selection-and-an-order-confirmation-screen",
+      "featureTitle": "Implement a shopping cart with the ability to add/remove dishes, adjust quantities, and view a subtotal. The cart should persist via localStorage and display item count in the navbar. Include a checkout flow with delivery/takeaway selection, address entry, payment method selection, and an order confirmation screen.",
+      "files": [
+        "frontend/src/components/layout/Navbar.tsx",
+        "frontend/src/pages/Cart.tsx",
+        "frontend/src/pages/Checkout.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-full-screen-hero-section-on-the-homepage-with-a-south-indian-food-background-image-the-restaurant-name-coal-curry-a-tagline-reflecting-south-indian-multi-cuisine-and-cta-buttons-linking-to-the-menu-and-reservation-pages",
+      "featureTitle": "Build a full-screen hero section on the homepage with a South Indian food background image, the restaurant name 'Coal & Curry', a tagline reflecting South Indian multi-cuisine, and CTA buttons linking to the Menu and Reservation pages.",
+      "files": [
+        "frontend/src/components/home/HeroSection.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-table-reservation-page-with-a-form-for-name-phone-number-date-time-number-of-guests-occasion-optional-and-seating-preference-on-successful-submission-display-a-reservation-confirmation-summary-store-reservations-in-the-motoko-backend",
+      "featureTitle": "Build a table reservation page with a form for name, phone number, date, time, number of guests, occasion (optional), and seating preference. On successful submission, display a reservation confirmation summary. Store reservations in the Motoko backend.",
+      "files": [
+        "frontend/src/pages/Reservation.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-signature-dishes-section-on-the-homepage-showcasing-4-featured-south-indian-specialties-e-g-ghee-roast-dosa-chettinad-pepper-chicken-prawn-masala-filter-coffee-dessert-platter-with-images-short-descriptions-prices-and-add-to-cart-buttons",
+      "featureTitle": "Add a Signature Dishes section on the homepage showcasing 4 featured South Indian specialties (e.g., Ghee Roast Dosa, Chettinad Pepper Chicken, Prawn Masala, Filter Coffee Dessert Platter) with images, short descriptions, prices, and Add to Cart buttons.",
+      "files": [
+        "frontend/src/components/home/SignatureDishes.tsx",
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-customer-reviews-section-on-the-homepage-that-fetches-reviews-from-the-motoko-backend-with-static-fallback-data-and-displays-them-in-a-carousel-with-star-ratings-reviewer-name-and-review-text",
+      "featureTitle": "Add a customer reviews section on the homepage that fetches reviews from the Motoko backend (with static fallback data) and displays them in a carousel with star ratings, reviewer name, and review text.",
+      "files": [
+        "frontend/src/components/home/CustomerReviews.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-seo-metadata-to-all-pages-including-title-meta-description-open-graph-tags-and-a-json-ld-restaurant-structured-data-block-on-the-homepage-update-frontend-public-robots-txt-and-frontend-public-sitemap-xml-to-reflect-all-public-routes",
+      "featureTitle": "Add SEO metadata to all pages including title, meta description, Open Graph tags, and a JSON-LD Restaurant structured data block on the homepage. Update frontend/public/robots.txt and frontend/public/sitemap.xml to reflect all public routes.",
+      "files": [
+        "frontend/src/components/seo/SEOHead.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/pages/Menu.tsx",
+        "frontend/src/pages/Reservation.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-include-a-floating-chatbot-widget-agni-assistant-fixed-to-the-bottom-right-corner-the-chatbot-should-respond-to-keywords-related-to-menu-hours-reservation-delivery-location-offers-and-payment-using-pre-written-static-responses",
+      "featureTitle": "Include a floating chatbot widget ('Agni' assistant) fixed to the bottom-right corner. The chatbot should respond to keywords related to menu, hours, reservation, delivery, location, offers, and payment using pre-written static responses.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/chatbot/ChatbotPanel.tsx",
+        "frontend/src/components/chatbot/ChatbotWidget.tsx",
+        "frontend/src/utils/chatbotResponses.ts"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-responsive-navbar-with-scroll-aware-styling-mobile-hamburger-menu-cart-item-count-badge-and-links-to-home-menu-about-gallery-offers-reservations-blog-and-contact-pages",
+      "featureTitle": "Add a responsive Navbar with scroll-aware styling, mobile hamburger menu, cart item count badge, and links to Home, Menu, About, Gallery, Offers, Reservations, Blog, and Contact pages.",
+      "files": [
+        "frontend/src/components/layout/Navbar.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-site-wide-footer-with-brand-description-social-media-links-quick-navigation-links-menu-category-links-contact-details-and-a-newsletter-signup-form-newsletter-submissions-should-be-stored-in-the-motoko-backend-with-duplicate-check-feedback",
+      "featureTitle": "Add a site-wide Footer with brand description, social media links, quick navigation links, menu category links, contact details, and a newsletter signup form. Newsletter submissions should be stored in the Motoko backend with duplicate-check feedback.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/NewsletterSignup.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
       ],
       "confidence": "high"
     }

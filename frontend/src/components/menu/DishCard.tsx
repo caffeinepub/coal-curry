@@ -1,73 +1,96 @@
-import { ShoppingCart, Flame } from 'lucide-react';
-import { useCart } from '@/context/CartContext';
-import { useLanguage } from '@/context/LanguageContext';
-import type { Dish } from '@/data/menuData';
+import { ShoppingCart, Flame, Leaf, Plus, Minus } from "lucide-react";
+import { MenuItem } from "../../data/menuData";
+import { useCart } from "../../contexts/CartContext";
 
 interface DishCardProps {
-  dish: Dish;
-}
-
-function SpiceLevel({ level }: { level: number }) {
-  if (level === 0) return <span className="text-cream/40 text-xs font-sans">No Spice</span>;
-  return (
-    <div className="flex gap-0.5 items-center">
-      {[1, 2, 3, 4, 5].map(i => (
-        <Flame
-          key={i}
-          size={12}
-          className={i <= level ? 'text-red-500 fill-red-500' : 'text-red-500/20'}
-        />
-      ))}
-    </div>
-  );
+  dish: MenuItem;
 }
 
 export default function DishCard({ dish }: DishCardProps) {
-  const { addToCart } = useCart();
-  const { t } = useLanguage();
-
-  const handleAdd = () => {
-    addToCart({
-      id: dish.id,
-      name: dish.name,
-      price: dish.priceDisplay,
-      imageUrl: dish.imageUrl,
-      category: dish.category,
-    });
-  };
+  const { addToCart, cartItems, updateQuantity } = useCart();
+  const cartItem = cartItems.find((i) => i.id === dish.id);
+  const quantity = cartItem?.quantity ?? 0;
 
   return (
-    <div className="card-smoky rounded-lg overflow-hidden group hover:border-gold/40 transition-all duration-300 hover:-translate-y-0.5 flex flex-col">
-      <div className="relative overflow-hidden h-44">
+    <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-warm transition-all hover:-translate-y-0.5 group border border-border">
+      {/* Image */}
+      <div className="relative h-44 overflow-hidden">
         <img
-          src={dish.imageUrl}
+          src={dish.image}
           alt={dish.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-coal/70 to-transparent" />
-        {dish.isSpecial && (
-          <span className="absolute top-2 right-2 bg-gold text-coal text-xs font-bold px-2 py-0.5 rounded">
-            SPECIAL
-          </span>
-        )}
-        <span className={`absolute top-2 left-2 text-xs px-2 py-0.5 rounded font-sans ${dish.isVeg ? 'bg-green-800/80 text-green-300' : 'bg-red-900/80 text-red-300'}`}>
-          {dish.isVeg ? '🟢 Veg' : '🔴 Non-Veg'}
-        </span>
-      </div>
-      <div className="p-4 flex flex-col flex-1">
-        <h3 className="font-display text-gold font-semibold text-base mb-1 leading-tight">{dish.name}</h3>
-        <p className="text-cream/60 text-xs font-sans leading-relaxed mb-3 flex-1">{dish.description}</p>
-        <div className="flex items-center justify-between mb-3">
-          <SpiceLevel level={dish.spiceLevel} />
-          <span className="font-display text-gold font-bold text-base">{dish.priceDisplay}</span>
+        {/* Veg/Non-veg */}
+        <div className="absolute top-2 left-2">
+          {dish.isVeg ? (
+            <span className="flex items-center gap-1 px-2 py-0.5 bg-white/95 text-green-700 text-xs font-bold rounded-full border border-green-500">
+              <Leaf className="w-3 h-3" /> Veg
+            </span>
+          ) : (
+            <span className="flex items-center gap-1 px-2 py-0.5 bg-white/95 text-red-700 text-xs font-bold rounded-full border border-red-500">
+              <span className="w-2 h-2 rounded-full bg-red-600 inline-block" /> Non-Veg
+            </span>
+          )}
         </div>
-        <button
-          onClick={handleAdd}
-          className="btn-maroon w-full py-2 rounded text-sm font-medium font-sans flex items-center justify-center gap-2"
-        >
-          <ShoppingCart size={14} />
-          {t('addToCart')}
-        </button>
+        {/* Signature */}
+        {dish.isSignature && (
+          <div className="absolute top-2 right-2">
+            <span className="px-2 py-0.5 bg-saffron text-charcoal text-xs font-bold rounded-full">
+              ⭐ Signature
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-4">
+        <h3 className="font-display text-base font-bold text-charcoal mb-1 leading-tight">{dish.name}</h3>
+        <p className="text-xs text-muted-foreground mb-3 line-clamp-2 leading-relaxed">{dish.description}</p>
+
+        {/* Spice Level */}
+        {dish.spiceLevel > 0 && (
+          <div className="flex items-center gap-0.5 mb-3">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Flame
+                key={i}
+                className={`w-3 h-3 ${i < dish.spiceLevel ? "text-deep-red" : "text-muted-foreground/20"}`}
+              />
+            ))}
+            <span className="text-xs text-muted-foreground ml-1">
+              {dish.spiceLevel <= 1 ? "Mild" : dish.spiceLevel <= 2 ? "Medium" : dish.spiceLevel <= 3 ? "Spicy" : dish.spiceLevel <= 4 ? "Hot" : "Extra Hot"}
+            </span>
+          </div>
+        )}
+
+        {/* Price & Cart */}
+        <div className="flex items-center justify-between">
+          <span className="font-display text-lg font-bold text-saffron">₹{dish.price}</span>
+          {quantity === 0 ? (
+            <button
+              onClick={() => addToCart(dish)}
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-saffron text-charcoal text-sm font-bold rounded-md hover:bg-turmeric transition-colors"
+            >
+              <ShoppingCart className="w-3.5 h-3.5" />
+              Add
+            </button>
+          ) : (
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => updateQuantity(dish.id, quantity - 1)}
+                className="w-7 h-7 rounded-full bg-saffron/10 text-saffron hover:bg-saffron hover:text-charcoal transition-colors flex items-center justify-center"
+              >
+                <Minus className="w-3.5 h-3.5" />
+              </button>
+              <span className="font-bold text-charcoal w-5 text-center">{quantity}</span>
+              <button
+                onClick={() => addToCart(dish)}
+                className="w-7 h-7 rounded-full bg-saffron text-charcoal hover:bg-turmeric transition-colors flex items-center justify-center"
+              >
+                <Plus className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

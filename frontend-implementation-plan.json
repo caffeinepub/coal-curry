@@ -1,107 +1,347 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add AI-generated dish images to menu",
+  "title": "Rebuild Coal & Curry as South Indian Multi-Cuisine Restaurant App",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Generate AI images for all menu dishes and save them as static assets in frontend/public/assets/generated/",
+      "summary": "Apply warm South Indian-inspired visual theme with saffron, turmeric, deep red, cream, and dark charcoal palette throughout the app",
       "acceptanceCriteria": [
-        "Every dish in menuData.ts has a corresponding AI-generated image saved in frontend/public/assets/generated/",
-        "Each image is visually appropriate for the dish it represents",
-        "Images follow a consistent artistic style suitable for a premium Chettinad restaurant"
+        "Color palette uses saffron, turmeric, deep red, and cream tones consistently across all pages",
+        "Typography uses a bold, legible display font appropriate for a restaurant brand",
+        "No blue or purple colors appear in the UI"
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/jigarthanda.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Jigarthanda — a chilled South Indian drink with sarsaparilla syrup, almond gum, reduced milk, and ice cream in a tall glass, top-down shot on dark stone surface"
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update CSS custom properties to replace coal/maroon theme with warm South Indian palette: saffron (#FF9933), turmeric (#FFC107), deep red (#C41E3A), cream (#FFF8E7), dark charcoal (#2C2C2C). Remove any blue/purple color definitions. Update text color variables to ensure readability against the new palette."
         },
         {
-          "path": "frontend/public/assets/generated/ice-cream.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Vanilla Ice Cream — two scoops of creamy vanilla ice cream in a ceramic bowl with wafer, warm moody lighting on dark background"
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Replace the existing coal/maroon/gold color scheme with South Indian-inspired colors: saffron, turmeric, deepRed, cream, charcoal. Update shadow and border utilities to use the new palette. Ensure no blue or purple colors remain in the configuration."
         },
         {
-          "path": "frontend/public/assets/generated/chettinad-chicken-curry.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Chettinad Chicken Curry — rich dark brown spiced chicken curry in a clay pot with curry leaves and red chilies, rustic wooden surface"
+          "path": "frontend/src/components/layout/Navbar.tsx",
+          "operation": "modify",
+          "description": "Update Navbar styling to use the new saffron/turmeric/cream color scheme. Apply warm background colors and ensure text contrast meets accessibility standards with the new palette."
         },
         {
-          "path": "frontend/public/assets/generated/mutton-kola-urundai.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Mutton Kola Urundai — golden fried minced mutton balls on a banana leaf with mint chutney, close-up shot"
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "modify",
+          "description": "Update Footer styling to use deep red or dark charcoal background with cream text. Apply the South Indian color palette to links, borders, and accents."
         },
         {
-          "path": "frontend/public/assets/generated/prawn-masala.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Prawn Masala — vibrant orange-red spiced prawns in a cast iron skillet with coriander garnish, dark moody lighting"
-        },
-        {
-          "path": "frontend/public/assets/generated/paneer-tikka.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Paneer Tikka — charcoal-grilled paneer cubes with bell peppers on skewers, light smoke wisps, dark background"
-        },
-        {
-          "path": "frontend/public/assets/generated/chettinad-fish-curry.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Chettinad Fish Curry — deep red fish curry with whole spices in a terracotta bowl, banana leaf underneath"
-        },
-        {
-          "path": "frontend/public/assets/generated/biryani.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Biryani — aromatic saffron-layered Chettinad biryani in a copper handi with fried onions and boiled egg"
-        },
-        {
-          "path": "frontend/public/assets/generated/parotta.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Parotta — flaky layered South Indian parotta stacked on a banana leaf, golden brown, dark atmospheric background"
-        },
-        {
-          "path": "frontend/public/assets/generated/rasam.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Rasam — thin golden-red tomato rasam in a small brass tumbler with curry leaves, steam rising"
-        },
-        {
-          "path": "frontend/public/assets/generated/sambar.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Sambar — thick lentil and vegetable sambar in a clay bowl with drumstick pieces visible"
-        },
-        {
-          "path": "frontend/public/assets/generated/curd-rice.dim_400x400.png",
-          "operation": "create",
-          "description": "Generate AI image: Curd Rice — creamy curd rice topped with pomegranate seeds and curry leaf tempering in a white ceramic bowl"
+          "path": "frontend/src/components/home/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Update hero section styling to use warm overlay colors (saffron/turmeric gradients) and cream text. Ensure CTA buttons use the new palette with strong visual hierarchy."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Update menuData.ts to reference all newly generated dish images from frontend/public/assets/generated/",
+      "summary": "Build complete South Indian multi-cuisine menu with 9 categories containing 4-6 realistic dishes each, stored in frontend menuData.ts",
       "acceptanceCriteria": [
-        "All dish entries in menuData.ts reference valid image paths pointing to the generated images",
-        "No broken image links remain in the menu data",
-        "The DishCard component renders the correct image for each dish on the Menu page"
+        "At least 9 menu categories are available",
+        "Each dish displays name, description, price, spice level, and veg/non-veg indicator",
+        "Sample dishes include items like Masala Dosa, Idly Sambar, Chettinad Chicken, Fish Curry, Filter Coffee, Payasam, etc.",
+        "Menu data is stored in frontend menuData.ts"
       ],
       "file_operations": [
         {
           "path": "frontend/src/data/menuData.ts",
           "operation": "modify",
-          "description": "Replace all existing placeholder or missing image references in the menuItems array with paths to the newly generated dish images. For each dish that matches a generated image (Jigarthanda, Vanilla Ice Cream, Chettinad Chicken Curry, Mutton Kola Urundai, Prawn Masala, Paneer Tikka, Chettinad Fish Curry, Biryani, Parotta, Rasam, Sambar, Curd Rice), update the image property to point to the corresponding file in /assets/generated/ (e.g., '/assets/generated/jigarthanda.dim_400x400.png'). Ensure all dishes have valid image paths that will load correctly in the DishCard component on the Menu page."
+          "description": "Replace the existing Chettinad menu with a comprehensive South Indian multi-cuisine menu containing 9 categories: Starters, Dosas & Uttapam, Idly & Vada, Rice & Biryani, Curries & Gravies, Breads, Seafood Specials, Desserts, and Drinks. Each category must contain 4-6 authentic South Indian dishes with name, description, price (in INR), spice level (1-5), and veg/non-veg flag. Use generated images from frontend/public/assets/generated for dish images, including: frontend/public/assets/generated/masala-dosa.dim_600x400.png, frontend/public/assets/generated/idly-sambar.dim_600x400.png, frontend/public/assets/generated/chettinad-chicken.dim_600x400.png, frontend/public/assets/generated/prawn-biryani.dim_600x400.png, frontend/public/assets/generated/fish-curry.dim_600x400.png, frontend/public/assets/generated/ghee-roast-dosa.dim_600x400.png, frontend/public/assets/generated/medu-vada.dim_600x400.png, frontend/public/assets/generated/onion-uttapam.dim_600x400.png, frontend/public/assets/generated/kothu-parotta.dim_600x400.png, frontend/public/assets/generated/fish-moilee.dim_600x400.png, frontend/public/assets/generated/sambar-rice.dim_600x400.png, frontend/public/assets/generated/payasam.dim_600x400.png, frontend/public/assets/generated/filter-coffee.dim_600x400.png, frontend/public/assets/generated/coconut-water.dim_600x400.png, frontend/public/assets/generated/butter-chicken.dim_600x400.png, frontend/public/assets/generated/plain-parotta.dim_600x400.png, frontend/public/assets/generated/mixed-veg-curry.dim_600x400.png."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Update SignatureDishes.tsx to use newly generated dish images for all four hardcoded signature dishes",
+      "summary": "Implement horizontally scrollable category tabs with emoji icons on Menu page for filtering dishes by category",
       "acceptanceCriteria": [
-        "Each signature dish card on the Home page displays the correct AI-generated image",
-        "Images load without errors and display correctly within the card layout"
+        "All menu categories appear as scrollable tabs",
+        "Selecting a tab filters the dish grid to show only items in that category",
+        "Active tab has clearly distinct styling"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/menu/MenuTabs.tsx",
+          "operation": "modify",
+          "description": "Update MenuTabs to display all 9 South Indian menu categories (Starters, Dosas & Uttapam, Idly & Vada, Rice & Biryani, Curries & Gravies, Breads, Seafood Specials, Desserts, Drinks) with appropriate emoji icons. Ensure horizontal scroll behavior works smoothly and active tab styling uses the new saffron/turmeric palette."
+        },
+        {
+          "path": "frontend/src/pages/Menu.tsx",
+          "operation": "modify",
+          "description": "Update Menu page to integrate the updated MenuTabs component and ensure category filtering works correctly with the new 9-category structure from menuData.ts. Apply the South Indian color theme to the page layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Render dish cards on Menu page with all required fields and Add to Cart functionality using generated images",
+      "acceptanceCriteria": [
+        "Each dish card displays all required fields",
+        "Add to Cart button increments the cart count in the navbar",
+        "Veg items show a green badge; non-veg items show a red badge"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/menu/DishCard.tsx",
+          "operation": "modify",
+          "description": "Update DishCard component to use the South Indian color palette for badges, borders, and button styling. Ensure veg badge is green and non-veg badge is red. Verify dish images use the full workspace path from frontend/public/assets/generated with .dim_600x400 dimensions as specified in menuData.ts. Ensure Add to Cart button integrates with CartContext and updates the navbar badge count."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement shopping cart with localStorage persistence, navbar badge, and multi-step checkout flow with order confirmation",
+      "acceptanceCriteria": [
+        "Cart persists across page refreshes using localStorage",
+        "Navbar shows cart item count badge",
+        "Checkout flow has steps: order type → address → payment → confirmation",
+        "Order confirmation screen displays a summary of items ordered"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "modify",
+          "description": "Update Cart page styling to use the South Indian color palette for item cards, buttons, and empty state messaging. Ensure quantity controls and remove buttons are clearly visible with the new theme."
+        },
+        {
+          "path": "frontend/src/pages/Checkout.tsx",
+          "operation": "modify",
+          "description": "Update Checkout page to apply South Indian theme colors throughout the multi-step flow (order type selection, address entry, payment method, confirmation). Ensure form fields, step indicators, and CTA buttons use saffron/turmeric accents on cream/charcoal backgrounds. Verify order confirmation screen displays all order details clearly."
+        },
+        {
+          "path": "frontend/src/components/layout/Navbar.tsx",
+          "operation": "modify",
+          "description": "Ensure the cart badge in the Navbar correctly reflects the item count from CartContext. Style the badge with a saffron or deep red background to stand out against the navbar theme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build full-screen hero section on homepage with South Indian food background, restaurant name, tagline, and CTA buttons",
+      "acceptanceCriteria": [
+        "Hero section is full viewport height",
+        "Restaurant name and tagline are clearly visible over the background",
+        "CTA buttons link correctly to /menu and /reservation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Update HeroSection to use the generated hero background image at frontend/public/assets/generated/hero-bg.dim_1920x1080.png. Update restaurant name to 'Coal & Curry' and tagline to reflect South Indian multi-cuisine dining (e.g., 'Authentic South Indian Multi-Cuisine Experience'). Style CTA buttons with saffron/turmeric colors and ensure they link to /menu and /reservation. Apply warm overlay gradient using the new palette."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create Restaurant Details / Contact page with business info, opening hours, social links, and contact form",
+      "acceptanceCriteria": [
+        "Address, phone, email, and opening hours are all displayed",
+        "WhatsApp link opens a WhatsApp chat",
+        "Contact form has name, email, and message fields with a submit confirmation state"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Update Contact page styling to use the South Indian color palette. Ensure all contact details (address, phone, email, WhatsApp link, social media) are displayed with good readability against the new background colors. Update the contact form styling with saffron/turmeric accents and ensure the success confirmation state is visually distinct."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build table reservation page with comprehensive form fields and backend storage, displaying confirmation summary on success",
+      "acceptanceCriteria": [
+        "All required form fields are validated before submission",
+        "Reservation is saved to backend stable storage",
+        "Confirmation summary is displayed after successful submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Reservation.tsx",
+          "operation": "modify",
+          "description": "Update Reservation page styling to use the South Indian color palette for form fields, labels, and submit button. Ensure form validation errors are displayed with appropriate contrast. Style the confirmation summary section with a warm, welcoming design using cream/saffron tones. The backend submitReservation method from backend/main.mo is already available via useQueries.ts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Add Signature Dishes section on homepage showcasing 4 featured South Indian specialties with images and Add to Cart buttons",
+      "acceptanceCriteria": [
+        "4 signature dishes are displayed in a grid on the homepage",
+        "Each card has an image, name, description, price, and Add to Cart button",
+        "Section links to the full menu page"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/home/SignatureDishes.tsx",
           "operation": "modify",
-          "description": "Replace the image references for all four hardcoded signature dishes with paths to the newly generated dish images from frontend/public/assets/generated/. Match each signature dish to its corresponding generated image (e.g., if a signature dish is Chettinad Chicken Curry, use '/assets/generated/chettinad-chicken-curry.dim_400x400.png'). Ensure the images load correctly and display properly within the existing card layout on the Home page."
+          "description": "Replace the existing signature dishes with 4 South Indian specialties: Ghee Roast Dosa (frontend/public/assets/generated/ghee-roast-dosa.dim_600x400.png), Chettinad Pepper Chicken (frontend/public/assets/generated/chettinad-chicken.dim_600x400.png), Prawn Masala (frontend/public/assets/generated/prawn-biryani.dim_600x400.png), and Filter Coffee Dessert Platter (frontend/public/assets/generated/filter-coffee.dim_600x400.png). Update card styling to use the South Indian color palette with saffron/turmeric accents. Ensure each card includes name, short description, price, and an Add to Cart button that integrates with CartContext."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Ensure the Home page correctly renders the updated SignatureDishes component and applies the South Indian theme consistently across all homepage sections."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add customer reviews carousel on homepage fetching from backend with star ratings and static fallback data",
+      "acceptanceCriteria": [
+        "Reviews are fetched from backend with at least 4 static fallback entries",
+        "Star ratings are visually rendered",
+        "Carousel navigation (prev/next) works correctly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/CustomerReviews.tsx",
+          "operation": "modify",
+          "description": "Update CustomerReviews component to use the South Indian color palette for review cards, star ratings, and navigation buttons. Ensure the component fetches reviews from backend via useQueries.ts (getTopReviews) and falls back to at least 4 static South Indian cuisine-themed reviews if backend is unavailable. Style carousel controls with saffron/turmeric accents."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Add SEO metadata to all pages with title, meta description, Open Graph tags, JSON-LD Restaurant schema, and update robots.txt/sitemap.xml",
+      "acceptanceCriteria": [
+        "Each page has a unique title and meta description",
+        "Homepage includes JSON-LD Restaurant schema",
+        "robots.txt allows all crawlers except /cart and /checkout",
+        "sitemap.xml lists all public routes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/seo/SEOHead.tsx",
+          "operation": "modify",
+          "description": "Update SEOHead component to ensure all pages have unique titles and descriptions reflecting 'Coal & Curry - South Indian Multi-Cuisine Restaurant'. Update the JSON-LD Restaurant schema on the homepage to include South Indian cuisine type, Coal & Curry branding, and accurate business details."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Ensure the Home page includes SEOHead with the Restaurant JSON-LD structured data block. Verify Open Graph tags include the generated images (frontend/public/assets/generated/hero-bg.dim_1920x1080.png or frontend/public/assets/generated/logo.dim_400x400.png)."
+        },
+        {
+          "path": "frontend/src/pages/Menu.tsx",
+          "operation": "modify",
+          "description": "Add SEOHead to Menu page with unique title 'South Indian Multi-Cuisine Menu | Coal & Curry' and description mentioning the 9 menu categories."
+        },
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "modify",
+          "description": "Add or update SEOHead in About page with unique title and description about Coal & Curry's South Indian culinary heritage."
+        },
+        {
+          "path": "frontend/src/pages/Reservation.tsx",
+          "operation": "modify",
+          "description": "Add or update SEOHead in Reservation page with unique title 'Book a Table | Coal & Curry' and relevant description."
+        },
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Add or update SEOHead in Contact page with unique title 'Contact Us | Coal & Curry' and description including contact methods."
+        },
+        {
+          "path": "frontend/src/pages/Gallery.tsx",
+          "operation": "modify",
+          "description": "Add or update SEOHead in Gallery page with unique title 'Photo Gallery | Coal & Curry' and description highlighting South Indian food and ambiance."
+        },
+        {
+          "path": "frontend/src/pages/Offers.tsx",
+          "operation": "modify",
+          "description": "Add or update SEOHead in Offers page with unique title 'Special Offers | Coal & Curry' and description of current promotions."
+        },
+        {
+          "path": "frontend/src/pages/Blog.tsx",
+          "operation": "modify",
+          "description": "Add or update SEOHead in Blog page with unique title 'Blog | Coal & Curry' and description about South Indian cuisine articles."
+        },
+        {
+          "path": "frontend/public/robots.txt",
+          "operation": "modify",
+          "description": "Verify robots.txt disallows /cart and /checkout while allowing all other routes. Ensure sitemap URL is correct."
+        },
+        {
+          "path": "frontend/public/sitemap.xml",
+          "operation": "modify",
+          "description": "Verify sitemap.xml lists all public routes (/, /menu, /about, /gallery, /offers, /reservation, /blog, /contact, /loyalty) with appropriate lastmod dates and priority values. Remove /cart and /checkout if present."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Include floating chatbot widget ('Agni' assistant) with keyword-based responses for common restaurant queries",
+      "acceptanceCriteria": [
+        "Chatbot toggle button is visible on all pages",
+        "Chatbot responds correctly to at least 8 keyword topics",
+        "Quick-reply shortcut buttons are available"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/chatbot/ChatbotWidget.tsx",
+          "operation": "modify",
+          "description": "Update ChatbotWidget styling to use saffron/turmeric colors for the floating toggle button. Ensure the button is fixed to the bottom-right and stands out with the South Indian theme."
+        },
+        {
+          "path": "frontend/src/components/chatbot/ChatbotPanel.tsx",
+          "operation": "modify",
+          "description": "Update ChatbotPanel styling to use the South Indian color palette for chat bubbles, input field, and quick-reply buttons. Ensure the 'Agni' assistant branding uses warm colors and the fire emoji."
+        },
+        {
+          "path": "frontend/src/utils/chatbotResponses.ts",
+          "operation": "modify",
+          "description": "Verify chatbotResponses.ts includes at least 8 keyword-based responses covering menu, hours, reservation, delivery, location, offers, payment, and specialties. Update response content to reflect Coal & Curry's South Indian multi-cuisine offering and business details."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure ChatbotWidget is rendered in the Layout component so it appears on all pages of the application."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Add responsive Navbar with scroll-aware styling, mobile hamburger menu, cart badge, and links to all main pages",
+      "acceptanceCriteria": [
+        "Navbar is responsive and collapses to hamburger on mobile",
+        "Cart badge shows correct item count",
+        "Navbar styling changes on scroll (e.g., transparent to solid background)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Navbar.tsx",
+          "operation": "modify",
+          "description": "Update Navbar to use the South Indian color palette with scroll-aware styling (warm gradient or solid saffron/charcoal background on scroll). Ensure all navigation links (Home, Menu, About, Gallery, Offers, Reservations, Blog, Contact) are present and styled consistently. Verify cart badge displays the correct count from CartContext and uses a high-contrast color (deep red or saffron). Ensure mobile hamburger menu works correctly and uses the new theme colors."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Add site-wide Footer with brand info, navigation links, contact details, and newsletter signup form with backend integration",
+      "acceptanceCriteria": [
+        "Footer appears on all pages",
+        "Newsletter form shows success, duplicate, or error feedback",
+        "All navigation links in footer are functional"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "modify",
+          "description": "Update Footer to use the South Indian color palette with a warm background (deep red or dark charcoal) and cream text. Ensure all quick navigation links, menu category links, social media icons, and contact details are styled consistently with the theme. Verify NewsletterSignup component is embedded and styled appropriately."
+        },
+        {
+          "path": "frontend/src/components/layout/NewsletterSignup.tsx",
+          "operation": "modify",
+          "description": "Update NewsletterSignup component to use the South Indian color palette for input field, submit button, and feedback messages. Ensure it calls the backend subscribeNewsletter method via useQueries.ts and displays success, duplicate, or error states with appropriate styling using saffron/turmeric accents."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure Footer is rendered in the Layout component so it appears consistently across all pages of the application."
         }
       ]
     }

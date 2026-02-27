@@ -1,90 +1,300 @@
 {
   "kind": "build_request",
-  "title": "Add AI-generated dish images to menu",
+  "title": "Rebuild Coal & Curry as South Indian Multi-Cuisine Restaurant App",
   "projectName": "Coal & Curry",
-  "priority": "normal",
+  "priority": "high",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Generate AI images for each dish listed in frontend/src/data/menuData.ts (e.g., Jigarthanda, Ice Cream, and all other menu items) and save them as static assets under frontend/public/assets/generated/ with filenames matching the dish references used in menuData.ts.",
+      "text": "Apply a warm, vibrant South Indian-inspired visual theme throughout the entire app using a rich spice palette (saffron, turmeric, deep red, cream, dark charcoal). Use bold display typography, layered texture backgrounds, and consistent component styling that evokes authentic South Indian dining culture.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4",
-          "msg-5"
+          "msg-20"
         ],
         "quotes": [
-          "No I don't have any specific image you create an AI image and replace it",
-          "add the suitable image to the dish like jigarthanda , ice cream .etc"
+          "South indian multi cuisine restaurant"
         ]
       },
       "acceptanceCriteria": [
-        "Every dish in menuData.ts has a corresponding AI-generated image saved in frontend/public/assets/generated/",
-        "Each image is visually appropriate for the dish it represents",
-        "Images follow a consistent artistic style suitable for a premium Chettinad restaurant"
+        "Color palette uses saffron, turmeric, deep red, and cream tones consistently across all pages",
+        "Typography uses a bold, legible display font appropriate for a restaurant brand",
+        "No blue or purple colors appear in the UI"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Update frontend/src/data/menuData.ts to replace all existing placeholder or missing image references with the paths to the newly generated dish images stored in frontend/public/assets/generated/.",
-      "target": "frontend",
+      "text": "Build a complete South Indian multi-cuisine menu with the following categories: Starters, Dosas & Uttapam, Idly & Vada, Rice & Biryani, Curries & Gravies, Breads, Seafood Specials, Desserts, and Drinks. Each category must contain at least 4–6 realistic South Indian dishes with name, description, price (in INR), spice level, and veg/non-veg badge.",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-4",
-          "msg-5"
+          "msg-20"
         ],
         "quotes": [
-          "add the suitable image to the dish like jigarthanda , ice cream .etc... like this change the suitable image"
+          "South indian multi cuisine restaurant"
         ]
       },
       "acceptanceCriteria": [
-        "All dish entries in menuData.ts reference valid image paths pointing to the generated images",
-        "No broken image links remain in the menu data",
-        "The DishCard component renders the correct image for each dish on the Menu page"
+        "At least 9 menu categories are available",
+        "Each dish displays name, description, price, spice level, and veg/non-veg indicator",
+        "Sample dishes include items like Masala Dosa, Idly Sambar, Chettinad Chicken, Fish Curry, Filter Coffee, Payasam, etc.",
+        "Menu data is stored in frontend menuData.ts"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Update the four hardcoded signature dishes in frontend/src/components/home/SignatureDishes.tsx to use the newly generated dish images instead of any placeholder or old image references.",
+      "text": "Implement horizontally scrollable category tabs on the Menu page so users can filter dishes by category. Each tab should show a relevant emoji and the category name. The active tab should be visually distinct.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-20"
         ],
         "quotes": [
-          "add the suitable image to the dish like jigarthanda , ice cream .etc"
+          "Menu with categories"
         ]
       },
       "acceptanceCriteria": [
-        "Each signature dish card on the Home page displays the correct AI-generated image",
-        "Images load without errors and display correctly within the card layout"
+        "All menu categories appear as scrollable tabs",
+        "Selecting a tab filters the dish grid to show only items in that category",
+        "Active tab has clearly distinct styling"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Render dish cards on the Menu page with dish image, name, short description, spice level indicator, price, veg/non-veg badge, and an 'Add to Cart' button. Images should use generated dish images stored in frontend/public/assets/generated.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "Dish cards with images, descriptions, and prices"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each dish card displays all required fields",
+        "Add to Cart button increments the cart count in the navbar",
+        "Veg items show a green badge; non-veg items show a red badge"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement a shopping cart with the ability to add/remove dishes, adjust quantities, and view a subtotal. The cart should persist via localStorage and display item count in the navbar. Include a checkout flow with delivery/takeaway selection, address entry, payment method selection, and an order confirmation screen.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "Shopping cart and ordering flow"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Cart persists across page refreshes using localStorage",
+        "Navbar shows cart item count badge",
+        "Checkout flow has steps: order type → address → payment → confirmation",
+        "Order confirmation screen displays a summary of items ordered"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Build a full-screen hero section on the homepage with a South Indian food background image, the restaurant name 'Coal & Curry', a tagline reflecting South Indian multi-cuisine, and CTA buttons linking to the Menu and Reservation pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "South indian multi cuisine restaurant"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section is full viewport height",
+        "Restaurant name and tagline are clearly visible over the background",
+        "CTA buttons link correctly to /menu and /reservation"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create a Restaurant Details / Contact page showing the restaurant's name, address, phone number, email, WhatsApp link, opening hours (daily schedule), and social media links. Include a simple contact inquiry form.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "Restaurant details — contact info, opening hours, and location"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Address, phone, email, and opening hours are all displayed",
+        "WhatsApp link opens a WhatsApp chat",
+        "Contact form has name, email, and message fields with a submit confirmation state"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Build a table reservation page with a form for name, phone number, date, time, number of guests, occasion (optional), and seating preference. On successful submission, display a reservation confirmation summary. Store reservations in the Motoko backend.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "South indian multi cuisine restaurant"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All required form fields are validated before submission",
+        "Reservation is saved to backend stable storage",
+        "Confirmation summary is displayed after successful submission"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add a Signature Dishes section on the homepage showcasing 4 featured South Indian specialties (e.g., Ghee Roast Dosa, Chettinad Pepper Chicken, Prawn Masala, Filter Coffee Dessert Platter) with images, short descriptions, prices, and Add to Cart buttons.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "South indian multi cuisine restaurant"
+        ]
+      },
+      "acceptanceCriteria": [
+        "4 signature dishes are displayed in a grid on the homepage",
+        "Each card has an image, name, description, price, and Add to Cart button",
+        "Section links to the full menu page"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Add a customer reviews section on the homepage that fetches reviews from the Motoko backend (with static fallback data) and displays them in a carousel with star ratings, reviewer name, and review text.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "South indian multi cuisine restaurant"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Reviews are fetched from backend with at least 4 static fallback entries",
+        "Star ratings are visually rendered",
+        "Carousel navigation (prev/next) works correctly"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Add SEO metadata to all pages including title, meta description, Open Graph tags, and a JSON-LD Restaurant structured data block on the homepage. Update frontend/public/robots.txt and frontend/public/sitemap.xml to reflect all public routes.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-17"
+        ],
+        "quotes": [
+          "If we search in google it will appear"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each page has a unique title and meta description",
+        "Homepage includes JSON-LD Restaurant schema",
+        "robots.txt allows all crawlers except /cart and /checkout",
+        "sitemap.xml lists all public routes"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Include a floating chatbot widget ('Agni' assistant) fixed to the bottom-right corner. The chatbot should respond to keywords related to menu, hours, reservation, delivery, location, offers, and payment using pre-written static responses.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "South indian multi cuisine restaurant"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Chatbot toggle button is visible on all pages",
+        "Chatbot responds correctly to at least 8 keyword topics",
+        "Quick-reply shortcut buttons are available"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Add a responsive Navbar with scroll-aware styling, mobile hamburger menu, cart item count badge, and links to Home, Menu, About, Gallery, Offers, Reservations, Blog, and Contact pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "South indian multi cuisine restaurant"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navbar is responsive and collapses to hamburger on mobile",
+        "Cart badge shows correct item count",
+        "Navbar styling changes on scroll (e.g., transparent to solid background)"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Add a site-wide Footer with brand description, social media links, quick navigation links, menu category links, contact details, and a newsletter signup form. Newsletter submissions should be stored in the Motoko backend with duplicate-check feedback.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "South indian multi cuisine restaurant"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer appears on all pages",
+        "Newsletter form shows success, duplicate, or error feedback",
+        "All navigation links in footer are functional"
       ]
     }
   ],
   "constraints": [
-    "Do not modify backend/main.mo — no backend changes required",
-    "Do not edit files under frontend/src/hooks/ or frontend/src/components/ui/",
-    "Generated images must be stored as static assets under frontend/public/assets/generated/ — do not route images through the backend"
+    "All Motoko logic must remain in a single actor in backend/main.mo",
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui",
+    "Generated dish and food images must be served as static assets from frontend/public/assets/generated",
+    "Do not use blue or purple as primary brand colors"
   ],
   "nonGoals": [
-    "Adding new dishes or changing menu prices",
-    "Changing the overall menu layout or card design",
-    "Integrating an external image CDN or dynamic image loading service"
+    "Real-time order tracking",
+    "Payment gateway integration",
+    "GPS or map embedding",
+    "User authentication via Internet Identity",
+    "External third-party delivery service integration"
   ],
   "imageRequirements": {
     "required": [
-      "Jigarthanda — a chilled South Indian drink with sarsaparilla syrup, almond gum, reduced milk, and ice cream in a tall glass, top-down shot on dark stone surface (jigarthanda.dim_400x400.png)",
-      "Vanilla Ice Cream — two scoops of creamy vanilla ice cream in a ceramic bowl with wafer, warm moody lighting on dark background (ice-cream.dim_400x400.png)",
-      "Chettinad Chicken Curry — rich dark brown spiced chicken curry in a clay pot with curry leaves and red chilies, rustic wooden surface (chettinad-chicken-curry.dim_400x400.png)",
-      "Mutton Kola Urundai — golden fried minced mutton balls on a banana leaf with mint chutney, close-up shot (mutton-kola-urundai.dim_400x400.png)",
-      "Prawn Masala — vibrant orange-red spiced prawns in a cast iron skillet with coriander garnish, dark moody lighting (prawn-masala.dim_400x400.png)",
-      "Paneer Tikka — charcoal-grilled paneer cubes with bell peppers on skewers, light smoke wisps, dark background (paneer-tikka.dim_400x400.png)",
-      "Chettinad Fish Curry — deep red fish curry with whole spices in a terracotta bowl, banana leaf underneath (chettinad-fish-curry.dim_400x400.png)",
-      "Biryani — aromatic saffron-layered Chettinad biryani in a copper handi with fried onions and boiled egg (biryani.dim_400x400.png)",
-      "Parotta — flaky layered South Indian parotta stacked on a banana leaf, golden brown, dark atmospheric background (parotta.dim_400x400.png)",
-      "Rasam — thin golden-red tomato rasam in a small brass tumbler with curry leaves, steam rising (rasam.dim_400x400.png)",
-      "Sambar — thick lentil and vegetable sambar in a clay bowl with drumstick pieces visible (sambar.dim_400x400.png)",
-      "Curd Rice — creamy curd rice topped with pomegranate seeds and curry leaf tempering in a white ceramic bowl (curd-rice.dim_400x400.png)"
+      "Full-screen South Indian restaurant interior with warm golden lighting and banana leaf table settings, landscape (hero-bg.dim_1920x1080.png)",
+      "Crispy golden Masala Dosa served with sambar and three chutneys on a banana leaf (masala-dosa.dim_600x400.png)",
+      "Soft white Idly served with sambar and coconut chutney in a traditional steel plate (idly-sambar.dim_600x400.png)",
+      "Chettinad Pepper Chicken curry in a clay pot with curry leaves and red chilies (chettinad-chicken.dim_600x400.png)",
+      "Aromatic Prawn Biryani garnished with fried onions and mint in a copper handi (prawn-biryani.dim_600x400.png)",
+      "Spicy Fish Curry in a thick coconut-based gravy served with steamed rice (fish-curry.dim_600x400.png)",
+      "Ghee Roast Dosa — paper-thin crispy dosa with ghee drizzle and red chutney (ghee-roast-dosa.dim_600x400.png)",
+      "Medu Vada — golden crispy lentil donuts served with coconut chutney and sambar (medu-vada.dim_600x400.png)",
+      "Onion Uttapam — thick rice pancake topped with onions, tomatoes, and green chilies (onion-uttapam.dim_600x400.png)",
+      "Vegetable Kothu Parotta — shredded parotta stir-fried with vegetables and spices (kothu-parotta.dim_600x400.png)",
+      "Kerala Fish Moilee — delicate white fish in coconut milk curry with green chilies (fish-moilee.dim_600x400.png)",
+      "Sambar Rice — steamed rice mixed with lentil sambar and ghee in a steel bowl (sambar-rice.dim_600x400.png)",
+      "Payasam — creamy South Indian vermicelli kheer with cashews and raisins in a silver bowl (payasam.dim_600x400.png)",
+      "Filter Coffee — frothy South Indian filter coffee in a traditional steel tumbler and dabarah (filter-coffee.dim_600x400.png)",
+      "Fresh Coconut Water served in a tender green coconut with a straw (coconut-water.dim_600x400.png)",
+      "Butter Chicken — rich tomato-cream chicken curry garnished with cream swirl and fenugreek (butter-chicken.dim_600x400.png)",
+      "Plain Parotta — flaky layered flatbread stacked on a banana leaf plate (plain-parotta.dim_600x400.png)",
+      "Mixed Veg Curry — colorful South Indian vegetable curry with mustard seeds and coconut (mixed-veg-curry.dim_600x400.png)",
+      "Coal & Curry restaurant logo — stylized flame over a curry pot with elegant serif text on dark background (logo.dim_400x400.png)",
+      "Offers section banner — festive South Indian food spread with banana leaves and brass lamps (offers-banner.dim_1200x400.png)"
     ],
     "edits": []
   }
