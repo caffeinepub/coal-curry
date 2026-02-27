@@ -42,7 +42,7 @@ function StarRating({ rating }: { rating: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className={`w-4 h-4 ${i < rating ? "text-saffron fill-saffron" : "text-muted-foreground/30"}`}
+          className={`w-4 h-4 ${i < rating ? "text-saffron fill-saffron" : "text-white/20"}`}
         />
       ))}
     </div>
@@ -86,10 +86,10 @@ export default function CustomerReviews() {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="text-saffron font-medium text-sm uppercase tracking-widest">Testimonials</span>
-          <h2 className="font-display text-4xl font-bold text-cream mt-2 mb-4">
+          <h2 className="font-display text-4xl font-bold text-white mt-2 mb-4">
             What Our Guests Say
           </h2>
-          <p className="text-cream/60 max-w-xl mx-auto">
+          <p className="text-white/70 max-w-xl mx-auto">
             Real experiences from our valued guests who have savored the authentic flavors of South India.
           </p>
         </div>
@@ -99,12 +99,12 @@ export default function CustomerReviews() {
           {visible.map((review, idx) => (
             <div
               key={idx}
-              className={`bg-charcoal border border-saffron/20 rounded-xl p-6 transition-all ${
+              className={`bg-black/30 border border-saffron/20 rounded-xl p-6 transition-all ${
                 idx === 0 ? "border-saffron/50 shadow-warm" : ""
               }`}
             >
               <StarRating rating={review.rating} />
-              <p className="text-cream/80 text-sm leading-relaxed mt-3 mb-4 italic">
+              <p className="text-white/90 text-sm leading-relaxed mt-3 mb-4 italic">
                 "{review.comment}"
               </p>
               <div className="flex items-center gap-3">
@@ -112,7 +112,7 @@ export default function CustomerReviews() {
                   {review.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-cream font-semibold text-sm">{review.name}</p>
+                  <p className="text-white font-semibold text-sm">{review.name}</p>
                   {review.dish && (
                     <p className="text-saffron text-xs">{review.dish}</p>
                   )}

@@ -7,11 +7,12 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/assets/generated/hero-bg.dim_1920x1080.png"
-          alt="South Indian cuisine spread"
+          src="/assets/generated/hero-coal-curry.dim_1920x1080.png"
+          alt="Coal and curry themed background with glowing charcoal embers and spices"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/50 to-charcoal/80" />
+        {/* Dark overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85" />
       </div>
 
       {/* Content */}
@@ -23,16 +24,16 @@ export default function HeroSection() {
         </div>
 
         {/* Title */}
-        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-cream mb-4 leading-tight">
+        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
           Coal &{" "}
           <span className="text-saffron">Curry</span>
         </h1>
 
         {/* Tagline */}
-        <p className="text-xl sm:text-2xl text-cream/80 font-body mb-4 leading-relaxed">
+        <p className="text-xl sm:text-2xl text-white/90 font-body mb-4 leading-relaxed">
           Authentic South Indian Multi-Cuisine Experience
         </p>
-        <p className="text-base text-cream/60 font-body mb-10 max-w-2xl mx-auto">
+        <p className="text-base text-white/75 font-body mb-10 max-w-2xl mx-auto">
           From crispy Ghee Roast Dosas to fiery Chettinad Curries, Filter Coffee to Payasam — 
           every dish tells a story of tradition, spice, and love.
         </p>
@@ -48,7 +49,7 @@ export default function HeroSection() {
           </Link>
           <Link
             to="/reservation"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-cream text-cream font-bold text-lg rounded-md hover:bg-cream hover:text-charcoal transition-all hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-md hover:bg-white hover:text-charcoal transition-all hover:scale-105"
           >
             <CalendarCheck className="w-5 h-5" />
             Book a Table
@@ -64,7 +65,7 @@ export default function HeroSection() {
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-display text-3xl font-bold text-saffron">{stat.value}</p>
-              <p className="text-sm text-cream/60">{stat.label}</p>
+              <p className="text-sm text-white/75">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -72,7 +73,7 @@ export default function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-8 h-8 text-cream/50" />
+        <ChevronDown className="w-8 h-8 text-white/60" />
       </div>
     </section>
   );

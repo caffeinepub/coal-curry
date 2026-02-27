@@ -1,115 +1,34 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Coal & Curry is a South Indian multi-cuisine restaurant app being rebuilt. It features a warm South Indian-inspired theme, menu categories (Starters, Dosas, Rice & Biryani, Curries, Breads, Desserts, Drinks), dish cards with images/descriptions/prices, a shopping cart and ordering flow, and restaurant details (contact info, hours, location).",
+  "summary": "Project involves a multi-page app/website with Review, Filter, and Contact pages. User wants font colors changed to white where needed for readability across these pages.",
   "architectural_notes": [],
   "known_issues": [
-    "Production deployment error encountered during last deploy attempt"
+    "Font color not updated on Review, Filter, and Contact pages despite previous attempt"
   ],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Full-screen South Indian restaurant interior with warm golden lighting and banana leaf table settings, landscape (hero-bg.dim_1920x1080.png)\n- Crispy golden Masala Dosa served with sambar and three chutneys on a banana leaf (masala-dosa.dim_600x400.png)\n- Soft white Idly served with sambar and coconut chutney in a traditional steel plate (idly-sambar.dim_600x400.png)\n- Chettinad Pepper Chicken curry in a clay pot with curry leaves and red chilies (chettinad-chicken.dim_600x400.png)\n- Aromatic Prawn Biryani garnished with fried onions and mint in a copper handi (prawn-biryani.dim_600x400.png)\n- Spicy Fish Curry in a thick coconut-based gravy served with steamed rice (fish-curry.dim_600x400.png)\n- Ghee Roast Dosa — paper-thin crispy dosa with ghee drizzle and red chutney (ghee-roast-dosa.dim_600x400.png)\n- Medu Vada — golden crispy lentil donuts served with coconut chutney and sambar (medu-vada.dim_600x400.png)\n- Onion Uttapam — thick rice pancake topped with onions, tomatoes, and green chilies (onion-uttapam.dim_600x400.png)\n- Vegetable Kothu Parotta — shredded parotta stir-fried with vegetables and spices (kothu-parotta.dim_600x400.png)\n- Kerala Fish Moilee — delicate white fish in coconut milk curry with green chilies (fish-moilee.dim_600x400.png)\n- Sambar Rice — steamed rice mixed with lentil sambar and ghee in a steel bowl (sambar-rice.dim_600x400.png)\n- Payasam — creamy South Indian vermicelli kheer with cashews and raisins in a silver bowl (payasam.dim_600x400.png)\n- Filter Coffee — frothy South Indian filter coffee in a traditional steel tumbler and dabarah (filter-coffee.dim_600x400.png)\n- Fresh Coconut Water served in a tender green coconut with a straw (coconut-water.dim_600x400.png)\n- Butter Chicken — rich tomato-cream chicken curry garnished with cream swirl and fenugreek (butter-chicken.dim_600x400.png)\n- Plain Parotta — flaky layered flatbread stacked on a banana leaf plate (plain-parotta.dim_600x400.png)\n- Mixed Veg Curry — colorful South Indian vegetable curry with mustard seeds and coconut (mixed-veg-curry.dim_600x400.png)\n- Coal & Curry restaurant logo — stylized flame over a curry pot with elegant serif text on dark background (logo.dim_400x400.png)\n- Offers section banner — festive South Indian food spread with banana leaves and brass lamps (offers-banner.dim_1200x400.png)",
+  "isFixRequest": true,
   "existing_features": [
     {
-      "id": "feature-apply-a-warm-vibrant-south-indian-inspired-visual-theme-throughout-the-entire-app-using-a-rich-spice-palette-saffron-turmeric-deep-red-cream-dark-charcoal-use-bold-display-typography-layered-texture-backgrounds-and-consistent-component-styling-that-evokes-authentic-south-indian-dining-culture",
-      "title": "Apply a warm, vibrant South Indian-inspired visual theme throughout the entire app using a rich spice palette (saffron, turmeric, deep red, cream, dark charcoal). Use bold display typography, layered texture backgrounds, and consistent component styling that evokes authentic South Indian dining culture.",
+      "id": "feature-on-the-reviews-page-and-the-customerreviews-component-used-on-home-change-all-text-elements-including-review-body-text-reviewer-names-star-ratings-date-labels-and-any-headings-to-white-or-a-light-contrast-color-e-g-white-or-off-white-so-they-are-fully-legible-against-the-dark-background",
+      "title": "On the Reviews page (and the CustomerReviews component used on Home), change all text elements — including review body text, reviewer names, star ratings, date labels, and any headings — to white or a light-contrast color (e.g., white or off-white) so they are fully legible against the dark background.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-build-a-complete-south-indian-multi-cuisine-menu-with-the-following-categories-starters-dosas-uttapam-idly-vada-rice-biryani-curries-gravies-breads-seafood-specials-desserts-and-drinks-each-category-must-contain-at-least-4-6-realistic-south-indian-dishes-with-name-description-price-in-inr-spice-level-and-veg-non-veg-badge",
-      "title": "Build a complete South Indian multi-cuisine menu with the following categories: Starters, Dosas & Uttapam, Idly & Vada, Rice & Biryani, Curries & Gravies, Breads, Seafood Specials, Desserts, and Drinks. Each category must contain at least 4–6 realistic South Indian dishes with name, description, price (in INR), spice level, and veg/non-veg badge.",
+      "id": "feature-on-the-menu-page-filter-tab-section-menutabs-component-and-any-search-filter-controls-on-the-menu-page-change-all-filter-tab-labels-search-input-text-placeholder-text-and-category-button-text-to-white-or-a-legible-light-color-so-they-are-visible-against-the-dark-or-colored-backgrounds",
+      "title": "On the Menu page filter/tab section (MenuTabs component and any search/filter controls on the Menu page), change all filter tab labels, search input text, placeholder text, and category button text to white or a legible light color so they are visible against the dark or colored backgrounds.",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
     },
     {
-      "id": "feature-implement-horizontally-scrollable-category-tabs-on-the-menu-page-so-users-can-filter-dishes-by-category-each-tab-should-show-a-relevant-emoji-and-the-category-name-the-active-tab-should-be-visually-distinct",
-      "title": "Implement horizontally scrollable category tabs on the Menu page so users can filter dishes by category. Each tab should show a relevant emoji and the category name. The active tab should be visually distinct.",
+      "id": "feature-on-the-contact-page-frontend-src-pages-contact-tsx-change-all-text-elements-including-section-headings-labels-address-phone-email-info-business-hours-form-field-labels-input-placeholder-text-and-button-text-to-white-or-a-light-contrast-color-wherever-text-appears-against-a-dark-or-colored-background",
+      "title": "On the Contact page (frontend/src/pages/Contact.tsx), change all text elements — including section headings, labels, address/phone/email info, business hours, form field labels, input placeholder text, and button text — to white or a light-contrast color wherever text appears against a dark or colored background.",
       "reqIds": [
         "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-render-dish-cards-on-the-menu-page-with-dish-image-name-short-description-spice-level-indicator-price-veg-non-veg-badge-and-an-add-to-cart-button-images-should-use-generated-dish-images-stored-in-frontend-public-assets-generated",
-      "title": "Render dish cards on the Menu page with dish image, name, short description, spice level indicator, price, veg/non-veg badge, and an 'Add to Cart' button. Images should use generated dish images stored in frontend/public/assets/generated.",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-implement-a-shopping-cart-with-the-ability-to-add-remove-dishes-adjust-quantities-and-view-a-subtotal-the-cart-should-persist-via-localstorage-and-display-item-count-in-the-navbar-include-a-checkout-flow-with-delivery-takeaway-selection-address-entry-payment-method-selection-and-an-order-confirmation-screen",
-      "title": "Implement a shopping cart with the ability to add/remove dishes, adjust quantities, and view a subtotal. The cart should persist via localStorage and display item count in the navbar. Include a checkout flow with delivery/takeaway selection, address entry, payment method selection, and an order confirmation screen.",
-      "reqIds": [
-        "REQ-5"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-build-a-full-screen-hero-section-on-the-homepage-with-a-south-indian-food-background-image-the-restaurant-name-coal-curry-a-tagline-reflecting-south-indian-multi-cuisine-and-cta-buttons-linking-to-the-menu-and-reservation-pages",
-      "title": "Build a full-screen hero section on the homepage with a South Indian food background image, the restaurant name 'Coal & Curry', a tagline reflecting South Indian multi-cuisine, and CTA buttons linking to the Menu and Reservation pages.",
-      "reqIds": [
-        "REQ-6"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-build-a-table-reservation-page-with-a-form-for-name-phone-number-date-time-number-of-guests-occasion-optional-and-seating-preference-on-successful-submission-display-a-reservation-confirmation-summary-store-reservations-in-the-motoko-backend",
-      "title": "Build a table reservation page with a form for name, phone number, date, time, number of guests, occasion (optional), and seating preference. On successful submission, display a reservation confirmation summary. Store reservations in the Motoko backend.",
-      "reqIds": [
-        "REQ-8"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-signature-dishes-section-on-the-homepage-showcasing-4-featured-south-indian-specialties-e-g-ghee-roast-dosa-chettinad-pepper-chicken-prawn-masala-filter-coffee-dessert-platter-with-images-short-descriptions-prices-and-add-to-cart-buttons",
-      "title": "Add a Signature Dishes section on the homepage showcasing 4 featured South Indian specialties (e.g., Ghee Roast Dosa, Chettinad Pepper Chicken, Prawn Masala, Filter Coffee Dessert Platter) with images, short descriptions, prices, and Add to Cart buttons.",
-      "reqIds": [
-        "REQ-9"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-customer-reviews-section-on-the-homepage-that-fetches-reviews-from-the-motoko-backend-with-static-fallback-data-and-displays-them-in-a-carousel-with-star-ratings-reviewer-name-and-review-text",
-      "title": "Add a customer reviews section on the homepage that fetches reviews from the Motoko backend (with static fallback data) and displays them in a carousel with star ratings, reviewer name, and review text.",
-      "reqIds": [
-        "REQ-10"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-seo-metadata-to-all-pages-including-title-meta-description-open-graph-tags-and-a-json-ld-restaurant-structured-data-block-on-the-homepage-update-frontend-public-robots-txt-and-frontend-public-sitemap-xml-to-reflect-all-public-routes",
-      "title": "Add SEO metadata to all pages including title, meta description, Open Graph tags, and a JSON-LD Restaurant structured data block on the homepage. Update frontend/public/robots.txt and frontend/public/sitemap.xml to reflect all public routes.",
-      "reqIds": [
-        "REQ-11"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-include-a-floating-chatbot-widget-agni-assistant-fixed-to-the-bottom-right-corner-the-chatbot-should-respond-to-keywords-related-to-menu-hours-reservation-delivery-location-offers-and-payment-using-pre-written-static-responses",
-      "title": "Include a floating chatbot widget ('Agni' assistant) fixed to the bottom-right corner. The chatbot should respond to keywords related to menu, hours, reservation, delivery, location, offers, and payment using pre-written static responses.",
-      "reqIds": [
-        "REQ-12"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-responsive-navbar-with-scroll-aware-styling-mobile-hamburger-menu-cart-item-count-badge-and-links-to-home-menu-about-gallery-offers-reservations-blog-and-contact-pages",
-      "title": "Add a responsive Navbar with scroll-aware styling, mobile hamburger menu, cart item count badge, and links to Home, Menu, About, Gallery, Offers, Reservations, Blog, and Contact pages.",
-      "reqIds": [
-        "REQ-13"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-site-wide-footer-with-brand-description-social-media-links-quick-navigation-links-menu-category-links-contact-details-and-a-newsletter-signup-form-newsletter-submissions-should-be-stored-in-the-motoko-backend-with-duplicate-check-feedback",
-      "title": "Add a site-wide Footer with brand description, social media links, quick navigation links, menu category links, contact details, and a newsletter signup form. Newsletter submissions should be stored in the Motoko backend with duplicate-check feedback.",
-      "reqIds": [
-        "REQ-14"
       ],
       "version": 1
     }
@@ -117,28 +36,8 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Menu with South Indian multi-cuisine categories and dish cards (images, descriptions, prices)",
+      "summary": "Change font color to white on Review page, Filter section, and Contact page where text is hard to read",
       "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "Shopping cart and ordering flow",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "Restaurant details page with contact info, opening hours, and location",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-10",
-      "summary": "Create a Restaurant Details / Contact page showing the restaurant's name, address, phone number, email, WhatsApp link, opening hours (daily schedule), and social media links. Include a simple contact inquiry form.",
-      "reqIds": [
-        "REQ-7"
-      ],
       "status": "pending"
     }
   ],
