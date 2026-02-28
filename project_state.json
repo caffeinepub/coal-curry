@@ -1,48 +1,38 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Project involves a multi-page app/website with Review, Filter, and Contact pages. User wants font colors changed to white where needed for readability across these pages.",
+  "summary": "New project",
   "architectural_notes": [],
-  "known_issues": [
-    "Font color not updated on Review, Filter, and Contact pages despite previous attempt"
-  ],
-  "isFixRequest": true,
+  "known_issues": [],
+  "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-on-the-reviews-page-and-the-customerreviews-component-used-on-home-change-all-text-elements-including-review-body-text-reviewer-names-star-ratings-date-labels-and-any-headings-to-white-or-a-light-contrast-color-e-g-white-or-off-white-so-they-are-fully-legible-against-the-dark-background",
-      "title": "On the Reviews page (and the CustomerReviews component used on Home), change all text elements — including review body text, reviewer names, star ratings, date labels, and any headings — to white or a light-contrast color (e.g., white or off-white) so they are fully legible against the dark background.",
+      "id": "feature-update-all-text-colours-in-the-footer-section-footer-tsx-to-a-readable-high-contrast-colour-suitable-for-the-dark-background-including-brand-info-quick-navigation-links-menu-category-links-contact-details-and-newsletter-text-ensure-all-text-meets-readable-contrast-standards",
+      "title": "Update all text colours in the footer section (Footer.tsx) to a readable, high-contrast colour suitable for the dark background — including brand info, quick navigation links, menu category links, contact details, and newsletter text. Ensure all text meets readable contrast standards.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-on-the-menu-page-filter-tab-section-menutabs-component-and-any-search-filter-controls-on-the-menu-page-change-all-filter-tab-labels-search-input-text-placeholder-text-and-category-button-text-to-white-or-a-legible-light-color-so-they-are-visible-against-the-dark-or-colored-backgrounds",
-      "title": "On the Menu page filter/tab section (MenuTabs component and any search/filter controls on the Menu page), change all filter tab labels, search input text, placeholder text, and category button text to white or a legible light color so they are visible against the dark or colored backgrounds.",
+      "id": "feature-update-the-colour-of-the-hamburger-menu-icon-three-line-icon-in-the-navbar-navbar-tsx-to-a-suitable-high-contrast-colour-so-it-is-clearly-visible-against-the-navbar-background-on-mobile",
+      "title": "Update the colour of the hamburger menu icon (three-line icon) in the Navbar (Navbar.tsx) to a suitable, high-contrast colour so it is clearly visible against the navbar background on mobile.",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
     },
     {
-      "id": "feature-on-the-contact-page-frontend-src-pages-contact-tsx-change-all-text-elements-including-section-headings-labels-address-phone-email-info-business-hours-form-field-labels-input-placeholder-text-and-button-text-to-white-or-a-light-contrast-color-wherever-text-appears-against-a-dark-or-colored-background",
-      "title": "On the Contact page (frontend/src/pages/Contact.tsx), change all text elements — including section headings, labels, address/phone/email info, business hours, form field labels, input placeholder text, and button text — to white or a light-contrast color wherever text appears against a dark or colored background.",
+      "id": "feature-update-the-filter-tab-colours-in-the-menutabs-component-menutabs-tsx-to-a-suitable-readable-colour-including-active-and-inactive-tab-states-so-the-filter-labels-are-clearly-visible-against-the-tab-bar-background",
+      "title": "Update the filter tab colours in the MenuTabs component (MenuTabs.tsx) to a suitable, readable colour — including active and inactive tab states — so the filter labels are clearly visible against the tab bar background.",
       "reqIds": [
         "REQ-3"
       ],
       "version": 1
     }
   ],
-  "new_feature_requests": [
-    {
-      "id": "AR-1",
-      "summary": "Change font color to white on Review page, Filter section, and Contact page where text is hard to read",
-      "reqIds": [],
-      "status": "pending"
-    }
-  ],
-  "gameProjectType": "none",
-  "projectName": "Coal & Curry",
+  "new_feature_requests": [],
+  "projectName": "Fix footer font colours and hamburger/filter menu icon colours for readability",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

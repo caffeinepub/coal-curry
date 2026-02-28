@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-on-the-reviews-page-and-the-customerreviews-component-used-on-home-change-all-text-elements-including-review-body-text-reviewer-names-star-ratings-date-labels-and-any-headings-to-white-or-a-light-contrast-color-e-g-white-or-off-white-so-they-are-fully-legible-against-the-dark-background",
-      "featureTitle": "On the Reviews page (and the CustomerReviews component used on Home), change all text elements — including review body text, reviewer names, star ratings, date labels, and any headings — to white or a light-contrast color (e.g., white or off-white) so they are fully legible against the dark background.",
+      "featureId": "feature-update-all-text-colours-in-the-footer-section-footer-tsx-to-a-readable-high-contrast-colour-suitable-for-the-dark-background-including-brand-info-quick-navigation-links-menu-category-links-contact-details-and-newsletter-text-ensure-all-text-meets-readable-contrast-standards",
+      "featureTitle": "Update all text colours in the footer section (Footer.tsx) to a readable, high-contrast colour suitable for the dark background — including brand info, quick navigation links, menu category links, contact details, and newsletter text. Ensure all text meets readable contrast standards.",
       "files": [
-        "frontend/src/components/home/CustomerReviews.tsx"
+        "frontend/src/components/layout/Footer.tsx"
       ],
       "components": [
         "blob-storage@4.0.0",
@@ -21,11 +21,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-on-the-menu-page-filter-tab-section-menutabs-component-and-any-search-filter-controls-on-the-menu-page-change-all-filter-tab-labels-search-input-text-placeholder-text-and-category-button-text-to-white-or-a-legible-light-color-so-they-are-visible-against-the-dark-or-colored-backgrounds",
-      "featureTitle": "On the Menu page filter/tab section (MenuTabs component and any search/filter controls on the Menu page), change all filter tab labels, search input text, placeholder text, and category button text to white or a legible light color so they are visible against the dark or colored backgrounds.",
+      "featureId": "feature-update-the-colour-of-the-hamburger-menu-icon-three-line-icon-in-the-navbar-navbar-tsx-to-a-suitable-high-contrast-colour-so-it-is-clearly-visible-against-the-navbar-background-on-mobile",
+      "featureTitle": "Update the colour of the hamburger menu icon (three-line icon) in the Navbar (Navbar.tsx) to a suitable, high-contrast colour so it is clearly visible against the navbar background on mobile.",
       "files": [
-        "frontend/src/components/menu/MenuTabs.tsx",
-        "frontend/src/pages/Menu.tsx"
+        "frontend/src/components/layout/Navbar.tsx"
       ],
       "components": [
         "blob-storage@4.0.0",
@@ -41,10 +40,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-on-the-contact-page-frontend-src-pages-contact-tsx-change-all-text-elements-including-section-headings-labels-address-phone-email-info-business-hours-form-field-labels-input-placeholder-text-and-button-text-to-white-or-a-light-contrast-color-wherever-text-appears-against-a-dark-or-colored-background",
-      "featureTitle": "On the Contact page (frontend/src/pages/Contact.tsx), change all text elements — including section headings, labels, address/phone/email info, business hours, form field labels, input placeholder text, and button text — to white or a light-contrast color wherever text appears against a dark or colored background.",
+      "featureId": "feature-update-the-filter-tab-colours-in-the-menutabs-component-menutabs-tsx-to-a-suitable-readable-colour-including-active-and-inactive-tab-states-so-the-filter-labels-are-clearly-visible-against-the-tab-bar-background",
+      "featureTitle": "Update the filter tab colours in the MenuTabs component (MenuTabs.tsx) to a suitable, readable colour — including active and inactive tab states — so the filter labels are clearly visible against the tab bar background.",
       "files": [
-        "frontend/src/pages/Contact.tsx"
+        "frontend/src/components/menu/MenuTabs.tsx"
       ],
       "components": [
         "blob-storage@4.0.0",

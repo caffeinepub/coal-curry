@@ -32,7 +32,7 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-charcoal text-cream/80">
+    <footer className="bg-charcoal text-cream">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -47,11 +47,11 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <h3 className="font-display text-xl font-bold text-cream">Coal & Curry</h3>
-                <p className="text-xs text-cream/50">South Indian Multi-Cuisine</p>
+                <h3 className="font-display text-xl font-bold text-white">Coal & Curry</h3>
+                <p className="text-xs text-cream/80">South Indian Multi-Cuisine</p>
               </div>
             </div>
-            <p className="text-sm text-cream/60 leading-relaxed mb-6">
+            <p className="text-sm text-cream/90 leading-relaxed mb-6">
               Authentic South Indian flavors crafted with love, tradition, and the finest spices. 
               Experience the rich culinary heritage of South India.
             </p>
@@ -88,13 +88,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display text-lg font-semibold text-cream mb-4">Quick Links</h4>
+            <h4 className="font-display text-lg font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-cream/60 hover:text-saffron transition-colors"
+                    className="text-sm text-cream/90 hover:text-saffron transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -105,13 +105,13 @@ export default function Footer() {
 
           {/* Menu Categories */}
           <div>
-            <h4 className="font-display text-lg font-semibold text-cream mb-4">Our Menu</h4>
+            <h4 className="font-display text-lg font-semibold text-white mb-4">Our Menu</h4>
             <ul className="space-y-2">
               {menuCategories.map((cat) => (
                 <li key={cat}>
                   <Link
                     to="/menu"
-                    className="text-sm text-cream/60 hover:text-saffron transition-colors"
+                    className="text-sm text-cream/90 hover:text-saffron transition-colors"
                   >
                     {cat}
                   </Link>
@@ -122,25 +122,25 @@ export default function Footer() {
 
           {/* Contact & Newsletter */}
           <div>
-            <h4 className="font-display text-lg font-semibold text-cream mb-4">Contact Us</h4>
+            <h4 className="font-display text-lg font-semibold text-white mb-4">Contact Us</h4>
             <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-2 text-sm text-cream/60">
+              <li className="flex items-start gap-2 text-sm text-cream/90">
                 <MapPin className="w-4 h-4 text-saffron mt-0.5 shrink-0" />
                 <span>123 Spice Garden Road, Chennai, Tamil Nadu 600001</span>
               </li>
-              <li className="flex items-center gap-2 text-sm text-cream/60">
+              <li className="flex items-center gap-2 text-sm text-cream/90">
                 <Phone className="w-4 h-4 text-saffron shrink-0" />
                 <a href="tel:+917845582661" className="hover:text-saffron transition-colors">
                   +91 78455 82661
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-cream/60">
+              <li className="flex items-center gap-2 text-sm text-cream/90">
                 <Mail className="w-4 h-4 text-saffron shrink-0" />
                 <a href="mailto:isacksanthosh@gmail.com" className="hover:text-saffron transition-colors">
                   isacksanthosh@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-sm text-cream/60">
+              <li className="flex items-start gap-2 text-sm text-cream/90">
                 <Clock className="w-4 h-4 text-saffron mt-0.5 shrink-0" />
                 <div>
                   <p>Mon–Fri: 7:00 AM – 10:30 PM</p>
@@ -156,10 +156,10 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-saffron/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-cream/40">
+          <p className="text-xs text-cream/70">
             © {year} Coal & Curry. All rights reserved.
           </p>
-          <p className="text-xs text-cream/40 flex items-center gap-1">
+          <p className="text-xs text-cream/70 flex items-center gap-1">
             Built with{" "}
             <Heart className="w-3 h-3 text-saffron fill-saffron" />{" "}
             using{" "}

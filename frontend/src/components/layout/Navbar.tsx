@@ -50,10 +50,10 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden sm:block">
-              <span className="font-display text-xl font-bold text-cream group-hover:text-saffron transition-colors">
+              <span className="font-display text-xl font-bold text-white group-hover:text-saffron transition-colors">
                 Coal & Curry
               </span>
-              <p className="text-xs text-cream/60 leading-none">South Indian Multi-Cuisine</p>
+              <p className="text-xs text-cream/80 leading-none">South Indian Multi-Cuisine</p>
             </div>
           </Link>
 
@@ -66,7 +66,7 @@ export default function Navbar() {
                 className={`px-3 py-2 text-sm font-body font-medium rounded-md transition-colors ${
                   isActive(link.path)
                     ? "text-saffron bg-saffron/10"
-                    : "text-cream/80 hover:text-saffron hover:bg-saffron/10"
+                    : "text-white hover:text-saffron hover:bg-saffron/10"
                 }`}
               >
                 {link.label}
@@ -78,12 +78,12 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               to="/cart"
-              className="relative p-2 text-cream hover:text-saffron transition-colors"
+              className="relative p-2 text-white hover:text-saffron transition-colors"
               aria-label="Cart"
             >
               <ShoppingCart className="w-6 h-6" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-deep-red text-cream text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-deep-red text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
                   {cartCount > 99 ? "99+" : cartCount}
                 </span>
               )}
@@ -97,9 +97,9 @@ export default function Navbar() {
               Book Table
             </Link>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Toggle — three-line hamburger icon */}
             <button
-              className="lg:hidden p-2 text-cream hover:text-saffron transition-colors"
+              className="lg:hidden p-2 text-white hover:text-saffron transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -121,7 +121,7 @@ export default function Navbar() {
                 className={`px-4 py-3 text-sm font-medium rounded-md transition-colors ${
                   isActive(link.path)
                     ? "text-saffron bg-saffron/10"
-                    : "text-cream/80 hover:text-saffron hover:bg-saffron/10"
+                    : "text-white hover:text-saffron hover:bg-saffron/10"
                 }`}
               >
                 {link.label}

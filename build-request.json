@@ -1,77 +1,71 @@
 {
   "kind": "build_request",
-  "title": "Fix font colors to white on Review, Filter, and Contact pages",
-  "projectName": "Coal & Curry",
-  "priority": "high",
+  "title": "Fix footer font colours and hamburger/filter menu icon colours for readability",
+  "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "On the Reviews page (and the CustomerReviews component used on Home), change all text elements — including review body text, reviewer names, star ratings, date labels, and any headings — to white or a light-contrast color (e.g., white or off-white) so they are fully legible against the dark background.",
+      "text": "Update all text colours in the footer section (Footer.tsx) to a readable, high-contrast colour suitable for the dark background — including brand info, quick navigation links, menu category links, contact details, and newsletter text. Ensure all text meets readable contrast standards.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-5"
         ],
         "quotes": [
-          "Change the colour of the font in review page"
+          "the last part of the page change the colour of the for with suitable for reading text"
         ]
       },
       "acceptanceCriteria": [
-        "All text in the Reviews/CustomerReviews section is white or off-white and clearly readable against the background.",
-        "Reviewer names, review body text, star rating labels, and pagination controls all have sufficient contrast.",
-        "No dark-on-dark or invisible text remains in the reviews area."
+        "All text in the footer is clearly readable against the footer background",
+        "Section headings, body text, links, and labels in the footer all use a suitable high-contrast colour",
+        "No footer text appears invisible or low-contrast against its background"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "On the Menu page filter/tab section (MenuTabs component and any search/filter controls on the Menu page), change all filter tab labels, search input text, placeholder text, and category button text to white or a legible light color so they are visible against the dark or colored backgrounds.",
+      "text": "Update the colour of the hamburger menu icon (three-line icon) in the Navbar (Navbar.tsx) to a suitable, high-contrast colour so it is clearly visible against the navbar background on mobile.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-5"
         ],
         "quotes": [
-          "Change the colour of the font in review page , filter"
+          "the three line near cartoon button in that also change the filters colur as suitable one"
         ]
       },
       "acceptanceCriteria": [
-        "All tab labels in MenuTabs are white and readable against their backgrounds.",
-        "Active and inactive tab states both have legible white or light-colored text.",
-        "Search bar placeholder and typed text are white or off-white.",
-        "No filter-related text is invisible or hard to read."
+        "The three-line (hamburger) icon in the mobile navbar is clearly visible against the navbar background",
+        "The icon colour is consistent with the overall design palette and readable at all scroll states"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "On the Contact page (frontend/src/pages/Contact.tsx), change all text elements — including section headings, labels, address/phone/email info, business hours, form field labels, input placeholder text, and button text — to white or a light-contrast color wherever text appears against a dark or colored background.",
+      "text": "Update the filter tab colours in the MenuTabs component (MenuTabs.tsx) to a suitable, readable colour — including active and inactive tab states — so the filter labels are clearly visible against the tab bar background.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-5"
         ],
         "quotes": [
-          "Change the colour of the font in review page , filter , contact page likewise change the colour of the font to white where it is needed"
+          "change the filters colur as suitable one"
         ]
       },
       "acceptanceCriteria": [
-        "All headings and body text on the Contact page are white or off-white and clearly readable.",
-        "Form labels, input placeholder text, and helper text are legible white on their backgrounds.",
-        "Contact info items (address, phone, email, hours) display in white with sufficient contrast.",
-        "Button text and icon labels on the Contact page are readable.",
-        "No text on the Contact page is invisible or unreadably dark."
+        "All filter tab labels in MenuTabs are clearly readable in both active and inactive states",
+        "Tab text and icons have sufficient contrast against the tab bar background",
+        "Active tab is visually distinguishable from inactive tabs with readable colours"
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui/.",
-    "Do not change layout, spacing, or non-text visual elements — only fix text/font colors.",
-    "Preserve the existing dark/restaurant theme; only update text colors to white or off-white where contrast is insufficient."
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui/",
+    "Do not alter the overall layout or structure of the Footer, Navbar, or MenuTabs components — only update colours"
   ],
   "nonGoals": [
-    "Redesigning or restructuring any pages.",
-    "Changing background colors, images, or overall theme.",
-    "Updating text colors on pages other than Reviews, Filter/Menu, and Contact.",
-    "Backend changes of any kind."
+    "Redesigning the footer layout or structure",
+    "Adding new navigation items or sections",
+    "Changing fonts or typography sizes",
+    "Modifying backend logic"
   ],
   "imageRequirements": {
     "required": [],

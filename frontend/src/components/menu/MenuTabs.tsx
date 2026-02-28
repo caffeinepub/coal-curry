@@ -22,7 +22,7 @@ export default function MenuTabs({ activeCategory, onCategoryChange }: MenuTabsP
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all shrink-0 ${
                 activeCategory === cat.id
                   ? "bg-saffron text-charcoal shadow-warm font-bold"
-                  : "bg-white/10 text-white hover:bg-saffron/20 hover:text-saffron border border-white/20"
+                  : "bg-white/15 text-white hover:bg-saffron/30 hover:text-saffron border border-white/30"
               }`}
             >
               <span>{cat.emoji}</span>

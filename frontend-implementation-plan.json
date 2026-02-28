@@ -1,66 +1,52 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Fix font colors to white on Review, Filter, and Contact pages",
+  "title": "Fix footer font colours and hamburger/filter menu icon colours for readability",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Change all text elements in the Reviews page and CustomerReviews component to white or off-white for legibility against the dark background",
+      "summary": "Update all text colours in the footer section to high-contrast, readable colours suitable for the dark background",
       "acceptanceCriteria": [
-        "All text in the Reviews/CustomerReviews section is white or off-white and clearly readable against the background.",
-        "Reviewer names, review body text, star rating labels, and pagination controls all have sufficient contrast.",
-        "No dark-on-dark or invisible text remains in the reviews area."
+        "All text in the footer is clearly readable against the footer background",
+        "Section headings, body text, links, and labels in the footer all use a suitable high-contrast colour",
+        "No footer text appears invisible or low-contrast against its background"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/home/CustomerReviews.tsx",
+          "path": "frontend/src/components/layout/Footer.tsx",
           "operation": "modify",
-          "description": "Update all text color classes (review body text, reviewer names, star rating labels, date labels, headings, and pagination controls) to use white or off-white colors (e.g., text-white, text-gray-100, text-cream) to ensure legibility against the dark background. Replace any dark text colors (text-gray-800, text-gray-900, text-black) with light variants."
-        },
-        {
-          "path": "frontend/src/pages/Reviews.tsx",
-          "operation": "modify",
-          "description": "Update all text color classes throughout the Reviews page (including headings, review body text, reviewer names, star rating labels, date stamps, and any filter/sort controls) to white or off-white colors for contrast against the dark theme. Ensure pagination controls and any other interactive text elements are also set to light colors."
+          "description": "Update all text colour classes in the Footer component to ensure high contrast against the dark background. Change brand info text, section headings (Quick Links, Our Menu, Contact Us), navigation links, menu category links, contact details, and newsletter text to use light/white colours (e.g., text-white, text-gray-100, text-gray-200) for maximum readability. Ensure hover states maintain good contrast."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Change all filter tab labels, search input text, placeholder text, and category button text in the Menu page filter section to white or legible light color",
+      "summary": "Update the hamburger menu icon colour in the mobile navbar to high-contrast for clear visibility",
       "acceptanceCriteria": [
-        "All tab labels in MenuTabs are white and readable against their backgrounds.",
-        "Active and inactive tab states both have legible white or light-colored text.",
-        "Search bar placeholder and typed text are white or off-white.",
-        "No filter-related text is invisible or hard to read."
+        "The three-line (hamburger) icon in the mobile navbar is clearly visible against the navbar background",
+        "The icon colour is consistent with the overall design palette and readable at all scroll states"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/menu/MenuTabs.tsx",
+          "path": "frontend/src/components/layout/Navbar.tsx",
           "operation": "modify",
-          "description": "Update all tab label text colors (both active and inactive states) to white or off-white. Replace any dark text color classes with light variants (text-white, text-gray-100, text-cream) to ensure category button text is legible against their backgrounds."
-        },
-        {
-          "path": "frontend/src/pages/Menu.tsx",
-          "operation": "modify",
-          "description": "Update the search input field's text color and placeholder color to white or off-white. Ensure any filter control labels, sort dropdowns, or other text elements on the Menu page use light colors for contrast. Replace dark text classes with text-white, text-gray-100, or text-cream as appropriate."
+          "description": "Update the colour of the hamburger menu icon (three-line button) in the mobile navigation section to ensure high contrast against the navbar background. Apply suitable colour classes (e.g., text-white, text-gray-100, or theme-appropriate contrast colours) to the icon SVG or button element. Ensure the colour works well in both scrolled and non-scrolled navbar states."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Change all text elements on the Contact page to white or light-contrast color for legibility against dark or colored backgrounds",
+      "summary": "Update filter tab colours in MenuTabs to readable, high-contrast colours for both active and inactive states",
       "acceptanceCriteria": [
-        "All headings and body text on the Contact page are white or off-white and clearly readable.",
-        "Form labels, input placeholder text, and helper text are legible white on their backgrounds.",
-        "Contact info items (address, phone, email, hours) display in white with sufficient contrast.",
-        "Button text and icon labels on the Contact page are readable.",
-        "No text on the Contact page is invisible or unreadably dark."
+        "All filter tab labels in MenuTabs are clearly readable in both active and inactive states",
+        "Tab text and icons have sufficient contrast against the tab bar background",
+        "Active tab is visually distinguishable from inactive tabs with readable colours"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/Contact.tsx",
+          "path": "frontend/src/components/menu/MenuTabs.tsx",
           "operation": "modify",
-          "description": "Update all text color classes throughout the Contact page including section headings, body text, form field labels, input placeholder text, contact info items (address, phone, email, business hours), button text, icon labels, and helper text to white or off-white colors (text-white, text-gray-100, text-cream). Replace all dark text color classes to ensure sufficient contrast against the page's dark or colored backgrounds."
+          "description": "Update the text and background colour classes for both active and inactive tab states in the MenuTabs component. Ensure inactive tabs use a high-contrast text colour (e.g., text-gray-700, text-gray-800) against their background, and active tabs use a contrasting colour scheme (e.g., dark text on light background or light text on dark background) that clearly distinguishes them while maintaining readability. Adjust any icon colours to match the text contrast requirements."
         }
       ]
     }
