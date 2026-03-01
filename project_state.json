@@ -1,38 +1,48 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "New project",
-  "architectural_notes": [],
+  "summary": "Restaurant website for 'Coal & Curry' deployed on the Internet Computer. User requested SEO tags to be added for better Google discoverability.",
+  "architectural_notes": [
+    "Project is deployed on the Internet Computer (ICP) with a canister-based URL (https://[canister-id].icp0.io)"
+  ],
   "known_issues": [],
   "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-update-all-text-colours-in-the-footer-section-footer-tsx-to-a-readable-high-contrast-colour-suitable-for-the-dark-background-including-brand-info-quick-navigation-links-menu-category-links-contact-details-and-newsletter-text-ensure-all-text-meets-readable-contrast-standards",
-      "title": "Update all text colours in the footer section (Footer.tsx) to a readable, high-contrast colour suitable for the dark background — including brand info, quick navigation links, menu category links, contact details, and newsletter text. Ensure all text meets readable contrast standards.",
+      "id": "feature-update-frontend-index-html-to-include-a-descriptive-page-title-coal-curry-authentic-chettinad-restaurant-a-meta-description-summarizing-the-restaurant-relevant-keywords-meta-tag-open-graph-tags-og-title-og-description-og-type-og-url-og-image-and-twitter-card-meta-tags-so-the-site-is-discoverable-and-renders-rich-previews-when-shared",
+      "title": "Update frontend/index.html to include a descriptive page title ('Coal & Curry | Authentic Chettinad Restaurant'), a meta description summarizing the restaurant, relevant keywords meta tag, Open Graph tags (og:title, og:description, og:type, og:url, og:image), and Twitter Card meta tags so the site is discoverable and renders rich previews when shared.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-update-the-colour-of-the-hamburger-menu-icon-three-line-icon-in-the-navbar-navbar-tsx-to-a-suitable-high-contrast-colour-so-it-is-clearly-visible-against-the-navbar-background-on-mobile",
-      "title": "Update the colour of the hamburger menu icon (three-line icon) in the Navbar (Navbar.tsx) to a suitable, high-contrast colour so it is clearly visible against the navbar background on mobile.",
+      "id": "feature-ensure-the-existing-seohead-component-frontend-src-components-seo-seohead-tsx-is-used-on-every-page-home-about-menu-offers-gallery-blog-contact-reservation-loyalty-with-accurate-unique-page-level-title-meta-description-canonical-url-open-graph-and-twitter-card-values-tailored-to-each-page-s-content",
+      "title": "Ensure the existing SEOHead component (frontend/src/components/seo/SEOHead.tsx) is used on every page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) with accurate, unique page-level title, meta description, canonical URL, Open Graph, and Twitter Card values tailored to each page's content.",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
     },
     {
-      "id": "feature-update-the-filter-tab-colours-in-the-menutabs-component-menutabs-tsx-to-a-suitable-readable-colour-including-active-and-inactive-tab-states-so-the-filter-labels-are-clearly-visible-against-the-tab-bar-background",
-      "title": "Update the filter tab colours in the MenuTabs component (MenuTabs.tsx) to a suitable, readable colour — including active and inactive tab states — so the filter labels are clearly visible against the tab bar background.",
+      "id": "feature-verify-and-update-the-existing-robots-txt-frontend-public-robots-txt-and-sitemap-xml-frontend-public-sitemap-xml-to-ensure-all-public-pages-are-included-with-accurate-urls-using-the-canonical-domain-correct-priorities-and-up-to-date-lastmod-dates-so-google-can-crawl-and-index-the-site-efficiently",
+      "title": "Verify and update the existing robots.txt (frontend/public/robots.txt) and sitemap.xml (frontend/public/sitemap.xml) to ensure all public pages are included with accurate URLs (using the canonical domain), correct priorities, and up-to-date lastmod dates so Google can crawl and index the site efficiently.",
       "reqIds": [
         "REQ-3"
       ],
       "version": 1
     }
   ],
-  "new_feature_requests": [],
-  "projectName": "Fix footer font colours and hamburger/filter menu icon colours for readability",
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add SEO tags (title, meta description, keywords) to Coal & Curry website",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Coal & Curry",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

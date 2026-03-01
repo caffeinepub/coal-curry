@@ -1,11 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Fix text and icon colour readability issues in the Footer, Navbar hamburger icon, and MenuTabs filter tabs.
+**Goal:** Add comprehensive SEO meta tags across all pages of the Coal & Curry website to improve discoverability and enable rich social media previews.
 
 **Planned changes:**
-- Update all text colours in `Footer.tsx` (brand info, navigation links, menu category links, contact details, newsletter text) to high-contrast colours readable against the dark footer background
-- Update the hamburger menu icon colour in `Navbar.tsx` to a high-contrast, clearly visible colour against the navbar background on mobile
-- Update filter tab label and icon colours in `MenuTabs.tsx` for both active and inactive states to ensure readability against the tab bar background
+- Update `frontend/index.html` with a descriptive `<title>`, meta description, keywords, Open Graph tags (og:title, og:description, og:type, og:url, og:image), and Twitter Card tags
+- Add the existing `SEOHead` component to every public page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) with unique, page-specific title, description, canonical URL, Open Graph, and Twitter Card values
+- Update `frontend/public/robots.txt` to reference the correct sitemap URL and ensure no public pages are blocked
+- Update `frontend/public/sitemap.xml` to include all 9 public pages with canonical URLs, correct priorities, and updated lastmod dates
 
-**User-visible outcome:** All footer text, the mobile hamburger icon, and menu filter tabs are clearly readable with sufficient contrast against their backgrounds.
+**User-visible outcome:** The site will display rich link previews when shared on social media, and all public pages will be properly indexed by search engines with accurate, unique metadata.

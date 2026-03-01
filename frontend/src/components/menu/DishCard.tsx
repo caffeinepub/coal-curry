@@ -1,4 +1,4 @@
-import { ShoppingCart, Flame, Leaf, Plus, Minus } from "lucide-react";
+import { ShoppingCart, Flame, Leaf, Plus, Minus, UtensilsCrossed } from "lucide-react";
 import { MenuItem } from "../../data/menuData";
 import { useCart } from "../../contexts/CartContext";
 
@@ -6,20 +6,40 @@ interface DishCardProps {
   dish: MenuItem;
 }
 
+function spiceLevelLabel(level: number): string {
+  if (level <= 1) return "Mild";
+  if (level <= 2) return "Medium";
+  if (level <= 3) return "Spicy";
+  if (level <= 4) return "Hot";
+  return "Extra Hot";
+}
+
 export default function DishCard({ dish }: DishCardProps) {
   const { addToCart, cartItems, updateQuantity } = useCart();
   const cartItem = cartItems.find((i) => i.id === dish.id);
   const quantity = cartItem?.quantity ?? 0;
+  const spiceLevel = dish.spiceLevel ?? 0;
 
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-warm transition-all hover:-translate-y-0.5 group border border-border">
       {/* Image */}
-      <div className="relative h-44 overflow-hidden">
+      <div className="relative h-44 overflow-hidden bg-cream">
         <img
           src={dish.image}
           alt={dish.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          onError={(e) => {
+            const target = e.currentTarget;
+            target.style.display = "none";
+            const fallback = target.nextElementSibling as HTMLElement;
+            if (fallback) fallback.style.display = "flex";
+          }}
         />
+        <div className="w-full h-full hidden flex-col items-center justify-center gap-2 bg-charcoal/10 absolute inset-0">
+          <UtensilsCrossed className="w-10 h-10 text-saffron/40" />
+          <span className="text-xs text-muted-foreground text-center px-2 line-clamp-2">{dish.name}</span>
+        </div>
+
         {/* Veg/Non-veg */}
         <div className="absolute top-2 left-2">
           {dish.isVeg ? (
@@ -32,6 +52,7 @@ export default function DishCard({ dish }: DishCardProps) {
             </span>
           )}
         </div>
+
         {/* Signature */}
         {dish.isSignature && (
           <div className="absolute top-2 right-2">
@@ -48,16 +69,16 @@ export default function DishCard({ dish }: DishCardProps) {
         <p className="text-xs text-muted-foreground mb-3 line-clamp-2 leading-relaxed">{dish.description}</p>
 
         {/* Spice Level */}
-        {dish.spiceLevel > 0 && (
+        {spiceLevel > 0 && (
           <div className="flex items-center gap-0.5 mb-3">
             {Array.from({ length: 5 }).map((_, i) => (
               <Flame
                 key={i}
-                className={`w-3 h-3 ${i < dish.spiceLevel ? "text-deep-red" : "text-muted-foreground/20"}`}
+                className={`w-3 h-3 ${i < spiceLevel ? "text-deep-red" : "text-muted-foreground/20"}`}
               />
             ))}
             <span className="text-xs text-muted-foreground ml-1">
-              {dish.spiceLevel <= 1 ? "Mild" : dish.spiceLevel <= 2 ? "Medium" : dish.spiceLevel <= 3 ? "Spicy" : dish.spiceLevel <= 4 ? "Hot" : "Extra Hot"}
+              {spiceLevelLabel(spiceLevel)}
             </span>
           </div>
         )}

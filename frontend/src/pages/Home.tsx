@@ -9,31 +9,33 @@ const restaurantSchema = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: "Coal & Curry",
-  description: "Authentic South Indian Multi-Cuisine Restaurant in Chennai",
+  description: "Authentic Chettinad Restaurant in Neyveli, Tamil Nadu. Traditional coal-grilled specialties, biryanis, dosas, and South Indian classics.",
   url: "https://coalandcurry.com",
   telephone: "+917845582661",
   email: "isacksanthosh@gmail.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Spice Garden Road",
-    addressLocality: "Chennai",
+    streetAddress: "Neyveli",
+    addressLocality: "Neyveli",
     addressRegion: "Tamil Nadu",
-    postalCode: "600001",
+    postalCode: "607803",
     addressCountry: "IN",
   },
-  servesCuisine: ["South Indian", "Chettinad", "Tamil", "Kerala", "Seafood"],
+  servesCuisine: ["Chettinad", "South Indian", "Tamil", "Coal-Grilled", "Biryani"],
   priceRange: "₹₹",
-  openingHours: ["Mo-Fr 07:00-22:30", "Sa-Su 07:00-23:00"],
-  image: "/assets/generated/hero-bg.dim_1920x1080.png",
+  openingHours: ["Mo-Fr 11:00-23:00", "Sa-Su 10:00-23:30"],
+  image: "/assets/generated/hero-coal-curry.dim_1920x1080.png",
 };
 
 export default function Home() {
   return (
     <>
       <SEOHead
-        title="Coal & Curry | Authentic South Indian Multi-Cuisine Restaurant"
-        description="Experience authentic South Indian multi-cuisine at Coal & Curry, Chennai. Dosas, Biryanis, Chettinad Curries, Seafood Specials, and more. Book a table today!"
-        ogImage="/assets/generated/hero-bg.dim_1920x1080.png"
+        title="Coal & Curry | Authentic Chettinad Restaurant – Neyveli, Tamil Nadu"
+        description="Experience authentic Chettinad cuisine with traditional coal-grilled specialties, biryanis, dosas, and South Indian classics in a warm, inviting atmosphere. Book a table today!"
+        canonical="https://coalandcurry.com/"
+        ogUrl="https://coalandcurry.com/"
+        ogImage="/assets/generated/hero-coal-curry.dim_1920x1080.png"
         jsonLd={restaurantSchema}
       />
 
@@ -121,8 +123,8 @@ export default function Home() {
               </div>
               <div>
                 <p className="font-display font-bold text-charcoal">Opening Hours</p>
-                <p className="text-sm text-muted-foreground">Mon–Fri: 7 AM – 10:30 PM</p>
-                <p className="text-sm text-muted-foreground">Sat–Sun: 7 AM – 11 PM</p>
+                <p className="text-sm text-muted-foreground">Mon–Fri: 11 AM – 11 PM</p>
+                <p className="text-sm text-muted-foreground">Sat–Sun: 10 AM – 11:30 PM</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-3">
@@ -131,8 +133,8 @@ export default function Home() {
               </div>
               <div>
                 <p className="font-display font-bold text-charcoal">Location</p>
-                <p className="text-sm text-muted-foreground">123 Spice Garden Road</p>
-                <p className="text-sm text-muted-foreground">Chennai, Tamil Nadu 600001</p>
+                <p className="text-sm text-muted-foreground">Neyveli, Tamil Nadu</p>
+                <p className="text-sm text-muted-foreground">607 803, India</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-3">

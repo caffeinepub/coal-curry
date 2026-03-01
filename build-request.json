@@ -1,71 +1,79 @@
 {
   "kind": "build_request",
-  "title": "Fix footer font colours and hamburger/filter menu icon colours for readability",
+  "title": "Add SEO meta tags to all pages",
+  "projectName": "Coal & Curry",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Update all text colours in the footer section (Footer.tsx) to a readable, high-contrast colour suitable for the dark background — including brand info, quick navigation links, menu category links, contact details, and newsletter text. Ensure all text meets readable contrast standards.",
+      "text": "Update frontend/index.html to include a descriptive page title ('Coal & Curry | Authentic Chettinad Restaurant'), a meta description summarizing the restaurant, relevant keywords meta tag, Open Graph tags (og:title, og:description, og:type, og:url, og:image), and Twitter Card meta tags so the site is discoverable and renders rich previews when shared.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-5"
         ],
         "quotes": [
-          "the last part of the page change the colour of the for with suitable for reading text"
+          "Yes add SEO tags"
         ]
       },
       "acceptanceCriteria": [
-        "All text in the footer is clearly readable against the footer background",
-        "Section headings, body text, links, and labels in the footer all use a suitable high-contrast colour",
-        "No footer text appears invisible or low-contrast against its background"
+        "index.html contains a <title> tag with 'Coal & Curry | Authentic Chettinad Restaurant'",
+        "index.html contains a <meta name='description'> tag with a concise restaurant description",
+        "index.html contains <meta name='keywords'> with relevant terms (Chettinad, biryani, restaurant, etc.)",
+        "index.html contains Open Graph tags: og:title, og:description, og:type, og:url, og:image",
+        "index.html contains Twitter Card tags: twitter:card, twitter:title, twitter:description"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Update the colour of the hamburger menu icon (three-line icon) in the Navbar (Navbar.tsx) to a suitable, high-contrast colour so it is clearly visible against the navbar background on mobile.",
+      "text": "Ensure the existing SEOHead component (frontend/src/components/seo/SEOHead.tsx) is used on every page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) with accurate, unique page-level title, meta description, canonical URL, Open Graph, and Twitter Card values tailored to each page's content.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-5"
         ],
         "quotes": [
-          "the three line near cartoon button in that also change the filters colur as suitable one"
+          "Yes add SEO tags"
         ]
       },
       "acceptanceCriteria": [
-        "The three-line (hamburger) icon in the mobile navbar is clearly visible against the navbar background",
-        "The icon colour is consistent with the overall design palette and readable at all scroll states"
+        "Every public page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) renders an <SEOHead> component with a unique title and description",
+        "Each page's title follows the pattern '[Page Name] | Coal & Curry'",
+        "Each page's meta description is unique and accurately describes that page's content",
+        "Canonical URLs are set per page using the coalandcurry.com domain",
+        "Open Graph and Twitter Card tags are populated on every page"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Update the filter tab colours in the MenuTabs component (MenuTabs.tsx) to a suitable, readable colour — including active and inactive tab states — so the filter labels are clearly visible against the tab bar background.",
+      "text": "Verify and update the existing robots.txt (frontend/public/robots.txt) and sitemap.xml (frontend/public/sitemap.xml) to ensure all public pages are included with accurate URLs (using the canonical domain), correct priorities, and up-to-date lastmod dates so Google can crawl and index the site efficiently.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-5"
         ],
         "quotes": [
-          "change the filters colur as suitable one"
+          "Yes add SEO tags"
         ]
       },
       "acceptanceCriteria": [
-        "All filter tab labels in MenuTabs are clearly readable in both active and inactive states",
-        "Tab text and icons have sufficient contrast against the tab bar background",
-        "Active tab is visually distinguishable from inactive tabs with readable colours"
+        "robots.txt references the correct sitemap URL",
+        "sitemap.xml lists all 9 public pages with valid canonical URLs",
+        "sitemap.xml has updated lastmod dates",
+        "No public pages are accidentally blocked in robots.txt"
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui/",
-    "Do not alter the overall layout or structure of the Footer, Navbar, or MenuTabs components — only update colours"
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui",
+    "Cart and Checkout pages must remain noindex as currently implemented",
+    "Use the existing SEOHead component — do not create a duplicate SEO mechanism"
   ],
   "nonGoals": [
-    "Redesigning the footer layout or structure",
-    "Adding new navigation items or sections",
-    "Changing fonts or typography sizes",
-    "Modifying backend logic"
+    "Google Search Console setup or submission (manual step for the user)",
+    "Google Business Profile or Google Maps listing",
+    "Paid search or advertising setup",
+    "Structured data changes beyond what SEOHead already supports"
   ],
   "imageRequirements": {
     "required": [],

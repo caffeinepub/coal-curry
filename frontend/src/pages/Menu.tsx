@@ -21,9 +21,11 @@ export default function Menu() {
   return (
     <>
       <SEOHead
-        title="South Indian Multi-Cuisine Menu | Coal & Curry"
-        description="Explore our extensive South Indian menu with 9 categories: Starters, Dosas, Idly & Vada, Rice & Biryani, Curries, Breads, Seafood Specials, Desserts, and Drinks."
-        ogImage="/assets/generated/gallery-food-spread.dim_1200x800.png"
+        title="Menu | Coal & Curry – Veg Starters, Coal Specials, Biryani & More"
+        description="Browse our full menu featuring coal-grilled specials, Chettinad biryanis, crispy dosas, veg starters, and refreshing beverages. Authentic South Indian flavours with a smoky coal twist."
+        canonical="https://coalandcurry.com/menu"
+        ogUrl="https://coalandcurry.com/menu"
+        ogImage="/assets/generated/dish-chettinad-biryani.dim_800x600.png"
       />
 
       {/* Page Header */}
@@ -34,7 +36,7 @@ export default function Menu() {
             Our Menu
           </h1>
           <p className="text-white/70 max-w-xl mx-auto mb-8">
-            50+ authentic South Indian dishes across 9 categories — from crispy Dosas to fiery Chettinad Curries.
+            Authentic South Indian flavours across 5 categories — from crispy Veg Starters to smoky Coal Specials and refreshing Beverages.
           </p>
           {/* Search */}
           <div className="relative max-w-md mx-auto">

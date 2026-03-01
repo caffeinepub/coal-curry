@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-27T14:22:32.443Z",
+  "generatedAt": "2026-03-01T07:00:42.389Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -12,35 +12,45 @@
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Update all text colours in the footer section (Footer.tsx) to a readable, high-contrast colour suitable for the dark background — including brand info, quick navigation links, menu category links, contact details, and newsletter text. Ensure all text meets readable contrast standards.",
+        "summary": "Update frontend/index.html to include a descriptive page title ('Coal & Curry | Authentic Chettinad Restaurant'), a meta description summarizing the restaurant, relevant keywords meta tag, Open Graph tags (og:title, og:description, og:type, og:url, og:image), and Twitter Card meta tags so the site is discoverable and renders rich previews when shared.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/layout/Footer.tsx"
+          "frontend/index.html"
         ],
         "matchedFiles": [
-          "frontend/src/components/layout/Footer.tsx"
+          "frontend/index.html"
         ]
       },
       {
         "id": "REQ-2",
-        "summary": "Update the colour of the hamburger menu icon (three-line icon) in the Navbar (Navbar.tsx) to a suitable, high-contrast colour so it is clearly visible against the navbar background on mobile.",
+        "summary": "Ensure the existing SEOHead component (frontend/src/components/seo/SEOHead.tsx) is used on every page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) with accurate, unique page-level title, meta description, canonical URL, Open Graph, and Twitter Card values tailored to each page's content.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/layout/Navbar.tsx"
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/About.tsx",
+          "frontend/src/pages/Menu.tsx",
+          "frontend/src/pages/Offers.tsx",
+          "frontend/src/pages/Gallery.tsx",
+          "frontend/src/pages/Blog.tsx",
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/pages/Reservation.tsx",
+          "frontend/src/pages/Loyalty.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/layout/Navbar.tsx"
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/Menu.tsx"
         ]
       },
       {
         "id": "REQ-3",
-        "summary": "Update the filter tab colours in the MenuTabs component (MenuTabs.tsx) to a suitable, readable colour — including active and inactive tab states — so the filter labels are clearly visible against the tab bar background.",
+        "summary": "Verify and update the existing robots.txt (frontend/public/robots.txt) and sitemap.xml (frontend/public/sitemap.xml) to ensure all public pages are included with accurate URLs (using the canonical domain), correct priorities, and up-to-date lastmod dates so Google can crawl and index the site efficiently.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/menu/MenuTabs.tsx"
+          "frontend/public/robots.txt",
+          "frontend/public/sitemap.xml"
         ],
         "matchedFiles": [
-          "frontend/src/components/menu/MenuTabs.tsx"
+          "frontend/public/sitemap.xml"
         ]
       }
     ]
@@ -50,9 +60,10 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/layout/Footer.tsx",
-    "frontend/src/components/layout/Navbar.tsx",
-    "frontend/src/components/menu/MenuTabs.tsx",
+    "frontend/index.html",
+    "frontend/public/sitemap.xml",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/Menu.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
