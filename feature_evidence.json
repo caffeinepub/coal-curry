@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-frontend-index-html-to-include-a-descriptive-page-title-coal-curry-authentic-chettinad-restaurant-a-meta-description-summarizing-the-restaurant-relevant-keywords-meta-tag-open-graph-tags-og-title-og-description-og-type-og-url-og-image-and-twitter-card-meta-tags-so-the-site-is-discoverable-and-renders-rich-previews-when-shared",
-      "featureTitle": "Update frontend/index.html to include a descriptive page title ('Coal & Curry | Authentic Chettinad Restaurant'), a meta description summarizing the restaurant, relevant keywords meta tag, Open Graph tags (og:title, og:description, og:type, og:url, og:image), and Twitter Card meta tags so the site is discoverable and renders rich previews when shared.",
+      "featureId": "feature-add-the-google-site-verification-meta-tag-meta-name-google-site-verification-content-xd35xiyzjcmzsazdaat9pflxd6bn5yfz5vakotrastu-inside-the-head-section-of-frontend-index-html",
+      "featureTitle": "Add the Google Site Verification meta tag `<meta name=\"google-site-verification\" content=\"xD35XIyzJcMzSAzDAaT9PFlXd6bn5Yfz5VAKoTrASTU\" />` inside the `<head>` section of `frontend/index.html`.",
       "files": [
         "frontend/index.html"
       ],
@@ -17,45 +17,6 @@
       ],
       "testIds": [
         "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-ensure-the-existing-seohead-component-frontend-src-components-seo-seohead-tsx-is-used-on-every-page-home-about-menu-offers-gallery-blog-contact-reservation-loyalty-with-accurate-unique-page-level-title-meta-description-canonical-url-open-graph-and-twitter-card-values-tailored-to-each-page-s-content",
-      "featureTitle": "Ensure the existing SEOHead component (frontend/src/components/seo/SEOHead.tsx) is used on every page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) with accurate, unique page-level title, meta description, canonical URL, Open Graph, and Twitter Card values tailored to each page's content.",
-      "files": [
-        "frontend/src/pages/Home.tsx",
-        "frontend/src/pages/Menu.tsx"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-verify-and-update-the-existing-robots-txt-frontend-public-robots-txt-and-sitemap-xml-frontend-public-sitemap-xml-to-ensure-all-public-pages-are-included-with-accurate-urls-using-the-canonical-domain-correct-priorities-and-up-to-date-lastmod-dates-so-google-can-crawl-and-index-the-site-efficiently",
-      "featureTitle": "Verify and update the existing robots.txt (frontend/public/robots.txt) and sitemap.xml (frontend/public/sitemap.xml) to ensure all public pages are included with accurate URLs (using the canonical domain), correct priorities, and up-to-date lastmod dates so Google can crawl and index the site efficiently.",
-      "files": [
-        "frontend/public/sitemap.xml"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-3"
       ],
       "confidence": "high"
     }

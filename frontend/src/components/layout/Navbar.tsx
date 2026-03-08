@@ -1,140 +1,128 @@
-import { useState, useEffect } from "react";
-import { Link, useRouter } from "@tanstack/react-router";
-import { ShoppingCart, Menu, X, UtensilsCrossed } from "lucide-react";
-import { useCart } from "../../contexts/CartContext";
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from '@tanstack/react-router';
+import { ShoppingCart, Menu, X, Flame } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
 
 const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "Menu", path: "/menu" },
-  { label: "About", path: "/about" },
-  { label: "Gallery", path: "/gallery" },
-  { label: "Offers", path: "/offers" },
-  { label: "Reservations", path: "/reservation" },
-  { label: "Blog", path: "/blog" },
-  { label: "Contact", path: "/contact" },
+  { label: 'Home', path: '/' },
+  { label: 'Menu', path: '/menu' },
+  { label: 'Offers', path: '/offers' },
+  { label: 'Gallery', path: '/gallery' },
+  { label: 'Blog', path: '/blog' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { cartCount } = useCart();
-  const router = useRouter();
-  const currentPath = router.state.location.pathname;
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const isActive = (path: string) =>
-    path === "/" ? currentPath === "/" : currentPath.startsWith(path);
+    path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || mobileOpen
-          ? "bg-charcoal shadow-warm-lg"
-          : "bg-gradient-to-b from-charcoal/80 to-transparent"
+        scrolled
+          ? 'bg-coal-900 shadow-premium border-b border-coal-700'
+          : 'bg-coal-950/90 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-saffron">
-              <img
-                src="/assets/generated/coal-curry-logo-circular.dim_512x512.png"
-                alt="Coal & Curry"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-display text-xl font-bold text-white group-hover:text-saffron transition-colors">
-                Coal & Curry
-              </span>
-              <p className="text-xs text-cream/80 leading-none">South Indian Multi-Cuisine</p>
-            </div>
-          </Link>
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 group">
+          <div className="w-9 h-9 rounded-full bg-ember-500 flex items-center justify-center shadow-glow-ember">
+            <Flame className="w-5 h-5 text-white" />
+          </div>
+          <span className="font-display font-bold text-xl text-white tracking-wide">
+            Coal <span className="text-gold-400">&</span> Curry
+          </span>
+        </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex items-center gap-1">
+          {navLinks.map((link) => (
+            <li key={link.path}>
               <Link
-                key={link.path}
                 to={link.path}
-                className={`px-3 py-2 text-sm font-body font-medium rounded-md transition-colors ${
+                className={`px-3 py-2 rounded text-sm font-semibold transition-colors duration-200 ${
                   isActive(link.path)
-                    ? "text-saffron bg-saffron/10"
-                    : "text-white hover:text-saffron hover:bg-saffron/10"
+                    ? 'text-gold-400 bg-coal-800'
+                    : 'text-white hover:text-gold-400 hover:bg-coal-800'
                 }`}
               >
                 {link.label}
               </Link>
-            ))}
-          </nav>
+            </li>
+          ))}
+        </ul>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-3">
-            <Link
-              to="/cart"
-              className="relative p-2 text-white hover:text-saffron transition-colors"
-              aria-label="Cart"
-            >
-              <ShoppingCart className="w-6 h-6" />
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-deep-red text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                  {cartCount > 99 ? "99+" : cartCount}
-                </span>
-              )}
-            </Link>
+        {/* Right Actions */}
+        <div className="flex items-center gap-3">
+          {/* Cart */}
+          <Link to="/cart" className="relative p-2 rounded-full hover:bg-coal-800 transition-colors">
+            <ShoppingCart className="w-5 h-5 text-white" />
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-ember-500 text-white text-xs font-bold flex items-center justify-center">
+                {cartCount}
+              </span>
+            )}
+          </Link>
 
-            <Link
-              to="/reservation"
-              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 bg-saffron text-charcoal text-sm font-bold rounded-md hover:bg-turmeric transition-colors"
-            >
-              <UtensilsCrossed className="w-4 h-4" />
-              Book Table
-            </Link>
+          {/* Book Table CTA */}
+          <Link
+            to="/reservation"
+            className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded bg-ember-500 hover:bg-ember-600 text-white font-bold text-sm transition-colors duration-200 shadow-glow-ember"
+          >
+            Book Table
+          </Link>
 
-            {/* Mobile Menu Toggle — three-line hamburger icon */}
-            <button
-              className="lg:hidden p-2 text-white hover:text-saffron transition-colors"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden p-2 rounded hover:bg-coal-800 transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen
+              ? <X className="w-6 h-6 text-white" />
+              : <Menu className="w-6 h-6 text-white" />
+            }
+          </button>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-charcoal border-t border-saffron/20">
-          <nav className="px-4 py-4 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMobileOpen(false)}
-                className={`px-4 py-3 text-sm font-medium rounded-md transition-colors ${
-                  isActive(link.path)
-                    ? "text-saffron bg-saffron/10"
-                    : "text-white hover:text-saffron hover:bg-saffron/10"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+        <div className="md:hidden bg-coal-900 border-t border-coal-700 px-4 py-4 space-y-1">
+          {navLinks.map((link) => (
             <Link
-              to="/reservation"
+              key={link.path}
+              to={link.path}
               onClick={() => setMobileOpen(false)}
-              className="mt-2 px-4 py-3 bg-saffron text-charcoal text-sm font-bold rounded-md text-center hover:bg-turmeric transition-colors"
+              className={`block px-4 py-3 rounded text-sm font-semibold transition-colors ${
+                isActive(link.path)
+                  ? 'text-gold-400 bg-coal-800'
+                  : 'text-white hover:text-gold-400 hover:bg-coal-800'
+              }`}
             >
-              Book a Table
+              {link.label}
             </Link>
-          </nav>
+          ))}
+          <Link
+            to="/reservation"
+            onClick={() => setMobileOpen(false)}
+            className="block mt-3 px-4 py-3 rounded bg-ember-500 hover:bg-ember-600 text-white font-bold text-sm text-center transition-colors"
+          >
+            Book Table
+          </Link>
         </div>
       )}
     </header>

@@ -1,56 +1,24 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-03-01T07:00:42.389Z",
+  "generatedAt": "2026-03-01T08:13:37.972Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Update frontend/index.html to include a descriptive page title ('Coal & Curry | Authentic Chettinad Restaurant'), a meta description summarizing the restaurant, relevant keywords meta tag, Open Graph tags (og:title, og:description, og:type, og:url, og:image), and Twitter Card meta tags so the site is discoverable and renders rich previews when shared.",
+        "summary": "Add the Google Site Verification meta tag `<meta name=\"google-site-verification\" content=\"xD35XIyzJcMzSAzDAaT9PFlXd6bn5Yfz5VAKoTrASTU\" />` inside the `<head>` section of `frontend/index.html`.",
         "status": "implemented",
         "plannedFiles": [
           "frontend/index.html"
         ],
         "matchedFiles": [
           "frontend/index.html"
-        ]
-      },
-      {
-        "id": "REQ-2",
-        "summary": "Ensure the existing SEOHead component (frontend/src/components/seo/SEOHead.tsx) is used on every page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) with accurate, unique page-level title, meta description, canonical URL, Open Graph, and Twitter Card values tailored to each page's content.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/pages/Home.tsx",
-          "frontend/src/pages/About.tsx",
-          "frontend/src/pages/Menu.tsx",
-          "frontend/src/pages/Offers.tsx",
-          "frontend/src/pages/Gallery.tsx",
-          "frontend/src/pages/Blog.tsx",
-          "frontend/src/pages/Contact.tsx",
-          "frontend/src/pages/Reservation.tsx",
-          "frontend/src/pages/Loyalty.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/pages/Home.tsx",
-          "frontend/src/pages/Menu.tsx"
-        ]
-      },
-      {
-        "id": "REQ-3",
-        "summary": "Verify and update the existing robots.txt (frontend/public/robots.txt) and sitemap.xml (frontend/public/sitemap.xml) to ensure all public pages are included with accurate URLs (using the canonical domain), correct priorities, and up-to-date lastmod dates so Google can crawl and index the site efficiently.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/robots.txt",
-          "frontend/public/sitemap.xml"
-        ],
-        "matchedFiles": [
-          "frontend/public/sitemap.xml"
         ]
       }
     ]
@@ -61,9 +29,6 @@
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
     "frontend/index.html",
-    "frontend/public/sitemap.xml",
-    "frontend/src/pages/Home.tsx",
-    "frontend/src/pages/Menu.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

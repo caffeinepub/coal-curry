@@ -1,103 +1,21 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add SEO meta tags to all pages",
+  "title": "Add Google Site Verification meta tag to index.html",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Update index.html with comprehensive SEO meta tags including title, description, keywords, Open Graph, and Twitter Card tags for discoverability and rich social previews",
+      "summary": "Add Google Site Verification meta tag to the head section of index.html",
       "acceptanceCriteria": [
-        "index.html contains a <title> tag with 'Coal & Curry | Authentic Chettinad Restaurant'",
-        "index.html contains a <meta name='description'> tag with a concise restaurant description",
-        "index.html contains <meta name='keywords'> with relevant terms (Chettinad, biryani, restaurant, etc.)",
-        "index.html contains Open Graph tags: og:title, og:description, og:type, og:url, og:image",
-        "index.html contains Twitter Card tags: twitter:card, twitter:title, twitter:description"
+        "The `<head>` section of `frontend/index.html` contains exactly `<meta name=\"google-site-verification\" content=\"xD35XIyzJcMzSAzDAaT9PFlXd6bn5Yfz5VAKoTrASTU\" />`.",
+        "No existing meta tags or other head content are removed or modified.",
+        "The page still renders correctly after the change."
       ],
       "file_operations": [
         {
           "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Add SEO meta tags to the <head> section: update <title> to 'Coal & Curry | Authentic Chettinad Restaurant', add <meta name='description'> with restaurant summary, add <meta name='keywords'> with terms like 'Chettinad restaurant, coal-grilled cuisine, authentic South Indian, biryani, dosa, tandoori', add Open Graph tags (og:title, og:description, og:type='restaurant', og:url='https://coalandcurry.com', og:image pointing to frontend/public/assets/generated/coal-curry-logo-horizontal.dim_800x300.png), and add Twitter Card tags (twitter:card='summary_large_image', twitter:title, twitter:description, twitter:image). Use the generated logo image as the social share preview image."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Ensure every public page renders the SEOHead component with unique, page-specific title, description, canonical URL, Open Graph, and Twitter Card values",
-      "acceptanceCriteria": [
-        "Every public page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) renders an <SEOHead> component with a unique title and description",
-        "Each page's title follows the pattern '[Page Name] | Coal & Curry'",
-        "Each page's meta description is unique and accurately describes that page's content",
-        "Canonical URLs are set per page using the coalandcurry.com domain",
-        "Open Graph and Twitter Card tags are populated on every page"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/Home.tsx",
-          "operation": "modify",
-          "description": "Add or update the <SEOHead> component call with title='Coal & Curry | Authentic Chettinad Restaurant', description='Experience authentic Chettinad cuisine with traditional coal-grilled specialties, biryanis, and South Indian classics in a warm, inviting atmosphere', canonical='https://coalandcurry.com/', and ogImage pointing to frontend/public/assets/generated/hero-coal-curry.dim_1920x1080.png. Ensure Twitter Card tags are included."
-        },
-        {
-          "path": "frontend/src/pages/About.tsx",
-          "operation": "modify",
-          "description": "Add or update the <SEOHead> component call with title='About Us | Coal & Curry', description='Learn about Coal & Curry's journey, our passionate chefs, and our commitment to authentic Chettinad flavors and hygiene standards', canonical='https://coalandcurry.com/about', and ogImage pointing to frontend/public/assets/generated/founder-portrait.dim_600x600.png."
-        },
-        {
-          "path": "frontend/src/pages/Menu.tsx",
-          "operation": "modify",
-          "description": "Add or update the <SEOHead> component call with title='Menu | Coal & Curry', description='Browse our extensive menu featuring coal-grilled specials, biryanis, dosas, Chettinad curries, and refreshing beverages', canonical='https://coalandcurry.com/menu', and ogImage pointing to frontend/public/assets/generated/dish-chettinad-biryani.dim_800x600.png."
-        },
-        {
-          "path": "frontend/src/pages/Offers.tsx",
-          "operation": "modify",
-          "description": "Add or update the <SEOHead> component call with title='Special Offers | Coal & Curry', description='Save on your favorites with our limited-time offers including Lunch Combos, Family Feasts, and Weekend Grill specials', canonical='https://coalandcurry.com/offers', and ogImage pointing to frontend/public/assets/generated/offers-banner-bg.dim_1920x600.png."
-        },
-        {
-          "path": "frontend/src/pages/Gallery.tsx",
-          "operation": "modify",
-          "description": "Add or update the <SEOHead> component call with title='Gallery | Coal & Curry', description='Explore our restaurant ambience, charcoal cooking techniques, signature dishes, and celebration moments captured in photos', canonical='https://coalandcurry.com/gallery', and ogImage pointing to frontend/public/assets/generated/gallery-charcoal-cooking.dim_1200x800.png."
-        },
-        {
-          "path": "frontend/src/pages/Blog.tsx",
-          "operation": "modify",
-          "description": "Add or update the <SEOHead> component call with title='Blog | Coal & Curry', description='Discover stories about Chettinad cuisine, cooking tips, cultural traditions, and culinary insights from our kitchen', canonical='https://coalandcurry.com/blog', and ogImage pointing to frontend/public/assets/generated/chettinad-chicken.dim_600x400.png."
-        },
-        {
-          "path": "frontend/src/pages/Contact.tsx",
-          "operation": "modify",
-          "description": "Add or update the <SEOHead> component call with title='Contact Us | Coal & Curry', description='Get in touch with Coal & Curry. Find our location, hours, phone number, and reach out via our contact form', canonical='https://coalandcurry.com/contact', and ogImage pointing to frontend/public/assets/generated/restaurant-interior.dim_1200x800.png."
-        },
-        {
-          "path": "frontend/src/pages/Reservation.tsx",
-          "operation": "modify",
-          "description": "Add or update the <SEOHead> component call with title='Reservations | Coal & Curry', description='Reserve your table at Coal & Curry. Select your date, time, party size, and seating preferences for a memorable dining experience', canonical='https://coalandcurry.com/reservation', and ogImage pointing to frontend/public/assets/generated/ambience-dining.dim_1200x800.png."
-        },
-        {
-          "path": "frontend/src/pages/Loyalty.tsx",
-          "operation": "modify",
-          "description": "Add or update the <SEOHead> component call with title='Loyalty Program | Coal & Curry', description='Join the Coal & Curry rewards program and earn points with every visit. Unlock exclusive perks from Coal to Inferno tier', canonical='https://coalandcurry.com/loyalty', and ogImage pointing to frontend/public/assets/generated/coal-curry-logo-circular.dim_512x512.png."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Verify and update robots.txt and sitemap.xml to ensure all public pages are crawlable with accurate URLs, priorities, and current lastmod dates",
-      "acceptanceCriteria": [
-        "robots.txt references the correct sitemap URL",
-        "sitemap.xml lists all 9 public pages with valid canonical URLs",
-        "sitemap.xml has updated lastmod dates",
-        "No public pages are accidentally blocked in robots.txt"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/robots.txt",
-          "operation": "modify",
-          "description": "Verify that robots.txt allows crawling of all public paths (/, /about, /menu, /offers, /gallery, /blog, /contact, /reservation, /loyalty), disallows /cart and /checkout, and correctly references the sitemap at https://coalandcurry.com/sitemap.xml. Update if needed to ensure alignment with current site structure."
-        },
-        {
-          "path": "frontend/public/sitemap.xml",
-          "operation": "modify",
-          "description": "Verify that sitemap.xml includes all 9 public pages with canonical URLs (https://coalandcurry.com/, /about, /menu, /offers, /gallery, /blog, /contact, /reservation, /loyalty). Update lastmod dates to the current date (or a recent date reflecting the SEO update). Ensure priority values are set appropriately (e.g., homepage at 1.0, key pages like menu/reservation at 0.8-0.9, others at 0.7). Confirm changefreq values reflect realistic update patterns (homepage: daily, content pages: weekly/monthly)."
+          "description": "Insert the Google Site Verification meta tag `<meta name=\"google-site-verification\" content=\"xD35XIyzJcMzSAzDAaT9PFlXd6bn5Yfz5VAKoTrASTU\" />` into the `<head>` section, positioned after the existing charset and viewport meta tags but before the SEO-related meta tags. Ensure no other content in the head section is altered."
         }
       ]
     }

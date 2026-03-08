@@ -1,140 +1,155 @@
+import { Link } from '@tanstack/react-router';
 import CountdownTimer from '@/components/offers/CountdownTimer';
 import SEOHead from '@/components/seo/SEOHead';
-
-const now = new Date();
 
 const offers = [
   {
     id: 1,
-    title: 'Lunch Combo',
-    description: 'Starter + Main Course + Dessert + Beverage for one. Available Monday to Friday, 11 AM – 3 PM.',
+    title: 'Weekend Biryani Feast',
+    description: 'Get 20% off on all Biryani orders every Saturday and Sunday. Dine-in only.',
     discount: '20% OFF',
-    badge: '🍽️',
-    expiry: new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000),
-    color: 'border-gold',
+    validUntil: '2026-03-31',
+    terms: 'Valid on dine-in orders only. Cannot be combined with other offers.',
+    badge: 'Weekend Special',
+    badgeColor: 'bg-ember-500 text-white',
   },
   {
     id: 2,
-    title: 'Family Feast',
-    description: 'Special platter for 4+ guests including 2 Coal Specials, 2 Biryanis, and 4 Desserts.',
-    discount: '25% OFF',
-    badge: '👨‍👩‍👧‍👦',
-    expiry: new Date(now.getTime() + 10 * 24 * 60 * 60 * 1000),
-    color: 'border-maroon',
+    title: 'Coal Special Combo',
+    description: 'Order any 2 Coal Specials and get a complimentary Jigarthanda dessert.',
+    discount: 'FREE DESSERT',
+    validUntil: '2026-04-15',
+    terms: 'Valid on orders of 2 or more Coal Special dishes. Dine-in and takeaway.',
+    badge: 'Combo Deal',
+    badgeColor: 'bg-gold-500 text-coal-900',
   },
   {
     id: 3,
-    title: 'Weekend Grill Fest',
-    description: 'Unlimited coal-grilled items every Saturday & Sunday. Includes all Coal Specials.',
-    discount: 'FLAT ₹999',
-    badge: '🔥',
-    expiry: new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000),
-    color: 'border-gold',
+    title: 'Family Thali Thursday',
+    description: 'Every Thursday, enjoy our Family Thali for 4 at just ₹999. A complete Chettinad spread!',
+    discount: '₹999 for 4',
+    validUntil: '2026-05-01',
+    terms: 'Valid every Thursday. Dine-in only. Advance booking recommended.',
+    badge: 'Thursday Only',
+    badgeColor: 'bg-saffron-400 text-coal-900',
   },
   {
     id: 4,
-    title: 'Student Discount',
-    description: 'Valid student ID required. Applicable on all regular menu items. Not valid on Coal Specials.',
-    discount: '15% OFF',
-    badge: '🎓',
-    expiry: new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000),
-    color: 'border-maroon',
+    title: 'Loyalty Double Points',
+    description: 'Earn double loyalty points on all orders placed through our website this month.',
+    discount: '2X POINTS',
+    validUntil: '2026-03-31',
+    terms: 'Valid for registered loyalty members only. Online orders only.',
+    badge: 'Loyalty Bonus',
+    badgeColor: 'bg-coal-700 text-gold-400',
   },
   {
     id: 5,
-    title: 'Festival Special',
-    description: 'Celebrate Tamil festivals with our special thali — a curated 12-course traditional meal.',
-    discount: '30% OFF',
-    badge: '🎉',
-    expiry: new Date(now.getTime() + 15 * 24 * 60 * 60 * 1000),
-    color: 'border-gold',
+    title: 'Early Bird Lunch',
+    description: 'Arrive before 1 PM on weekdays and enjoy 15% off your entire lunch order.',
+    discount: '15% OFF',
+    validUntil: '2026-06-30',
+    terms: 'Valid Monday to Friday, 11 AM – 1 PM. Dine-in only.',
+    badge: 'Lunch Offer',
+    badgeColor: 'bg-ember-500 text-white',
   },
   {
     id: 6,
-    title: 'Birthday Package',
-    description: 'Celebrate your birthday with a complimentary dessert platter and personalized service.',
-    discount: 'FREE DESSERT',
-    badge: '🎂',
-    expiry: new Date(now.getTime() + 60 * 24 * 60 * 60 * 1000),
-    color: 'border-maroon',
+    title: 'Birthday Celebration',
+    description: 'Celebrate your birthday with us and get a complimentary dessert platter for the table.',
+    discount: 'FREE PLATTER',
+    validUntil: '2026-12-31',
+    terms: 'Valid on your birthday. ID proof required. Dine-in only.',
+    badge: 'Birthday Special',
+    badgeColor: 'bg-gold-500 text-coal-900',
   },
 ];
 
 export default function Offers() {
   return (
-    <main className="min-h-screen bg-coal pt-20">
+    <>
       <SEOHead
-        title="Special Offers | Coal & Curry Restaurant Neyveli"
-        description="Grab exclusive limited-time deals at Coal & Curry, Neyveli. Lunch combos, family feasts, weekend grill fests, student discounts, festival specials, and birthday packages — authentic South Indian food at unbeatable value."
-        canonical="https://coalandcurry.com/offers"
-        ogType="website"
-        ogUrl="https://coalandcurry.com/offers"
+        title="Offers & Deals | Coal & Curry – Chettinad Restaurant Neyveli"
+        description="Discover the latest offers and deals at Coal & Curry. Weekend biryani discounts, combo deals, family thali specials, and loyalty bonus points. Don't miss out!"
         ogImage="/assets/generated/offers-banner-bg.dim_1920x600.png"
       />
 
       {/* Hero Banner */}
-      <div className="relative py-20 overflow-hidden">
+      <section className="relative pt-16 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('/assets/generated/offers-banner-bg.dim_1920x600.png')` }}
+          style={{ backgroundImage: "url('/assets/generated/offers-banner-bg.dim_1920x600.png')" }}
         />
-        <div className="absolute inset-0 bg-coal/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-maroon/30 via-transparent to-maroon/30" />
-        <div className="relative z-10 text-center px-4">
-          <p className="font-serif-alt text-gold/70 text-sm uppercase tracking-[0.3em] mb-2">Limited Time</p>
-          <h1 className="section-heading text-5xl sm:text-6xl mb-4">Exclusive Offers</h1>
-          <div className="gold-divider w-32 mx-auto mb-4" />
-          <p className="text-cream/60 font-sans max-w-xl mx-auto">
-            Grab these limited-time deals before they expire. Authentic flavors at unbeatable value.
+        <div className="absolute inset-0 bg-coal-950/80" />
+        <div className="relative z-10 py-24 px-4 text-center">
+          <p className="text-ember-400 text-sm font-bold uppercase tracking-widest mb-3">
+            Limited Time
+          </p>
+          <h1
+            className="font-display text-4xl sm:text-5xl font-bold text-white mb-4"
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}
+          >
+            Exclusive Offers
+          </h1>
+          <p
+            className="text-coal-200 text-lg max-w-xl mx-auto"
+            style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}
+          >
+            Savour more for less — handpicked deals crafted to make every visit special.
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Offers Grid */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {offers.map(offer => (
-            <div
-              key={offer.id}
-              className={`card-smoky rounded-xl overflow-hidden border-t-4 ${offer.color} hover:shadow-fire transition-all duration-300 hover:-translate-y-1 flex flex-col`}
-            >
-              <div className="p-6 flex-1">
-                {/* Badge & Discount */}
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-3xl">{offer.badge}</span>
-                  <span className="bg-maroon text-gold font-bold text-sm px-3 py-1.5 rounded-full font-sans">
-                    {offer.discount}
-                  </span>
+      <section className="py-16 bg-coal-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {offers.map((offer) => (
+              <div
+                key={offer.id}
+                className="bg-coal-800 border border-coal-700 rounded-xl overflow-hidden shadow-card hover:shadow-premium hover:border-gold-500/40 transition-all duration-300 flex flex-col"
+              >
+                {/* Badge + Discount */}
+                <div className="p-5 border-b border-coal-700">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`text-xs font-bold px-3 py-1 rounded-full ${offer.badgeColor}`}>
+                      {offer.badge}
+                    </span>
+                    <span className="text-gold-400 font-bold text-lg">{offer.discount}</span>
+                  </div>
+                  <h3 className="font-display font-bold text-white text-lg mb-2">{offer.title}</h3>
+                  <p className="text-coal-300 text-sm leading-relaxed">{offer.description}</p>
                 </div>
-
-                {/* Title */}
-                <h3 className="font-display text-gold text-2xl font-bold mb-2">{offer.title}</h3>
-
-                {/* Description */}
-                <p className="text-cream/60 font-sans text-sm leading-relaxed mb-6">{offer.description}</p>
 
                 {/* Countdown */}
-                <div className="border-t border-gold/10 pt-4">
-                  <p className="text-cream/40 text-xs font-sans text-center mb-3 uppercase tracking-wider">Offer Expires In</p>
-                  <CountdownTimer targetDate={offer.expiry} />
+                <div className="px-5 py-4 bg-coal-900/50">
+                  <p className="text-coal-300 text-xs font-semibold uppercase tracking-wide mb-2">
+                    Offer Ends In:
+                  </p>
+                  <CountdownTimer targetDate={offer.validUntil} />
+                </div>
+
+                {/* Terms */}
+                <div className="px-5 py-3 flex-1">
+                  <p className="text-coal-400 text-xs italic leading-relaxed">
+                    * {offer.terms}
+                  </p>
+                </div>
+
+                {/* CTA */}
+                <div className="px-5 pb-5">
+                  <Link
+                    to="/reservation"
+                    className="block w-full text-center py-2.5 rounded bg-ember-500 hover:bg-ember-600 text-white font-bold text-sm transition-colors"
+                  >
+                    Claim This Offer
+                  </Link>
                 </div>
               </div>
-
-              {/* CTA */}
-              <div className="px-6 pb-6">
-                <button className="btn-maroon w-full py-2.5 rounded font-display font-semibold text-sm">
-                  Claim Offer
-                </button>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-
-        {/* Terms */}
-        <p className="text-center text-cream/30 text-xs font-sans mt-10">
-          * All offers are subject to availability. Cannot be combined with other promotions. Valid at Coal & Curry, Neyveli only.
-        </p>
       </section>
-    </main>
+    </>
   );
 }

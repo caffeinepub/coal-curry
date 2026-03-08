@@ -1,59 +1,59 @@
-import HeroSection from "../components/home/HeroSection";
-import SignatureDishes from "../components/home/SignatureDishes";
-import CustomerReviews from "../components/home/CustomerReviews";
-import SEOHead from "../components/seo/SEOHead";
-import { Link } from "@tanstack/react-router";
-import { UtensilsCrossed, Clock, MapPin, Phone } from "lucide-react";
+import HeroSection from '@/components/home/HeroSection';
+import SignatureDishes from '@/components/home/SignatureDishes';
+import CustomerReviews from '@/components/home/CustomerReviews';
+import { Link } from '@tanstack/react-router';
+import { Flame, Clock, MapPin, Phone } from 'lucide-react';
+import SEOHead from '@/components/seo/SEOHead';
 
-const restaurantSchema = {
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  name: "Coal & Curry",
-  description: "Authentic Chettinad Restaurant in Neyveli, Tamil Nadu. Traditional coal-grilled specialties, biryanis, dosas, and South Indian classics.",
-  url: "https://coalandcurry.com",
-  telephone: "+917845582661",
-  email: "isacksanthosh@gmail.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Neyveli",
-    addressLocality: "Neyveli",
-    addressRegion: "Tamil Nadu",
-    postalCode: "607803",
-    addressCountry: "IN",
-  },
-  servesCuisine: ["Chettinad", "South Indian", "Tamil", "Coal-Grilled", "Biryani"],
-  priceRange: "₹₹",
-  openingHours: ["Mo-Fr 11:00-23:00", "Sa-Su 10:00-23:30"],
-  image: "/assets/generated/hero-coal-curry.dim_1920x1080.png",
-};
+const features = [
+  { icon: '🔥', title: 'Charcoal Grilled', desc: 'Every dish slow-cooked over real charcoal for authentic smoky depth.' },
+  { icon: '🌿', title: 'Fresh Spices', desc: 'Hand-ground Chettinad masalas sourced from local farms daily.' },
+  { icon: '👨‍🍳', title: 'Master Chefs', desc: 'Recipes passed down through generations of Chettinad culinary tradition.' },
+  { icon: '🏆', title: 'Award Winning', desc: "Recognised as Neyveli's best restaurant for 5 consecutive years." },
+];
 
 export default function Home() {
   return (
     <>
       <SEOHead
-        title="Coal & Curry | Authentic Chettinad Restaurant – Neyveli, Tamil Nadu"
-        description="Experience authentic Chettinad cuisine with traditional coal-grilled specialties, biryanis, dosas, and South Indian classics in a warm, inviting atmosphere. Book a table today!"
-        canonical="https://coalandcurry.com/"
-        ogUrl="https://coalandcurry.com/"
+        title="Coal & Curry | Authentic Chettinad Restaurant in Neyveli"
+        description="Experience the bold, smoky flavours of authentic Chettinad cuisine at Coal & Curry, Neyveli's finest restaurant. Charcoal-grilled meats, aromatic biryanis, and fiery curries."
         ogImage="/assets/generated/hero-coal-curry.dim_1920x1080.png"
-        jsonLd={restaurantSchema}
+        ogUrl="https://coalandcurry.com/"
+        canonical="https://coalandcurry.com/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          "name": "Coal & Curry",
+          "description": "Authentic Chettinad restaurant in Neyveli, Tamil Nadu",
+          "servesCuisine": "Chettinad, South Indian",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "12, Coal Street, Neyveli Township",
+            "addressLocality": "Neyveli",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "607803",
+            "addressCountry": "IN"
+          },
+          "telephone": "+917845582661",
+          "openingHours": "Mo-Su 11:00-23:00",
+          "priceRange": "₹₹"
+        }}
       />
 
       <HeroSection />
 
       {/* Features Strip */}
-      <section className="bg-saffron py-6">
+      <section className="py-14 bg-coal-800 border-y border-coal-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            {[
-              { icon: "🌶️", label: "Authentic Spices" },
-              { icon: "🍃", label: "Fresh Ingredients" },
-              { icon: "👨‍🍳", label: "Expert Chefs" },
-              { icon: "❤️", label: "Made with Love" },
-            ].map((f) => (
-              <div key={f.label} className="flex items-center justify-center gap-2">
-                <span className="text-2xl">{f.icon}</span>
-                <span className="font-bold text-charcoal text-sm">{f.label}</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((f) => (
+              <div key={f.title} className="flex items-start gap-4">
+                <span className="text-3xl">{f.icon}</span>
+                <div>
+                  <h3 className="font-display font-bold text-white text-base mb-1">{f.title}</h3>
+                  <p className="text-coal-300 text-sm leading-relaxed">{f.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -61,93 +61,61 @@ export default function Home() {
       </section>
 
       <SignatureDishes />
+      <CustomerReviews />
 
       {/* About Teaser */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-saffron font-medium text-sm uppercase tracking-widest">Our Story</span>
-              <h2 className="font-display text-4xl font-bold text-charcoal mt-2 mb-6">
-                A Culinary Journey Through South India
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Coal & Curry was born from a passion for authentic South Indian flavors. 
-                Our chefs bring decades of experience from the kitchens of Tamil Nadu, Kerala, 
-                Karnataka, and Andhra Pradesh.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                From the fiery Chettinad curries to the delicate Kerala fish moilee, 
-                every dish is crafted with freshly ground spices and time-honored recipes 
-                passed down through generations.
-              </p>
-              <div className="flex gap-4">
-                <Link
-                  to="/about"
-                  className="px-6 py-3 bg-saffron text-charcoal font-bold rounded-md hover:bg-turmeric transition-colors"
-                >
-                  Our Story
-                </Link>
-                <Link
-                  to="/menu"
-                  className="px-6 py-3 border-2 border-saffron text-saffron font-bold rounded-md hover:bg-saffron hover:text-charcoal transition-colors"
-                >
-                  View Menu
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="/assets/generated/restaurant-interior.dim_1200x800.png"
-                alt="Coal & Curry restaurant interior"
-                className="rounded-2xl shadow-warm-lg w-full object-cover h-80"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-saffron rounded-xl p-4 shadow-warm">
-                <p className="font-display text-3xl font-bold text-charcoal">50+</p>
-                <p className="text-charcoal/80 text-sm font-medium">Authentic Dishes</p>
-              </div>
-            </div>
+      <section className="py-20 bg-coal-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-ember-400 text-sm font-bold uppercase tracking-widest mb-3">Our Story</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-5">
+              Born from the Coals of Neyveli
+            </h2>
+            <p className="text-coal-200 text-base leading-relaxed mb-4">
+              Coal & Curry was founded in 2009 by Chef Murugan Pillai, a third-generation Chettinad cook who grew up watching his grandmother transform simple ingredients into extraordinary meals over glowing charcoal.
+            </p>
+            <p className="text-coal-200 text-base leading-relaxed mb-6">
+              Today, we carry that legacy forward — every dish is a tribute to the bold, complex flavours of Chettinad cuisine, cooked with the same passion and respect for tradition.
+            </p>
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded bg-ember-500 hover:bg-ember-600 text-white font-bold text-sm transition-colors"
+            >
+              <Flame className="w-4 h-4" />
+              Read Our Story
+            </Link>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-premium">
+            <img
+              src="/assets/generated/restaurant-interior.dim_1200x800.png"
+              alt="Coal & Curry restaurant interior"
+              className="w-full h-72 lg:h-96 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-coal-950/60 to-transparent" />
           </div>
         </div>
       </section>
 
-      <CustomerReviews />
-
-      {/* Info Strip */}
-      <section className="py-12 bg-cream border-t border-border">
+      {/* Quick Info Strip */}
+      <section className="py-10 bg-coal-950 border-t border-coal-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-saffron/10 flex items-center justify-center">
-                <Clock className="w-6 h-6 text-saffron" />
-              </div>
-              <div>
-                <p className="font-display font-bold text-charcoal">Opening Hours</p>
-                <p className="text-sm text-muted-foreground">Mon–Fri: 11 AM – 11 PM</p>
-                <p className="text-sm text-muted-foreground">Sat–Sun: 10 AM – 11:30 PM</p>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+            <div className="flex flex-col items-center gap-2">
+              <Clock className="w-6 h-6 text-gold-400" />
+              <p className="text-white font-semibold text-sm">Mon–Sun: 11 AM – 11 PM</p>
+              <p className="text-coal-300 text-xs">Open Every Day</p>
             </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-saffron/10 flex items-center justify-center">
-                <MapPin className="w-6 h-6 text-saffron" />
-              </div>
-              <div>
-                <p className="font-display font-bold text-charcoal">Location</p>
-                <p className="text-sm text-muted-foreground">Neyveli, Tamil Nadu</p>
-                <p className="text-sm text-muted-foreground">607 803, India</p>
-              </div>
+            <div className="flex flex-col items-center gap-2">
+              <MapPin className="w-6 h-6 text-gold-400" />
+              <p className="text-white font-semibold text-sm">12, Coal Street, Neyveli</p>
+              <p className="text-coal-300 text-xs">Tamil Nadu – 607 803</p>
             </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-saffron/10 flex items-center justify-center">
-                <Phone className="w-6 h-6 text-saffron" />
-              </div>
-              <div>
-                <p className="font-display font-bold text-charcoal">Reservations</p>
-                <p className="text-sm text-muted-foreground">+91 78455 82661</p>
-                <Link to="/reservation" className="text-sm text-saffron font-medium hover:underline">
-                  Book Online →
-                </Link>
-              </div>
+            <div className="flex flex-col items-center gap-2">
+              <Phone className="w-6 h-6 text-gold-400" />
+              <a href="tel:+917845582661" className="text-white font-semibold text-sm hover:text-gold-400 transition-colors">
+                +91 78455 82661
+              </a>
+              <p className="text-coal-300 text-xs">Call for Reservations</p>
             </div>
           </div>
         </div>

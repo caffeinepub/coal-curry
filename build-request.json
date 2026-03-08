@@ -1,79 +1,37 @@
 {
   "kind": "build_request",
-  "title": "Add SEO meta tags to all pages",
+  "title": "Add Google Site Verification meta tag to index.html",
   "projectName": "Coal & Curry",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Update frontend/index.html to include a descriptive page title ('Coal & Curry | Authentic Chettinad Restaurant'), a meta description summarizing the restaurant, relevant keywords meta tag, Open Graph tags (og:title, og:description, og:type, og:url, og:image), and Twitter Card meta tags so the site is discoverable and renders rich previews when shared.",
+      "text": "Add the Google Site Verification meta tag `<meta name=\"google-site-verification\" content=\"xD35XIyzJcMzSAzDAaT9PFlXd6bn5Yfz5VAKoTrASTU\" />` inside the `<head>` section of `frontend/index.html`.",
       "target": "frontend",
       "source": {
         "messageIds": [
+          "msg-4",
           "msg-5"
         ],
         "quotes": [
-          "Yes add SEO tags"
+          "<meta name=\"google-site-verification\" content=\"xD35XIyzJcMzSAzDAaT9PFlXd6bn5Yfz5VAKoTrASTU\" />",
+          "Add this meta tag to existing project"
         ]
       },
       "acceptanceCriteria": [
-        "index.html contains a <title> tag with 'Coal & Curry | Authentic Chettinad Restaurant'",
-        "index.html contains a <meta name='description'> tag with a concise restaurant description",
-        "index.html contains <meta name='keywords'> with relevant terms (Chettinad, biryani, restaurant, etc.)",
-        "index.html contains Open Graph tags: og:title, og:description, og:type, og:url, og:image",
-        "index.html contains Twitter Card tags: twitter:card, twitter:title, twitter:description"
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Ensure the existing SEOHead component (frontend/src/components/seo/SEOHead.tsx) is used on every page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) with accurate, unique page-level title, meta description, canonical URL, Open Graph, and Twitter Card values tailored to each page's content.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "Yes add SEO tags"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Every public page (Home, About, Menu, Offers, Gallery, Blog, Contact, Reservation, Loyalty) renders an <SEOHead> component with a unique title and description",
-        "Each page's title follows the pattern '[Page Name] | Coal & Curry'",
-        "Each page's meta description is unique and accurately describes that page's content",
-        "Canonical URLs are set per page using the coalandcurry.com domain",
-        "Open Graph and Twitter Card tags are populated on every page"
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Verify and update the existing robots.txt (frontend/public/robots.txt) and sitemap.xml (frontend/public/sitemap.xml) to ensure all public pages are included with accurate URLs (using the canonical domain), correct priorities, and up-to-date lastmod dates so Google can crawl and index the site efficiently.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "Yes add SEO tags"
-        ]
-      },
-      "acceptanceCriteria": [
-        "robots.txt references the correct sitemap URL",
-        "sitemap.xml lists all 9 public pages with valid canonical URLs",
-        "sitemap.xml has updated lastmod dates",
-        "No public pages are accidentally blocked in robots.txt"
+        "The `<head>` section of `frontend/index.html` contains exactly `<meta name=\"google-site-verification\" content=\"xD35XIyzJcMzSAzDAaT9PFlXd6bn5Yfz5VAKoTrASTU\" />`.",
+        "No existing meta tags or other head content are removed or modified.",
+        "The page still renders correctly after the change."
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui",
-    "Cart and Checkout pages must remain noindex as currently implemented",
-    "Use the existing SEOHead component — do not create a duplicate SEO mechanism"
+    "Do not modify any backend files.",
+    "Do not alter any existing meta tags, SEO tags, or other head content in index.html."
   ],
   "nonGoals": [
-    "Google Search Console setup or submission (manual step for the user)",
-    "Google Business Profile or Google Maps listing",
-    "Paid search or advertising setup",
-    "Structured data changes beyond what SEOHead already supports"
+    "Adding verification tags to any other file or component (e.g., SEOHead.tsx).",
+    "Any other SEO or meta tag changes."
   ],
   "imageRequirements": {
     "required": [],
